@@ -175,14 +175,6 @@
         📡 Radio waves (Wi-Fi)
       </div>
     
-      <!-- IMAGE 3 -->
-      <h3 class="image-heading">TCP/IP vs OSI Model</h3>
-      <img
-        src="../../assets/images/OSI-Model-vs-TCPIP-Model.png"
-        alt="OSI vs TCP IP Model"
-        class="content-image"
-      />
-    
       <h3>🔁 How Data Flows (VERY IMPORTANT 🔥)</h3>
     
       <div class="info-card">
@@ -202,6 +194,322 @@
       </div>
     
     </section>
+    <section class="content-section">
+
+      <h2>OSI Model (Open Systems Interconnection)</h2>
+    
+      <p>
+        The <strong>OSI Model</strong> is a <strong>7-layer conceptual model</strong> that
+        explains how data moves in a network step by step.
+      </p>
+    
+      <div class="info-card">
+        📌 It is <strong>not a real protocol</strong><br>
+        📌 It is a <strong>learning + troubleshooting model</strong>
+      </div>
+    
+      <div class="info-card">
+        💡 Think like this:<br><br>
+        <strong>TCP/IP</strong> → How the internet actually works<br>
+        <strong>OSI</strong> → How humans understand and fix network problems
+      </div>
+    
+      <!-- IMAGE 1 -->
+      <h3 class="image-heading">OSI Model – 7 Layers Overview</h3>
+      <img
+        src="../../assets/images/The 7 Layers of OSI.webp"
+        alt="OSI Model 7 Layers"
+        class="content-image"
+      />
+    
+      <h3>🧠 Why OSI Model is IMPORTANT for CCST (Very Important 🔥)</h3>
+    
+      <p>
+        As a <strong>network support technician</strong>, your main job is troubleshooting.
+      </p>
+    
+      <div class="info-card">
+        You must answer questions like:
+        <ul>
+          <li>❓ Is the cable faulty?</li>
+          <li>❓ Is IP missing?</li>
+          <li>❓ Is the application down?</li>
+        </ul>
+        👉 The OSI model helps you find <strong>EXACTLY where the problem is</strong>.
+      </div>
+    
+      <p>📌 Instead of guessing, you check <strong>layer by layer</strong>.</p>
+    
+      <h3>🧩 OSI Model – 7 Layers (Top to Bottom)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Layer No.</th>
+            <th>Layer Name</th>
+            <th>Easy Meaning</th>
+          </tr>
+          <tr>
+            <td>7️⃣</td>
+            <td>Application</td>
+            <td>What the user uses</td>
+          </tr>
+          <tr>
+            <td>6️⃣</td>
+            <td>Presentation</td>
+            <td>Format & security</td>
+          </tr>
+          <tr>
+            <td>5️⃣</td>
+            <td>Session</td>
+            <td>Connection control</td>
+          </tr>
+          <tr>
+            <td>4️⃣</td>
+            <td>Transport</td>
+            <td>Reliable delivery</td>
+          </tr>
+          <tr>
+            <td>3️⃣</td>
+            <td>Network</td>
+            <td>IP & routing</td>
+          </tr>
+          <tr>
+            <td>2️⃣</td>
+            <td>Data Link</td>
+            <td>MAC & switching</td>
+          </tr>
+          <tr>
+            <td>1️⃣</td>
+            <td>Physical</td>
+            <td>Cables & signals</td>
+          </tr>
+        </table>
+      </div>
+    
+      <!-- IMAGE 2 -->
+      <h3 class="image-heading">OSI 7 Layers Explained (Detail)</h3>
+      <img
+        src="../../assets/images/OSI-7-layers_detail_explain.jpg"
+        alt="OSI 7 Layers Detailed Explanation"
+        class="content-image"
+      />
+    
+      <h3>🧠 Memory Trick (EXAM GOLD 🥇)</h3>
+    
+      <div class="info-card">
+        👉 <strong>All People Seem To Need Data Processing</strong>
+        <ul>
+          <li>Application</li>
+          <li>Presentation</li>
+          <li>Session</li>
+          <li>Transport</li>
+          <li>Network</li>
+          <li>Data Link</li>
+          <li>Physical</li>
+        </ul>
+        📌 This trick is VERY popular in exams and interviews.
+      </div>
+    
+      <h3>🟦 Layer 7: Application Layer</h3>
+    
+      <div class="info-card">
+        <p>Direct interaction with user applications.</p>
+    
+        <strong>Examples:</strong>
+        <ul>
+          <li>Web browser (Chrome)</li>
+          <li>Email client (Gmail, Outlook)</li>
+        </ul>
+    
+        <strong>Protocols:</strong>
+        <ul>
+          <li>HTTP / HTTPS</li>
+          <li>FTP</li>
+          <li>SMTP</li>
+          <li>DNS</li>
+        </ul>
+    
+        🧠 Problem Example:<br>
+        ❌ Website not opening<br>
+        ✔ First check <strong>Application layer</strong>
+      </div>
+    
+      <h3>🟩 Layer 6: Presentation Layer</h3>
+    
+      <div class="info-card">
+        Handles:
+        <ul>
+          <li>Data formatting</li>
+          <li>Encryption & decryption</li>
+          <li>Compression</li>
+        </ul>
+    
+        🧠 Examples:
+        <ul>
+          <li>HTTPS encryption 🔐</li>
+          <li>JPEG, PNG images</li>
+          <li>MP4 videos</li>
+        </ul>
+    
+        📌 Data unreadable → Presentation layer issue
+      </div>
+    
+      <h3>🟨 Layer 5: Session Layer</h3>
+    
+      <div class="info-card">
+        Manages:
+        <ul>
+          <li>Session start</li>
+          <li>Session maintenance</li>
+          <li>Session termination</li>
+        </ul>
+    
+        🧠 Examples:
+        <ul>
+          <li>Staying logged into a website</li>
+          <li>Session timeout after inactivity</li>
+        </ul>
+    
+        📌 Connection drops repeatedly → Session layer problem
+      </div>
+    
+      <h3>🟥 Layer 4: Transport Layer</h3>
+    
+      <div class="info-card">
+        Handles:
+        <ul>
+          <li>End-to-end delivery</li>
+          <li>Error correction</li>
+          <li>Flow control</li>
+        </ul>
+    
+        <strong>Protocols:</strong>
+        <ul>
+          <li>TCP → Reliable, safe</li>
+          <li>UDP → Fast, no guarantee</li>
+        </ul>
+    
+        🧠 Examples:
+        <ul>
+          <li>File download → TCP</li>
+          <li>Video streaming → UDP</li>
+        </ul>
+    
+        📌 CCST Tip:<br>
+        TCP = Reliable<br>
+        UDP = Fast
+      </div>
+    
+      <h3>🟪 Layer 3: Network Layer</h3>
+    
+      <div class="info-card">
+        Handles:
+        <ul>
+          <li>IP addressing</li>
+          <li>Routing between networks</li>
+        </ul>
+    
+        <strong>Protocol:</strong> IP (IPv4 / IPv6)<br><br>
+    
+        🧠 Examples:
+        <ul>
+          <li>No IP address</li>
+          <li>Router not working</li>
+        </ul>
+    
+        👉 Network layer problem
+      </div>
+    
+      <h3>🟧 Layer 2: Data Link Layer</h3>
+    
+      <div class="info-card">
+        Handles:
+        <ul>
+          <li>MAC addressing</li>
+          <li>Switching</li>
+          <li>Error detection (frames)</li>
+        </ul>
+    
+        <strong>Devices:</strong>
+        <ul>
+          <li>Switch</li>
+          <li>Network Interface Card (NIC)</li>
+        </ul>
+    
+        🧠 Examples:
+        <ul>
+          <li>Switch port disabled</li>
+          <li>MAC address issue</li>
+        </ul>
+    
+        👉 Data Link layer problem
+      </div>
+    
+      <h3>⬛ Layer 1: Physical Layer</h3>
+    
+      <div class="info-card">
+        Handles physical transmission using:
+        <ul>
+          <li>Electrical signals</li>
+          <li>Optical signals</li>
+          <li>Radio waves</li>
+        </ul>
+    
+        <strong>Examples:</strong>
+        <ul>
+          <li>Ethernet cable</li>
+          <li>Fiber cable</li>
+          <li>Wi-Fi signals</li>
+        </ul>
+    
+        🧠 Examples:
+        <ul>
+          <li>Cable unplugged ❌</li>
+          <li>No Wi-Fi signal ❌</li>
+        </ul>
+    
+        👉 Physical layer issue
+      </div>
+    
+      <!-- IMAGE 3 -->
+      <h3 class="image-heading">OSI vs TCP/IP Model</h3>
+      <img
+        src="../../assets/images/OSI-Model-vs-TCPIP-Model.png"
+        alt="OSI vs TCP IP Model"
+        class="content-image"
+      />
+    
+      <!-- IMAGE 4 -->
+      <h3 class="image-heading">OSI vs TCP/IP Diagram</h3>
+      <img
+        src="../../assets/images/osi-vs-tcpip-diagram.jpg"
+        alt="OSI vs TCP IP Diagram"
+        class="content-image"
+      />
+    
+      <h3>🔁 How Technicians Troubleshoot (Real Method)</h3>
+    
+      <div class="info-card">
+        Support engineers usually check <strong>Bottom → Top</strong>:<br><br>
+    
+        1️⃣ Check cable<br>
+        2️⃣ Check switch<br>
+        3️⃣ Check IP<br>
+        4️⃣ Check service<br><br>
+    
+        📌 This saves <strong>TIME</strong> and avoids confusion.
+      </div>
+    
+      <div class="info-card">
+        🎯 <strong>Final One-Line Summary (Remember This 💡)</strong><br><br>
+        OSI Model helps you understand <strong>WHERE</strong> the network problem is,
+        layer by layer.
+      </div>
+    
+    </section>
+
+    
     
 
   </main>
