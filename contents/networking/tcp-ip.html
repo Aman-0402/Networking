@@ -14,65 +14,195 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1>TCP/IP Model</h1>
+    <h1>Standards and Concepts</h1>
     <p class="subtitle">Foundation of modern computer networking</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
-    <!-- Section -->
     <section class="content-section">
-      <h2>What is the TCP/IP Model?</h2>
+
+      <h2>TCP/IP Model</h2>
+    
       <p>
-        The TCP/IP model is a conceptual framework that explains how data
-        is transmitted across networks. It is the backbone of the Internet
-        and most modern networking systems.
+        The <strong>TCP/IP model</strong> is a set of rules and steps that explains how
+        data moves from one device to another over a network or the internet.
       </p>
+    
+      <div class="info-card">
+        👉 Think of TCP/IP like a <strong>delivery system</strong>
+        (Amazon / Swiggy style 🚚) that decides:
+        <ul>
+          <li>How data is created</li>
+          <li>How it is packed</li>
+          <li>How it travels</li>
+          <li>How it is delivered correctly</li>
+        </ul>
+        <strong>Without TCP/IP → Internet cannot work at all ❌</strong>
+      </div>
+    
+      <!-- IMAGE 1 -->
+      <h3 class="image-heading">What is the TCP/IP Model?</h3>
+      <img
+        src="../../assets/images/what-is-the-tcp-ip-model.jpg"
+        alt="What is TCP IP Model"
+        class="content-image"
+      />
+    
+      <h3>🌐 Real-World Example (VERY IMPORTANT 💡)</h3>
+    
+      <p>📱 You open <strong>google.com</strong> on your phone.</p>
+    
+      <div class="info-card">
+        <ol>
+          <li>Your phone creates a request</li>
+          <li>Data is broken into small packets</li>
+          <li>Packets travel through routers on the internet</li>
+          <li>Google’s server receives and understands the request</li>
+          <li>Google sends the response back (page loads)</li>
+        </ol>
+        👉 All of this works because of the <strong>TCP/IP model</strong> ✅
+      </div>
+    
+      <h3>🧩 TCP/IP Model Layers (CCST Focus ⭐)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Layer No.</th>
+            <th>Layer Name</th>
+            <th>What It Does</th>
+          </tr>
+          <tr>
+            <td>4️⃣</td>
+            <td>Application</td>
+            <td>What the user uses</td>
+          </tr>
+          <tr>
+            <td>3️⃣</td>
+            <td>Transport</td>
+            <td>How data is delivered</td>
+          </tr>
+          <tr>
+            <td>2️⃣</td>
+            <td>Internet</td>
+            <td>IP address & routing</td>
+          </tr>
+          <tr>
+            <td>1️⃣</td>
+            <td>Network Access</td>
+            <td>Physical sending of data</td>
+          </tr>
+        </table>
+      </div>
+    
+      <!-- IMAGE 2 -->
+      <h3 class="image-heading">TCP/IP Data Flow</h3>
+      <img
+        src="../../assets/images/TCPIP_workFlow.png"
+        alt="TCP IP Data Flow"
+        class="content-image"
+      />
+    
+      <h3>🟦 Layer 4: Application Layer</h3>
+    
+      <div class="info-card">
+        <p>Closest layer to the user. Allows apps and software to use the network.</p>
+    
+        <strong>Common Protocols:</strong>
+        <ul>
+          <li>HTTP / HTTPS → Websites</li>
+          <li>FTP → File transfer</li>
+          <li>SMTP → Sending emails</li>
+          <li>DNS → Name → IP conversion</li>
+        </ul>
+    
+        🧠 Example:<br />
+        Typing <code>https://youtube.com</code><br />
+        👉 Application layer understands:
+        <em>“User wants a website”</em>
+      </div>
+    
+      <h3>🟩 Layer 3: Transport Layer</h3>
+    
+      <div class="info-card">
+        <ul>
+          <li><strong>TCP</strong> → Reliable, safe, slower</li>
+          <li><strong>UDP</strong> → Fast, no guarantee</li>
+        </ul>
+    
+        🎥 Watching YouTube → UDP (speed matters)<br />
+        🏦 Online banking → TCP (accuracy matters)
+    
+        <hr />
+    
+        <strong>Exam Trick:</strong><br />
+        TCP = Reliable<br />
+        UDP = Fast
+      </div>
+    
+      <h3>🟨 Layer 2: Internet Layer</h3>
+    
+      <div class="info-card">
+        <p>Handles IP addresses and routing.</p>
+    
+        <strong>Main Protocol:</strong> IP<br /><br />
+    
+        Example:
+        <ul>
+          <li>Your IP → 192.168.1.10</li>
+          <li>Google IP → 142.250.182.14</li>
+        </ul>
+    
+        👉 Internet layer decides the best path 🌍
+      </div>
+    
+      <h3>🟥 Layer 1: Network Access Layer</h3>
+    
+      <div class="info-card">
+        <p>Responsible for physical data transmission.</p>
+    
+        Examples:
+        <ul>
+          <li>Ethernet cable</li>
+          <li>Wi-Fi</li>
+          <li>Network Interface Card (NIC)</li>
+        </ul>
+    
+        Data becomes:<br />
+        ⚡ Electrical signals (cable)<br />
+        📡 Radio waves (Wi-Fi)
+      </div>
+    
+      <!-- IMAGE 3 -->
+      <h3 class="image-heading">TCP/IP vs OSI Model</h3>
+      <img
+        src="../../assets/images/OSI-Model-vs-TCPIP-Model.png"
+        alt="OSI vs TCP IP Model"
+        class="content-image"
+      />
+    
+      <h3>🔁 How Data Flows (VERY IMPORTANT 🔥)</h3>
+    
+      <div class="info-card">
+        📤 <strong>Sending Device</strong><br />
+        Application → Transport → Internet → Network Access<br /><br />
+    
+        📥 <strong>Receiving Device</strong><br />
+        Network Access → Internet → Transport → Application<br /><br />
+    
+        📌 Same layers, reverse direction
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>One-Line Memory Trick (Exam GOLD 🥇)</strong><br /><br />
+        “Application creates data, Transport delivers it,
+        Internet routes it, Network sends it.”
+      </div>
+    
     </section>
-
-    <!-- Section -->
-    <section class="content-section">
-      <h2>Layers of the TCP/IP Model</h2>
-
-      <article class="info-card">
-        <h3>Application Layer</h3>
-        <p>
-          Provides network services directly to user applications.
-          Examples include HTTP, FTP, SMTP, and DNS.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Transport Layer</h3>
-        <p>
-          Responsible for end-to-end communication, reliability,
-          flow control, and error handling (TCP & UDP).
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Internet Layer</h3>
-        <p>
-          Handles logical addressing and routing using IP, ICMP,
-          and related protocols.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Network Access Layer</h3>
-        <p>
-          Manages physical data transmission through Ethernet,
-          Wi-Fi, ARP, and network hardware.
-        </p>
-      </article>
-    </section>
-
-    <!-- Image Section -->
-    <section class="content-section">
-      <h2 class="image-heading">TCP/IP Model Diagram</h2>
-      <img src="../../assets/images/tcp-ip.png" alt="TCP/IP Model Diagram" class="content-image">
-    </section>
+    
 
   </main>
 
