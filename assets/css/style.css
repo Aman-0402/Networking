@@ -8,7 +8,7 @@
 
 body {
   margin: 0;
-  background: #0f172a;
+  background: #000000;
   color: #e5e7eb;
 }
 
@@ -119,11 +119,25 @@ body {
 }
 
 /* =====================
-   PAGE HEADER
+   PAGE HEADER (GLASS)
 ===================== */
 .page-header {
   text-align: center;
-  padding: 2rem;
+  padding: 3.5rem 2rem;
+  position: relative;
+}
+
+.page-header h1 {
+  font-size: 2.3rem;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(56,189,248,0.35);
+}
+
+.page-header p {
+  color: #9ca3af;
+  margin-top: 0.6rem;
 }
 
 /* =====================
@@ -132,46 +146,168 @@ body {
 .modules-wrapper {
   max-width: 1200px;
   margin: auto;
-  padding: 2rem;
+  padding: 3rem 2rem;
 }
 
 /* =====================
    MODULE SECTION
 ===================== */
 .module {
-  margin-bottom: 3rem;
-}
-
-.module-title {
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-  color: #38bdf8;
-  border-left: 6px solid #38bdf8;
-  padding-left: 12px;
+  margin-bottom: 4rem;
+  animation: glassReveal 0.8s ease both;
 }
 
 /* =====================
-   TOPIC GRID (SINGLE SOURCE)
+   MODULE TITLE (GLASS EDGE)
+===================== */
+.module-title {
+  font-size: 1.6rem;
+  margin-bottom: 1.6rem;
+  padding-left: 18px;
+  position: relative;
+
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.module-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 6px;
+  height: 70%;
+  background: linear-gradient(90deg, #dc2626, #fb923c);
+
+  transform: translateY(-50%);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(56,189,248,0.6);
+}
+
+/* =====================
+   TOPIC GRID
 ===================== */
 .topic-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.6rem;
 }
 
+/* =====================
+   GLASS DOOR CARD
+===================== */
 .topic-grid a {
+  position: relative;
+  padding: 1.3rem 1.2rem;
+  border-radius: 18px;
   text-decoration: none;
-  background: #111827;
-  color: #e5e7eb;
-  padding: 1rem;
-  border-radius: 12px;
-  text-align: center;
-  border: 1px solid #1f2937;
-  transition: all 0.25s ease;
+
+  background: rgba(17, 24, 39, 0.45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5f5;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+
+  transition: 
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+  overflow: hidden;
 }
 
+/* Glass light reflection */
+.topic-grid a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255,255,255,0.18),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* =====================
+   GLOW BORDER
+===================== */
+.topic-grid a::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff1e1e, #ff7a00);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+/* =====================
+   HOVER = GLASS DOOR OPEN ✨
+===================== */
 .topic-grid a:hover {
-  background: #020617;
-  border-color: #38bdf8;
-  transform: translateY(-4px);
+  transform: translateY(-12px) scale(1.05);
+  background: rgba(17, 24, 39, 0.7);
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.8),
+    0 0 45px rgba(56,189,248,0.35);
+}
+
+.topic-grid a:hover::before {
+  opacity: 1;
+}
+
+.topic-grid a:hover::after {
+  opacity: 1;
+}
+
+/* =====================
+   TEXT COLOR SHIFT ON HOVER
+===================== */
+.topic-grid a strong {
+  font-size: 1rem;
+  color: #cbd5f5;
+  transition: color 0.35s ease;
+}
+
+.topic-grid a p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #9ca3af;
+  transition: color 0.35s ease;
+}
+
+.topic-grid a:hover strong {
+  color: #000000; /* warm orange highlight */
+  text-shadow:
+    0 0 8px rgba(255, 122, 0, 0.6),
+    0 0 16px rgba(255, 30, 30, 0.5);
+}
+
+.topic-grid a:hover p {
+  color: #ffe4d5; /* soft warm white */
+}
+
+
+/* =====================
+   ENTRY ANIMATION
+===================== */
+@keyframes glassReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
