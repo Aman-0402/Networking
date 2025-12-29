@@ -508,16 +508,507 @@
       </div>
     
     </section>
+    <section class="content-section">
 
+      <h2>Frames and Packets (Networking Fundamentals)</h2>
     
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE (VERY IMPORTANT)</strong><br><br>
+        <strong>Packets</strong> are used by <strong>routers (IP)</strong><br>
+        <strong>Frames</strong> are used by <strong>switches (MAC)</strong><br><br>
+        👉 This one line alone answers many CCST exam questions.
+      </div>
+    
+      <h3>📦 What is a Packet?</h3>
+    
+      <p>
+        A <strong>packet</strong> is a small piece of data created at the
+        <strong>Network Layer (Layer 3)</strong>.
+        It contains <strong>IP addresses</strong>, so routers know where the data should go.
+      </p>
+    
+      <div class="info-card">
+        📌 Packets are used when data needs to:
+        <ul>
+          <li>Travel between different networks</li>
+          <li>Be routed using IP addresses</li>
+        </ul>
+      </div>
+    
+      <h3>🧠 What does a Packet contain?</h3>
+    
+      <div class="info-card">
+        <ul>
+          <li>✅ Source IP address</li>
+          <li>✅ Destination IP address</li>
+          <li>✅ Actual data (payload)</li>
+        </ul>
+      </div>
+    
+      <h3>🌍 Real-World Example</h3>
+    
+      <div class="info-card">
+        You send a message from:<br>
+        <strong>Your laptop → Google server</strong><br><br>
+    
+        Packets created:
+        <ul>
+          <li>From IP: 192.168.1.10</li>
+          <li>To IP: 142.250.182.14</li>
+        </ul>
+    
+        👉 <strong>Routers read packets, not frames</strong><br>
+        Because routers work with <strong>IP addresses</strong>.
+      </div>
+    
+      <!-- IMAGE 1 -->
+      <h3 class="image-heading">Difference Between Frames and Packets</h3>
+      <img
+        src="../../assets/images/Difference_Between_Frames_and_Packets.jpg"
+        alt="Difference Between Frames and Packets"
+        class="content-image"
+      />
+    
+      <h3>📨 What is a Frame?</h3>
+    
+      <p>
+        A <strong>frame</strong> is a data unit at the
+        <strong>Data Link Layer (Layer 2)</strong>.
+        It contains <strong>MAC addresses</strong> and is used for local delivery.
+      </p>
+    
+      <div class="info-card">
+        📌 Frames are used for:
+        <ul>
+          <li>Communication inside the same network (LAN)</li>
+          <li>Delivery from one device to the next</li>
+        </ul>
+      </div>
+    
+      <h3>🧠 What does a Frame contain?</h3>
+    
+      <div class="info-card">
+        <ul>
+          <li>✅ Source MAC address</li>
+          <li>✅ Destination MAC address</li>
+          <li>✅ The packet inside it</li>
+        </ul>
+    
+        👉 Yes 😄 A <strong>packet is wrapped inside a frame</strong>
+      </div>
+    
+      <h3>🏠 Real-World Example (Home Network)</h3>
+    
+      <div class="info-card">
+        Inside your home:
+        <ul>
+          <li>Laptop → Wi-Fi Router</li>
+          <li>Router → Switch</li>
+        </ul>
+    
+        Frames use MAC addresses like:<br>
+        <strong>00:1A:2B:3C:4D:5E</strong><br><br>
+    
+        👉 <strong>Switches read frames, not packets</strong>
+      </div>
+    
+      <h3>🧩 Packet vs Frame (Side-by-Side – VERY IMPORTANT)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Feature</th>
+            <th>Packet</th>
+            <th>Frame</th>
+          </tr>
+          <tr>
+            <td>OSI Layer</td>
+            <td>Layer 3 (Network)</td>
+            <td>Layer 2 (Data Link)</td>
+          </tr>
+          <tr>
+            <td>Address Type</td>
+            <td>IP Address</td>
+            <td>MAC Address</td>
+          </tr>
+          <tr>
+            <td>Used by</td>
+            <td>Routers</td>
+            <td>Switches</td>
+          </tr>
+          <tr>
+            <td>Scope</td>
+            <td>Between networks</td>
+            <td>Within same network</td>
+          </tr>
+          <tr>
+            <td>Contains</td>
+            <td>Data</td>
+            <td>Packet + MAC info</td>
+          </tr>
+        </table>
+      </div>
+    
+      <!-- IMAGE 2 -->
+      <h3 class="image-heading">Packets, Frames & OSI Layers</h3>
+      <img
+        src="../../assets/images/osi-model-headers_flames_packets.jpg"
+        alt="OSI Model Headers Frames Packets"
+        class="content-image"
+      />
+    
+      <h3>🚚 Data Journey (Step-by-Step Flow)</h3>
+    
+      <div class="info-card">
+        1️⃣ Application creates data<br>
+        2️⃣ Transport layer breaks data<br>
+        3️⃣ Network layer creates <strong>packet (IP)</strong><br>
+        4️⃣ Data Link layer wraps packet into <strong>frame (MAC)</strong><br>
+        5️⃣ Physical layer sends bits (0s & 1s)<br><br>
+    
+        👉 This process is called <strong>encapsulation</strong>
+      </div>
+    
+      <h3>🔁 What Happens at Each Device?</h3>
+    
+      <div class="info-card">
+        🖥️ <strong>End Device (PC / Phone)</strong><br>
+        • Creates packet<br>
+        • Wraps it inside a frame<br><br>
+    
+        🔀 <strong>Switch</strong><br>
+        • Looks only at MAC address<br>
+        • Forwards frame<br>
+        • ❌ Does NOT care about IP<br><br>
+    
+        🌐 <strong>Router</strong><br>
+        • Removes old frame<br>
+        • Reads packet (IP)<br>
+        • Decides next path<br>
+        • Creates new frame for next network<br><br>
+    
+        📌 Frame changes at every hop<br>
+        📌 Packet usually stays the same
+      </div>
+    
+      <h3>🛠️ CCST Troubleshooting Example (Real Exam Logic)</h3>
+    
+      <div class="info-card">
+        ❌ <strong>Problem:</strong> Internet not working<br><br>
+    
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Symptom</th>
+            <th>Likely Issue</th>
+          </tr>
+          <tr>
+            <td>Switch light OFF</td>
+            <td>Frame / Layer 2 issue</td>
+          </tr>
+          <tr>
+            <td>No IP address</td>
+            <td>Packet / Layer 3 issue</td>
+          </tr>
+          <tr>
+            <td>Can ping IP but website not loading</td>
+            <td>Application layer issue</td>
+          </tr>
+        </table>
+    
+        👉 OSI + Packet/Frame knowledge = <strong>fast troubleshooting</strong> 🚀
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Memory Trick (Easy Recall)</strong><br><br>
+        Frame = Local delivery (MAC)<br>
+        Packet = Global delivery (IP)
+      </div>
+    
+    </section>
+    <section class="content-section">
+
+      <h2>Addressing Concepts in Networking</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE (Remember This!)</strong><br><br>
+        <strong>IP</strong> = Who (device)<br>
+        <strong>MAC</strong> = Which hardware<br>
+        <strong>Port</strong> = Which application<br><br>
+        👉 If you remember this one line, half of addressing questions are solved ✅
+      </div>
+    
+      <h3>🔹 Why Addressing is Needed</h3>
+    
+      <p>
+        Imagine sending a courier without:
+      </p>
+    
+      <div class="info-card">
+        ❌ House address<br>
+        ❌ Flat number<br>
+        ❌ Person name
+      </div>
+    
+      <p>Same in networking:</p>
+    
+      <div class="info-card">
+        <ul>
+          <li>IP finds the <strong>device</strong></li>
+          <li>MAC finds the <strong>hardware</strong> on local network</li>
+          <li>Port finds the <strong>application</strong></li>
+        </ul>
+      </div>
+    
+      <!-- IMAGE 1 -->
+      <h3 class="image-heading">Home Network Addressing Overview</h3>
+      <img
+        src="../../assets/images/home_network_steup.png"
+        alt="Home Network Addressing Setup"
+        class="content-image"
+      />
+    
+      <h3>🧩 1️⃣ IP Address (Network Layer – Layer 3)</h3>
+    
+      <p>
+        An <strong>IP address</strong> is a logical address that uniquely identifies
+        a device on a network.
+      </p>
+    
+      <div class="info-card">
+        🧠 Think of IP as a <strong>home address</strong> 🏠
+      </div>
+    
+      <h3>🔹 Examples</h3>
+    
+      <div class="info-card">
+        IPv4: <strong>192.168.1.10</strong><br>
+        IPv6: <strong>2001:db8::1</strong>
+      </div>
+    
+      <h3>🔹 Types of IP</h3>
+    
+      <div class="info-card">
+        <ul>
+          <li><strong>Private IP</strong> → Inside LAN (home / office)</li>
+          <li><strong>Public IP</strong> → On the internet</li>
+        </ul>
+      </div>
+    
+      <h3>🧠 Easy Example</h3>
+    
+      <div class="info-card">
+        Your laptop IP → 192.168.1.10<br>
+        Google server IP → 142.250.182.14<br><br>
+        👉 <strong>Routers use IP addresses to route packets</strong> 🌐
+      </div>
+    
+      <h3>🧩 2️⃣ MAC Address (Data Link Layer – Layer 2)</h3>
+    
+      <p>
+        A <strong>MAC address</strong> is a physical (hardware) address
+        permanently assigned to a network device.
+      </p>
+    
+      <div class="info-card">
+        🧠 Think of MAC as a <strong>fingerprint</strong> 🆔
+      </div>
+    
+      <h3>🔹 Example</h3>
+    
+      <div class="info-card">
+        00:1A:2B:3C:4D:5E
+      </div>
+    
+      <h3>🔹 Key Points</h3>
+    
+      <div class="info-card">
+        <ul>
+          <li>Fixed to NIC (Network Interface Card)</li>
+          <li>Works inside the local network (LAN)</li>
+          <li>Used by switches</li>
+        </ul>
+      </div>
+    
+      <h3>🧠 Easy Example</h3>
+    
+      <div class="info-card">
+        Inside your home:<br>
+        Laptop → Router → Switch<br><br>
+        Communication happens using <strong>MAC addresses (frames)</strong><br>
+        👉 <strong>Switches read MAC, not IP</strong>
+      </div>
+    
+      <!-- IMAGE 2 -->
+      <h3 class="image-heading">MAC Address vs IP Address</h3>
+      <div style="display: block; background-color: white; padding: 15px; border-radius: 8px;">
+        <img
+          src="../../assets/images/MAC-address-vs-IP-address.png"
+          alt="MAC Address vs IP Address"
+          class="content-image"
+        />
+      </div>
+    
+      <h3>🧩 3️⃣ Port Number (Transport Layer – Layer 4)</h3>
+    
+      <p>
+        A <strong>port number</strong> identifies which
+        application or service should receive the data.
+      </p>
+    
+      <div class="info-card">
+        🧠 Think of port as a <strong>room number in a house</strong> 🚪
+      </div>
+    
+      <h3>🔹 Common Port Numbers (VERY IMPORTANT)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Service</th>
+            <th>Port</th>
+          </tr>
+          <tr>
+            <td>HTTP</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>HTTPS</td>
+            <td>443</td>
+          </tr>
+          <tr>
+            <td>FTP</td>
+            <td>21</td>
+          </tr>
+          <tr>
+            <td>SSH</td>
+            <td>22</td>
+          </tr>
+          <tr>
+            <td>SMTP</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>DNS</td>
+            <td>53</td>
+          </tr>
+        </table>
+      </div>
+    
+      <h3>🧠 Easy Example</h3>
+    
+      <div class="info-card">
+        You open:<br>
+        <strong>https://google.com</strong><br><br>
+    
+        Behind the scenes:<br>
+        IP → Google server<br>
+        Port → <strong>443 (HTTPS)</strong><br><br>
+    
+        👉 Same server, different apps → different ports
+      </div>
+    
+      <h3>🧠 How All Three Work Together (Real Flow)</h3>
+    
+      <div class="info-card">
+        When you open a website:<br><br>
+    
+        IP Address → Finds the device (server)<br>
+        MAC Address → Finds device in local network<br>
+        Port Number → Finds the correct application
+      </div>
+    
+      <h3>🔁 Real Example</h3>
+    
+      <div class="info-card">
+        Destination IP → 142.250.182.14<br>
+        Destination Port → 443<br>
+        Destination MAC → Router’s MAC (local hop)
+      </div>
+    
+      <h3>🧩 Comparison Table (Exam Friendly)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Feature</th>
+            <th>IP Address</th>
+            <th>MAC Address</th>
+            <th>Port Number</th>
+          </tr>
+          <tr>
+            <td>OSI Layer</td>
+            <td>Layer 3</td>
+            <td>Layer 2</td>
+            <td>Layer 4</td>
+          </tr>
+          <tr>
+            <td>Identifies</td>
+            <td>Device</td>
+            <td>Hardware</td>
+            <td>Application</td>
+          </tr>
+          <tr>
+            <td>Used by</td>
+            <td>Routers</td>
+            <td>Switches</td>
+            <td>TCP / UDP</td>
+          </tr>
+          <tr>
+            <td>Scope</td>
+            <td>Global</td>
+            <td>Local (LAN)</td>
+            <td>Application level</td>
+          </tr>
+          <tr>
+            <td>Changes?</td>
+            <td>Yes (DHCP)</td>
+            <td>No (mostly)</td>
+            <td>No</td>
+          </tr>
+        </table>
+      </div>
+    
+      <h3>🛠️ CCST Troubleshooting Examples</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Problem</th>
+            <th>Likely Cause</th>
+          </tr>
+          <tr>
+            <td>No internet, no IP</td>
+            <td>IP addressing issue</td>
+          </tr>
+          <tr>
+            <td>Devices not visible in LAN</td>
+            <td>MAC / Layer 2 issue</td>
+          </tr>
+          <tr>
+            <td>Website opens, email not working</td>
+            <td>Port issue</td>
+          </tr>
+        </table>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Final Memory Trick (Don’t Forget!)</strong><br><br>
+        IP = Where the device is<br>
+        MAC = Which device it is<br>
+        Port = Which app it is
+      </div>
+    
+    </section>
+    
+
     
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
-    <a href="osi-model.html">⬅ Back to Content</a>
-    <a href="protocols.html">Next Content ➡</a>
+    <a href="home.html">⬅ Back to Content</a>
+    <a href="bandwidth-throughput.html">Next Content ➡</a>
   </nav>
 
   <!-- External Script -->
