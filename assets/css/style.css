@@ -257,3 +257,68 @@ img {
     transform: translateY(0);
   }
 }
+
+/* =====================
+   MOBILE RESPONSIVE FIXES
+   ===================== */
+@media (max-width: 768px) {
+  /* 1. Prevent the glass card from hitting screen edges */
+  .container {
+    padding: 1rem;
+  }
+
+  .ebook-card {
+    max-width: 100%; /* Allow it to fill the width */
+    padding: 2rem 1.25rem;
+  }
+
+  /* 2. Adjust Bubbles so they don't cause overflow-x */
+  .ebook-card::before {
+    width: 120px;
+    height: 120px;
+    top: -30px;
+    left: -20px;
+  }
+  .ebook-card::after {
+    width: 120px;
+    height: 120px;
+    bottom: -30px;
+    right: -20px;
+  }
+
+  /* 3. Stack the Grid vertically */
+  .topic-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 1rem;
+  }
+
+  /* 4. Fine-tune Spacing */
+  .modules-wrapper {
+    padding: 1.5rem 1rem;
+  }
+
+  .module {
+    margin-bottom: 2.5rem;
+  }
+
+  /* 5. Improve Touch Targets */
+  .topic-grid a {
+    padding: 1.5rem 1.25rem; /* Larger area for thumb tapping */
+  }
+
+  /* 6. Header Scaling */
+  .page-header {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Extra Small Devices (Phones under 400px) */
+@media (max-width: 400px) {
+  .ebook-card h1 {
+    font-size: 1.5rem;
+  }
+  
+  .module-title {
+    font-size: 1.2rem;
+  }
+}
