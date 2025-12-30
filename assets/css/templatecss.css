@@ -174,12 +174,38 @@ tbody tr:last-child td {
 .bottom-nav {
   display: flex;
   justify-content: space-between;
-  padding: 2rem;
-  border-top: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+  
+  /* Positions the buttons over the content */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  /* Removes background and border */
+  background: transparent; 
+  border: none;
+  
+  /* Ensures it stays above all content */
+  z-index: 1000;
+  pointer-events: none; /* Allows clicking "through" the empty space to content behind it */
 }
 
 .bottom-nav a {
   text-decoration: none;
-  color: var(--primary);
-  font-weight: 500;
+  color: #ffffff; /* Contrast color for text */
+  background-color: var(--primary);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px; /* Rounded pill shape for a modern button look */
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Adds depth so they stand out */
+  
+  /* Re-enables clicking for the buttons specifically */
+  pointer-events: auto; 
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.bottom-nav a:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
 }
