@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title></title>
+  <title>Network Connectivity Setup & Checks</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="../../assets/css/templatecss.css" />
@@ -14,14 +14,991 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1></h1>
-    <p class="subtitle"></p>
+    <h1>Network Connectivity Setup & Checks</h1>
+    <p class="subtitle">Learn how to configure and verify network connectivity across
+      Windows, Linux, macOS, Android, and iOS using networking utilities and wireless settings.</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
+    <section class="content-section">
 
+      <h1 class="main-heading">🖥️ 1️⃣ Network Setup & Checks on Computers</h1>
+    
+      <p class="intro-text">
+        Network setup and checks are extremely important for troubleshooting,
+        labs, and exams such as CCST and basic networking.
+        This section starts with Windows and then maps the same concepts to
+        Linux and macOS.
+      </p>
+    
+      <h2 class="section-heading">🪟 A) Windows</h2>
+    
+      <h3 class="sub-heading">🔹 How to Check Network Connection (GUI Method)</h3>
+    
+      <ol>
+        <li>Open <strong>Settings</strong></li>
+        <li>Go to <strong>Network & Internet</strong></li>
+      </ol>
+    
+      <p>You can immediately see:</p>
+      <ul>
+        <li>Connected / Not connected</li>
+        <li>Connection type (Wi-Fi or Ethernet)</li>
+      </ul>
+    
+      <p>
+        Click <strong>Properties</strong> (Wi-Fi or Ethernet) to view:
+      </p>
+    
+      <ul>
+        <li>IPv4 address</li>
+        <li>Subnet mask</li>
+        <li>Default gateway</li>
+        <li>DNS servers</li>
+        <li>Network profile (Public / Private)</li>
+      </ul>
+    
+      <div class="info-card">
+        <strong>Use GUI when:</strong><br>
+        You want a quick overview, are a beginner,
+        or don’t have command-line access.
+      </div>
+    
+      <h3 class="sub-heading">🔹 Command-Line Checks (VERY IMPORTANT)</h3>
+    
+      <p>
+        Exams and real troubleshooting mostly use the command line.
+      </p>
+    
+      <p>
+        Open Command Prompt:<br>
+        <strong>Win + R → cmd → Enter</strong>
+      </p>
+    
+      <h3 class="sub-heading">1️⃣ ipconfig</h3>
+    
+      <pre class="flow-box">
+    ipconfig
+      </pre>
+    
+      <p><strong>What it shows:</strong></p>
+      <ul>
+        <li>IPv4 address</li>
+        <li>Subnet mask</li>
+        <li>Default gateway</li>
+      </ul>
+    
+      <pre class="flow-box">
+    IPv4 Address . . . : 192.168.1.10
+    Subnet Mask  . . . : 255.255.255.0
+    Default Gateway . : 192.168.1.1
+      </pre>
+    
+      <div class="info-card">
+        <strong>This confirms:</strong><br>
+        PC received an IP address and DHCP is working.
+      </div>
+    
+      <h3 class="sub-heading">🔴 Special Case: 169.254.x.x</h3>
+    
+      <pre class="flow-box">
+    IPv4 Address : 169.254.12.45
+      </pre>
+    
+      <p><strong>Meaning:</strong></p>
+      <ul>
+        <li>APIPA address</li>
+        <li>DHCP server not reachable</li>
+        <li>No Internet</li>
+        <li>No default gateway</li>
+      </ul>
+    
+      <h3 class="sub-heading">2️⃣ ping google.com</h3>
+    
+      <pre class="flow-box">
+    ping google.com
+      </pre>
+    
+      <p><strong>What it checks:</strong></p>
+      <ul>
+        <li>Internet connectivity</li>
+        <li>DNS resolution</li>
+        <li>Packet delivery</li>
+      </ul>
+    
+      <p><strong>Successful result:</strong></p>
+      <pre class="flow-box">
+    Reply from xxx.xxx.xxx.xxx
+      </pre>
+    
+      <p><strong>If it fails:</strong></p>
+      <ul>
+        <li>No Internet</li>
+        <li>DNS issue</li>
+        <li>Gateway unreachable</li>
+      </ul>
+    
+      <h3 class="sub-heading">3️⃣ tracert google.com</h3>
+    
+      <pre class="flow-box">
+    tracert google.com
+      </pre>
+    
+      <p><strong>What it shows:</strong></p>
+      <ul>
+        <li>Path taken by packets</li>
+        <li>Routers between PC and destination</li>
+      </ul>
+    
+      <pre class="flow-box">
+    PC → Router → ISP → Internet → Google
+      </pre>
+    
+      <div class="info-card">
+        Used to detect where the connection breaks
+        or where delay occurs.
+      </div>
+    
+      <h2 class="section-heading">🔧 Common Windows Network Problems (Exam Gold)</h2>
+    
+      <h3 class="sub-heading">❌ Problem 1: No IP Address</h3>
+    
+      <pre class="flow-box">
+    ipconfig → No IPv4 address
+      </pre>
+    
+      <p><strong>Possible causes:</strong></p>
+      <ul>
+        <li>DHCP server down</li>
+        <li>Ethernet cable unplugged</li>
+        <li>Wi-Fi not connected</li>
+      </ul>
+    
+      <h3 class="sub-heading">❌ Problem 2: 169.254.x.x</h3>
+    
+      <p><strong>Meaning:</strong></p>
+      <ul>
+        <li>DHCP request failed</li>
+        <li>System self-assigned IP</li>
+      </ul>
+    
+      <p><strong>Fix:</strong></p>
+    
+      <pre class="flow-box">
+    ipconfig /release
+    ipconfig /renew
+      </pre>
+    
+      <h3 class="sub-heading">❌ Problem 3: Ping Fails</h3>
+    
+      <pre class="flow-box">
+    ping google.com → Request timed out
+      </pre>
+    
+      <p><strong>Possible reasons:</strong></p>
+      <ul>
+        <li>Default gateway missing</li>
+        <li>DNS issue</li>
+        <li>Firewall blocking</li>
+      </ul>
+    
+      <p><strong>Test gateway:</strong></p>
+    
+      <pre class="flow-box">
+    ping 192.168.1.1
+      </pre>
+    
+      <h2 class="section-heading">🧠 Windows Troubleshooting Flow (Exam Ready)</h2>
+    
+      <pre class="flow-box">
+    Check cable / Wi-Fi
+            ↓
+    ipconfig
+            ↓
+    Valid IP?
+      Yes → ping gateway
+      No  → DHCP issue
+            ↓
+    ping google.com
+            ↓
+    Internet OK / Not OK
+      </pre>
+    
+      <h2 class="section-heading">🐧 B) Linux (Quick Mapping)</h2>
+    
+      <h3 class="sub-heading">🔹 Check IP Address</h3>
+    
+      <pre class="flow-box">
+    ip a
+      </pre>
+    
+      <pre class="flow-box">
+    ifconfig
+      </pre>
+    
+      <h3 class="sub-heading">🔹 Check Internet</h3>
+    
+      <pre class="flow-box">
+    ping google.com
+      </pre>
+    
+      <h3 class="sub-heading">🔹 Check Route</h3>
+    
+      <pre class="flow-box">
+    traceroute google.com
+      </pre>
+    
+      <div class="info-card">
+        Same logic as Windows, different commands.
+      </div>
+    
+      <h2 class="section-heading">🍎 C) macOS (Quick Mapping)</h2>
+    
+      <h3 class="sub-heading">🔹 GUI Method</h3>
+      <p>
+        System Settings → Network → Wi-Fi / Ethernet
+      </p>
+    
+      <h3 class="sub-heading">🔹 Terminal Commands</h3>
+    
+      <pre class="flow-box">
+    ifconfig
+    ping google.com
+    traceroute google.com
+      </pre>
+    
+      <h2 class="section-heading">🧠 FINAL EXAM TIPS (VERY IMPORTANT)</h2>
+    
+      <ul>
+        <li><strong>ipconfig</strong> → IP & DHCP check</li>
+        <li><strong>ping</strong> → Connectivity test</li>
+        <li><strong>tracert</strong> → Path analysis</li>
+      </ul>
+    
+      <div class="exam-tip">
+        <strong>Golden Rules:</strong><br>
+        No IP → DHCP problem<br>
+        169.254 → DHCP failed<br>
+        Ping fails → Gateway or DNS issue
+      </div>
+    
+    </section>
+    <section class="content-section">
+
+      <h1 class="main-heading">📱 2️⃣ Network Setup & Checks on Mobile Devices</h1>
+    
+      <p class="intro-text">
+        Mobile devices are wireless-first endpoint devices.
+        Unlike computers, they rely heavily on Wi-Fi and cellular networks,
+        so checks are simpler but extremely important for troubleshooting and exams.
+      </p>
+    
+      <h2 class="section-heading">🤖 A) Android</h2>
+    
+      <h3 class="sub-heading">🔹 Wi-Fi Setup (Step-by-Step)</h3>
+    
+      <p><strong>Path:</strong> Settings → Wi-Fi</p>
+    
+      <ol>
+        <li>Turn Wi-Fi ON</li>
+        <li>Select the SSID (network name)</li>
+        <li>Enter the password</li>
+        <li>Tap Connect</li>
+      </ol>
+    
+      <p><strong>After connection, check:</strong></p>
+      <ul>
+        <li>Status → Connected</li>
+        <li>Signal strength (📶)</li>
+        <li>“Connected, internet available”</li>
+      </ul>
+    
+      <p>
+        Tap the connected network to view:
+      </p>
+      <ul>
+        <li>IP address</li>
+        <li>Gateway</li>
+        <li>DNS</li>
+        <li>Link speed</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔹 Mobile Data Check (Cellular Internet)</h3>
+    
+      <p><strong>Path:</strong> Settings → Network & Internet → Mobile Network</p>
+    
+      <p><strong>Verify:</strong></p>
+      <ul>
+        <li>Mobile Data = ON</li>
+        <li>Signal bars visible</li>
+        <li>Network type: 4G / LTE / 5G</li>
+      </ul>
+    
+      <div class="info-card">
+        If signal bars are empty, possible reasons include weak coverage,
+        SIM issues, or Airplane mode enabled.
+      </div>
+    
+      <h3 class="sub-heading">🔹 Android Troubleshooting (VERY IMPORTANT)</h3>
+    
+      <h4 class="sub-heading">✔ 1️⃣ Toggle Airplane Mode</h4>
+    
+      <pre class="flow-box">
+    Turn ON → wait 10 seconds → Turn OFF
+      </pre>
+    
+      <p><strong>Fixes:</strong></p>
+      <ul>
+        <li>Network refresh</li>
+        <li>Signal re-registration</li>
+      </ul>
+    
+      <h4 class="sub-heading">✔ 2️⃣ Forget & Reconnect Wi-Fi</h4>
+    
+      <p>
+        Settings → Wi-Fi → Tap Network → Forget<br>
+        Reconnect by entering the password again.
+      </p>
+    
+      <p><strong>Fixes:</strong></p>
+      <ul>
+        <li>Wrong password issues</li>
+        <li>Cached network errors</li>
+      </ul>
+    
+      <h4 class="sub-heading">✔ 3️⃣ Reset Network Settings (Last Option)</h4>
+    
+      <p>
+        Settings → System → Reset Options → Reset Wi-Fi, Mobile & Bluetooth
+      </p>
+    
+      <div class="info-card">
+        This resets Wi-Fi, Mobile data, and Bluetooth settings.<br>
+        Personal data is NOT deleted.
+      </div>
+    
+      <h3 class="sub-heading">🔴 Common Android Network Issues (Exam Gold)</h3>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Problem</th>
+            <th>Likely Cause</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Connected but no internet</td>
+            <td>Router or ISP issue</td>
+          </tr>
+          <tr>
+            <td>Wi-Fi keeps disconnecting</td>
+            <td>Weak signal</td>
+          </tr>
+          <tr>
+            <td>Mobile data not working</td>
+            <td>APN or SIM issue</td>
+          </tr>
+          <tr>
+            <td>No signal bars</td>
+            <td>Coverage issue or Airplane mode</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <h2 class="section-heading">🍏 B) iOS (iPhone / iPad)</h2>
+    
+      <h3 class="sub-heading">🔹 Wi-Fi Setup</h3>
+    
+      <p><strong>Path:</strong> Settings → Wi-Fi</p>
+    
+      <ol>
+        <li>Turn Wi-Fi ON</li>
+        <li>Select the network</li>
+        <li>Enter the password</li>
+      </ol>
+    
+      <div class="info-card">
+        Blue checkmark (✓) indicates the device is connected.
+      </div>
+    
+      <p>
+        Tap the <strong>(i)</strong> icon to view:
+      </p>
+      <ul>
+        <li>IP address</li>
+        <li>Router</li>
+        <li>DNS</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔹 Cellular (Mobile Data) Check</h3>
+    
+      <p><strong>Path:</strong> Settings → Mobile Data → ON</p>
+    
+      <p><strong>Verify:</strong></p>
+      <ul>
+        <li>Mobile Data enabled</li>
+        <li>Signal bars visible</li>
+        <li>4G / 5G indicator near signal</li>
+      </ul>
+    
+      <div class="info-card">
+        If roaming, enable <strong>Data Roaming</strong>.
+      </div>
+    
+      <h3 class="sub-heading">🔹 Common iOS Fix (MOST IMPORTANT)</h3>
+    
+      <p><strong>Reset Network Settings</strong></p>
+    
+      <pre class="flow-box">
+    Settings → General
+    → Transfer or Reset iPhone
+    → Reset
+    → Reset Network Settings
+      </pre>
+    
+      <div class="info-card">
+        Fixes Wi-Fi, cellular, and Bluetooth issues.<br>
+        Apps and files are NOT deleted, but Wi-Fi passwords are removed.
+      </div>
+    
+      <h2 class="section-heading">🧠 Mobile Networking Characteristics (Extra Knowledge)</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Mobile Devices</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Connection</td>
+            <td>Wireless only</td>
+          </tr>
+          <tr>
+            <td>IP Address</td>
+            <td>Dynamic</td>
+          </tr>
+          <tr>
+            <td>Switching</td>
+            <td>Auto Wi-Fi ↔ Mobile Data</td>
+          </tr>
+          <tr>
+            <td>Power</td>
+            <td>Battery dependent</td>
+          </tr>
+          <tr>
+            <td>Usage</td>
+            <td>User-operated endpoints</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <div class="exam-tip">
+        <strong>Exam Tip:</strong> Mobile devices automatically switch between
+        Wi-Fi and cellular networks to maintain the best connectivity.
+      </div>
+    
+    </section>
+    <section class="content-section">
+
+      <h1 class="main-heading">🛠️ 3️⃣ Networking Utilities</h1>
+    
+      <p class="intro-text">
+        Networking utilities are basic diagnostic tools used to identify where
+        a network problem exists—device, gateway, DNS, route, or service.
+      </p>
+    
+      <div class="info-card">
+        Think of networking utilities as medical tests for networks 🩺.
+      </div>
+    
+      <h2 class="section-heading">🔹 1️⃣ ping — Reachability Test</h2>
+    
+      <p><strong>What ping does:</strong></p>
+      <ul>
+        <li>Checks if a destination is reachable</li>
+        <li>Tests basic connectivity</li>
+        <li>Measures latency (delay)</li>
+      </ul>
+    
+      <pre class="flow-box">
+    ping 8.8.8.8
+      </pre>
+    
+      <p><strong>What it confirms:</strong></p>
+      <ul>
+        <li>Network path exists</li>
+        <li>Packets can travel and return</li>
+        <li>Round-trip time in milliseconds</li>
+      </ul>
+    
+      <p><strong>How it works:</strong></p>
+      <ul>
+        <li>Sends ICMP Echo Request</li>
+        <li>Receives ICMP Echo Reply</li>
+      </ul>
+    
+      <img
+        src="../../assets/images/Networking-Utilities-Ping-command.png"
+        alt="Ping Command Output"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">🔴 If ping fails</h3>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Result</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Request timed out</td>
+            <td>Destination unreachable</td>
+          </tr>
+          <tr>
+            <td>Destination host unreachable</td>
+            <td>Gateway or routing issue</td>
+          </tr>
+          <tr>
+            <td>High time (ms)</td>
+            <td>Network congestion</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <div class="info-card">
+        Always ping an IP first, then a domain:
+        <br>ping 8.8.8.8 → ping google.com
+      </div>
+    
+      <h2 class="section-heading">🔹 2️⃣ tracert / traceroute — Path Discovery</h2>
+    
+      <p><strong>What it does:</strong></p>
+      <ul>
+        <li>Shows each router (hop) packets pass through</li>
+        <li>Helps find where the connection breaks</li>
+      </ul>
+    
+      <p><strong>Commands:</strong></p>
+    
+      <pre class="flow-box">
+    Windows:
+    tracert google.com
+      </pre>
+    
+      <pre class="flow-box">
+    Linux / macOS:
+    traceroute google.com
+      </pre>
+    
+      <p><strong>What it shows:</strong></p>
+    
+      <pre class="flow-box">
+    PC → Router → ISP → Internet → Destination
+      </pre>
+    
+      <ul>
+        <li>Each line represents one hop</li>
+      </ul>
+    
+      <p><strong>When to use:</strong></p>
+      <ul>
+        <li>Slow internet</li>
+        <li>Ping works but site not loading</li>
+        <li>To identify ISP or routing problems</li>
+      </ul>
+    
+      <div class="info-card">
+        Uses TTL (Time To Live) to discover hops.
+      </div>
+    
+      <h2 class="section-heading">🔹 3️⃣ nslookup — DNS Troubleshooting</h2>
+    
+      <p><strong>What nslookup does:</strong></p>
+      <ul>
+        <li>Converts domain name to IP address</li>
+        <li>Verifies DNS server functionality</li>
+      </ul>
+    
+      <pre class="flow-box">
+    nslookup google.com
+      </pre>
+    
+      <p><strong>Successful output shows:</strong></p>
+      <ul>
+        <li>DNS server address</li>
+        <li>Resolved IP address</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔴 If it fails</h3>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Problem</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>DNS request timed out</td>
+            <td>DNS server unreachable</td>
+          </tr>
+          <tr>
+            <td>Non-existent domain</td>
+            <td>Wrong or invalid domain</td>
+          </tr>
+          <tr>
+            <td>Ping IP works but domain fails</td>
+            <td>DNS issue</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <div class="info-card">
+        Classic exam case:
+        <br>ping 8.8.8.8 ✅
+        <br>ping google.com ❌
+        <br><strong>Conclusion:</strong> DNS problem
+      </div>
+    
+      <h2 class="section-heading">🔹 4️⃣ ipconfig / ifconfig — IP Configuration</h2>
+    
+      <p><strong>What it shows:</strong></p>
+      <ul>
+        <li>IP address</li>
+        <li>Subnet mask</li>
+        <li>Default gateway</li>
+        <li>DNS servers</li>
+      </ul>
+    
+      <pre class="flow-box">
+    Windows:
+    ipconfig
+      </pre>
+    
+      <pre class="flow-box">
+    Linux / macOS:
+    ifconfig
+    or
+    ip a
+      </pre>
+    
+      <h3 class="sub-heading">🔴 Special Case (Exam Favorite)</h3>
+    
+      <pre class="flow-box">
+    169.254.x.x
+      </pre>
+    
+      <p><strong>Meaning:</strong></p>
+      <ul>
+        <li>DHCP failed</li>
+        <li>Self-assigned APIPA address</li>
+      </ul>
+    
+      <p><strong>DHCP renew (Windows):</strong></p>
+    
+      <pre class="flow-box">
+    ipconfig /release
+    ipconfig /renew
+      </pre>
+    
+      <h2 class="section-heading">🔹 5️⃣ netstat — Connections & Ports</h2>
+    
+      <p><strong>What netstat does:</strong></p>
+      <ul>
+        <li>Shows active network connections</li>
+        <li>Displays listening ports</li>
+        <li>Identifies protocols (TCP / UDP)</li>
+      </ul>
+    
+      <pre class="flow-box">
+    netstat
+      </pre>
+    
+      <p><strong>Common useful option:</strong></p>
+    
+      <pre class="flow-box">
+    netstat -an
+      </pre>
+    
+      <p><strong>Helps identify:</strong></p>
+      <ul>
+        <li>Running services</li>
+        <li>Open ports (security checks)</li>
+        <li>Suspicious connections</li>
+      </ul>
+    
+      <div class="info-card">
+        Widely used by network administrators and security teams.
+      </div>
+    
+      <h2 class="section-heading">🧠 How to Use Utilities Together (Real Troubleshooting Flow)</h2>
+    
+      <pre class="flow-box">
+    ipconfig        → Check IP
+         ↓
+    ping gateway    → Local network
+         ↓
+    ping 8.8.8.8   → Internet reachability
+         ↓
+    nslookup site   → DNS check
+         ↓
+    tracert site    → Path issue
+      </pre>
+    
+      <div class="exam-tip">
+        <strong>Exam Tip:</strong> Always troubleshoot step-by-step.
+        Never jump directly to DNS or traceroute without checking IP and ping first.
+      </div>
+    
+    </section>
+    <section class="content-section">
+
+      <h1 class="main-heading">📶 4️⃣ Wireless Settings (SSID, Authentication, WPA)</h1>
+    
+      <p class="intro-text">
+        Wireless settings decide who can connect, how securely,
+        and how well a Wi-Fi network performs.
+        This topic is very important for exams and real-world networks.
+      </p>
+    
+      <h2 class="section-heading">📡 A) SSID (Service Set Identifier)</h2>
+    
+      <h3 class="sub-heading">🔹 What is SSID?</h3>
+      <p>
+        An SSID is simply the name of a Wi-Fi network.
+        It is what you see when your phone or laptop scans for available Wi-Fi.
+      </p>
+    
+      <p><strong>Examples:</strong></p>
+      <ul>
+        <li>Home_WiFi</li>
+        <li>Office_5G</li>
+        <li>Campus_WLAN</li>
+      </ul>
+    
+      <div class="info-card">
+        Each SSID identifies one unique wireless network.
+      </div>
+    
+      <img
+        src="../../assets/images/ssid.png"
+        alt="Wi-Fi SSID Example"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">🔹 Hidden SSID</h3>
+    
+      <p><strong>What is a Hidden SSID?</strong></p>
+      <ul>
+        <li>Wi-Fi name is not broadcast</li>
+        <li>Network does not appear in Wi-Fi list</li>
+        <li>User must manually enter SSID and password</li>
+      </ul>
+    
+      <p><strong>Used in:</strong></p>
+      <ul>
+        <li>Offices</li>
+        <li>Labs</li>
+        <li>Small security setups</li>
+      </ul>
+    
+      <div class="info-card">
+        <strong>Reality Check:</strong><br>
+        Hidden SSID provides only slight security.
+        Skilled attackers can still detect it.
+        It is NOT a replacement for strong encryption.
+      </div>
+    
+      <h2 class="section-heading">🔐 B) Authentication</h2>
+    
+      <h3 class="sub-heading">🔹 What is Authentication?</h3>
+      <p>
+        Authentication is the process of verifying who is allowed
+        to connect to a Wi-Fi network.
+      </p>
+    
+      <div class="info-card">
+        It answers the question:
+        <strong>“Are you allowed to join this network?”</strong>
+      </div>
+    
+      <h3 class="sub-heading">🔹 Common Authentication Types (Exam Ready)</h3>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Security Level</th>
+            <th>Explanation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Open</td>
+            <td>❌ None</td>
+            <td>Anyone can connect</td>
+          </tr>
+          <tr>
+            <td>WPA2-PSK</td>
+            <td>✅ Good</td>
+            <td>Password-based authentication</td>
+          </tr>
+          <tr>
+            <td>WPA3-PSK</td>
+            <td>✅ Best</td>
+            <td>Strong password protection</td>
+          </tr>
+          <tr>
+            <td>Enterprise (802.1X)</td>
+            <td>🔒 Very High</td>
+            <td>Username + password or certificate</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <h3 class="sub-heading">🔹 WPA-PSK (Personal)</h3>
+      <p>
+        WPA-PSK uses a shared password and is commonly used in homes
+        and small offices.
+      </p>
+    
+      <h3 class="sub-heading">🔹 Enterprise Authentication</h3>
+      <p>
+        Enterprise authentication uses a username and password
+        (or certificates) along with a RADIUS server.
+      </p>
+    
+      <ul>
+        <li>Corporates</li>
+        <li>Universities</li>
+      </ul>
+    
+      <div class="info-card">
+        Enterprise authentication is the most secure authentication type.
+      </div>
+    
+      <h2 class="section-heading">🔒 C) WPA Modes (VERY IMPORTANT)</h2>
+    
+      <h3 class="sub-heading">🔹 WPA (Old)</h3>
+      <ul>
+        <li>Weak encryption</li>
+        <li>Easily crackable</li>
+        <li>Not recommended</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔹 WPA2 (Most Common)</h3>
+      <ul>
+        <li>Uses AES encryption</li>
+        <li>Secure and stable</li>
+        <li>Still widely used</li>
+      </ul>
+    
+      <div class="info-card">
+        Minimum recommended standard today.
+      </div>
+    
+      <h3 class="sub-heading">🔹 WPA3 (Best & Modern)</h3>
+      <ul>
+        <li>Strongest encryption</li>
+        <li>Protection against brute-force attacks</li>
+        <li>Safer on public Wi-Fi</li>
+      </ul>
+    
+      <div class="info-card">
+        Default on modern routers and devices.
+      </div>
+    
+      <img
+        src="../../assets/images/WEP-vs-WPA-vs-WPA2-vs-WPA3-2.webp"
+        alt="WEP vs WPA vs WPA2 vs WPA3 Comparison"
+        class="content-image"
+      />
+    
+      <h2 class="section-heading">📊 WPA Comparison (Exam Ready)</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>WPA Mode</th>
+            <th>Security</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>WPA</td>
+            <td>❌ Weak</td>
+            <td>Obsolete</td>
+          </tr>
+          <tr>
+            <td>WPA2</td>
+            <td>✅ Strong</td>
+            <td>Standard</td>
+          </tr>
+          <tr>
+            <td>WPA3</td>
+            <td>🔒 Very Strong</td>
+            <td>Best</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <h2 class="section-heading">⚡ Common Wireless Problems & Fixes</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Problem</th>
+            <th>Likely Cause</th>
+            <th>Best Fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Slow Wi-Fi</td>
+            <td>Congestion</td>
+            <td>Use 5 GHz</td>
+          </tr>
+          <tr>
+            <td>Frequent disconnects</td>
+            <td>Channel overlap</td>
+            <td>Change channel</td>
+          </tr>
+          <tr>
+            <td>Weak signal</td>
+            <td>Distance / walls</td>
+            <td>Move router</td>
+          </tr>
+          <tr>
+            <td>Can’t connect</td>
+            <td>Wrong password</td>
+            <td>Re-enter key</td>
+          </tr>
+          <tr>
+            <td>Connected but no internet</td>
+            <td>DNS / gateway issue</td>
+            <td>Check DNS</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <div class="exam-tip">
+        <strong>Exam Tip:</strong> SSID identifies the network,
+        authentication verifies the user,
+        and WPA determines the encryption strength.
+      </div>
+    
+    </section>
+    
 
   </main>
 

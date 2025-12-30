@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TCP/IP Model – Networking eBook</title>
+  <title>Network Technologies</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="../../assets/css/templatecss.css" />
@@ -14,65 +14,445 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1>TCP/IP Model</h1>
-    <p class="subtitle">Foundation of modern computer networking</p>
+    <h1>Network Technologies</h1>
+    <p class="subtitle">Understand wired and wireless networking technologies including
+      Wi-Fi bands (2.4GHz, 5GHz, 6GHz), cellular networks, and interference sources.</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
-    <!-- Section -->
     <section class="content-section">
-      <h2>What is the TCP/IP Model?</h2>
+
+      <h2>Wired Network Technologies</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE</strong><br><br>
+        Wired networks use <strong>physical cables</strong> to transmit data
+        using electricity or light
+      </div>
+    
+      <h3>🔌 1️⃣ Wired Network Technologies (Copper & Fiber)</h3>
+    
+      <!-- COPPER -->
+      <h3>🧵 A) Copper-Based Wired Networks</h3>
+    
       <p>
-        The TCP/IP model is a conceptual framework that explains how data
-        is transmitted across networks. It is the backbone of the Internet
-        and most modern networking systems.
+        In <strong>copper-based wired networks</strong>, data is transmitted
+        using <strong>electrical signals</strong> through copper cables.
       </p>
+    
+      <h3>🔹 Common Copper Cables</h3>
+    
+      <div class="info-card">
+        <ul>
+          <li>Twisted Pair (Cat5e, Cat6, Cat6a)</li>
+          <li>Coaxial cable (older)</li>
+        </ul>
+      </div>
+    
+      <h3 class="image-heading">Copper Network Cables (Twisted Pair Comparison)</h3>
+      <img
+        src="../../assets/images/cat5-vs-cat6-vs-cat7-twisted-pair.webp"
+        alt="Cat5 vs Cat6 vs Cat7 cables"
+        class="content-image"
+      />
+    
+      <h3 class="image-heading">Coaxial Cable</h3>
+      <img
+        src="../../assets/images/Coaxial-Cable.webp"
+        alt="Coaxial Cable"
+        class="content-image"
+      />
+    
+      <h3>🔹 Where Copper Networks Are Used</h3>
+    
+      <div class="info-card">
+        <ul>
+          <li>Homes</li>
+          <li>Offices</li>
+          <li>Schools</li>
+          <li>LAN networks</li>
+        </ul>
+      </div>
+    
+      <h3>🔹 Example</h3>
+    
+      <div class="info-card">
+        🧠 Example network flow:<br><br>
+        <strong>PC ── Ethernet ── Switch ── Ethernet ── Router</strong>
+      </div>
+    
+      <h3>🔹 Pros & Cons (Copper)</h3>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages</strong>
+        <ul>
+          <li>Cheap</li>
+          <li>Easy installation</li>
+          <li>Reliable for short distances</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>Maximum distance ≈ 100 meters</li>
+          <li>Affected by electrical interference (EMI)</li>
+        </ul>
+      </div>
+    
+      <!-- FIBER -->
+      <h3>💡 B) Fiber-Based Wired Networks</h3>
+    
+      <p>
+        <strong>Fiber-based wired networks</strong> transmit data using
+        <strong>light signals</strong> instead of electricity.
+      </p>
+    
+      <h3>🔹 Where Fiber Networks Are Used</h3>
+    
+      <div class="info-card">
+        <ul>
+          <li>Internet backbone</li>
+          <li>ISPs</li>
+          <li>Data centers</li>
+          <li>Long-distance connections</li>
+        </ul>
+      </div>
+    
+      <h3>🔹 Example</h3>
+    
+      <div class="info-card">
+        🧠 Long-distance example:<br><br>
+        <strong>City A ── Fiber ── City B ── Fiber ── Country C</strong>
+      </div>
+    
+      <h3>🔹 Pros & Cons (Fiber)</h3>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages</strong>
+        <ul>
+          <li>Extremely high speed</li>
+          <li>Very long distance</li>
+          <li>Immune to EMI</li>
+          <li>More secure</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>Expensive</li>
+          <li>Fragile</li>
+          <li>Complex installation</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Exam Tip</strong><br><br>
+        If the question mentions:<br>
+        <strong>Long distance + High speed</strong> → ✅ <strong>Fiber</strong>
+      </div>
+    
     </section>
-
-    <!-- Section -->
     <section class="content-section">
-      <h2>Layers of the TCP/IP Model</h2>
 
-      <article class="info-card">
-        <h3>Application Layer</h3>
-        <p>
-          Provides network services directly to user applications.
-          Examples include HTTP, FTP, SMTP, and DNS.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Transport Layer</h3>
-        <p>
-          Responsible for end-to-end communication, reliability,
-          flow control, and error handling (TCP & UDP).
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Internet Layer</h3>
-        <p>
-          Handles logical addressing and routing using IP, ICMP,
-          and related protocols.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Network Access Layer</h3>
-        <p>
-          Manages physical data transmission through Ethernet,
-          Wi-Fi, ARP, and network hardware.
-        </p>
-      </article>
+      <h2>Wireless Network Technologies (Wi-Fi)</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE</strong><br><br>
+        Wireless networking = Data sent using <strong>radio waves</strong> (no cables)
+      </div>
+    
+      <h3>📶 2️⃣ Wireless Network Technologies (Wi-Fi)</h3>
+    
+      <p>
+        <strong>Wireless networking</strong> allows devices to communicate
+        without physical cables by using <strong>radio waves</strong>.
+      </p>
+    
+      <div class="info-card">
+        📌 Wi-Fi is based on <strong>IEEE 802.11 standards</strong>
+      </div>
+    
+      <!-- 2.4 GHz -->
+      <h3>📡 Wi-Fi Frequency Bands (VERY IMPORTANT)</h3>
+    
+      <h3>📶 A) 2.4 GHz Band</h3>
+    
+      <div class="info-card">
+        🔹 <strong>Characteristics</strong>
+        <ul>
+          <li>Longer range</li>
+          <li>Slower speed</li>
+          <li>More interference</li>
+        </ul>
+    
+        🔹 <strong>Speed</strong><br>
+        Up to ~600 Mbps (theoretical)<br><br>
+    
+        🔹 <strong>Used For</strong>
+        <ul>
+          <li>Older devices</li>
+          <li>Smart bulbs</li>
+          <li>IoT devices</li>
+        </ul>
+    
+        🧠 Example: Smart TV, Smart Bulb, Old Laptop
+      </div>
+    
+      <!-- 5 GHz -->
+      <h3>📶 B) 5 GHz Band</h3>
+    
+      <div class="info-card">
+        🔹 <strong>Characteristics</strong>
+        <ul>
+          <li>Shorter range</li>
+          <li>Higher speed</li>
+          <li>Less interference</li>
+        </ul>
+    
+        🔹 <strong>Speed</strong><br>
+        1 – 3 Gbps (theoretical)<br><br>
+    
+        🔹 <strong>Used For</strong>
+        <ul>
+          <li>Streaming</li>
+          <li>Gaming</li>
+          <li>Video calls</li>
+        </ul>
+      </div>
+    
+      <!-- 6 GHz -->
+      <h3>📶 C) 6 GHz Band (Wi-Fi 6E / Wi-Fi 7)</h3>
+    
+      <div class="info-card">
+        🔹 <strong>Characteristics</strong>
+        <ul>
+          <li>Very high speed</li>
+          <li>Very low interference</li>
+          <li>Shorter range</li>
+          <li>Newest devices only</li>
+        </ul>
+    
+        🔹 <strong>Used For</strong>
+        <ul>
+          <li>AR / VR</li>
+          <li>4K / 8K streaming</li>
+          <li>Enterprise networks</li>
+        </ul>
+      </div>
+    
+      <!-- COMPARISON -->
+      <h3>📊 Quick Comparison Table (EXAM READY)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Band</th>
+            <th>Range</th>
+            <th>Speed</th>
+            <th>Interference</th>
+          </tr>
+          <tr>
+            <td>2.4 GHz</td>
+            <td>Long</td>
+            <td>Low</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>5 GHz</td>
+            <td>Medium</td>
+            <td>High</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>6 GHz</td>
+            <td>Short</td>
+            <td>Very High</td>
+            <td>Very Low</td>
+          </tr>
+        </table>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Memory Trick (Exam Gold 🥇)</strong><br><br>
+        Lower frequency → Longer range<br>
+        Higher frequency → Higher speed
+      </div>
+    
     </section>
-
-    <!-- Image Section -->
     <section class="content-section">
-      <h2 class="image-heading">TCP/IP Model Diagram</h2>
-      <img src="../../assets/images/tcp-ip.png" alt="TCP/IP Model Diagram" class="content-image">
+
+      <h2>Cellular Networks (Licensed Spectrum)</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE</strong><br><br>
+        Cellular networks use <strong>licensed radio spectrum</strong>
+        managed by telecom providers
+      </div>
+    
+      <h3>📱 3️⃣ Cellular Networks (Licensed Spectrum)</h3>
+    
+      <p>
+        <strong>Cellular networking</strong> is a wireless communication technology
+        that uses <strong>licensed radio frequencies</strong> controlled by
+        telecom service providers.
+      </p>
+    
+      <div class="info-card">
+        📌 Requires a <strong>SIM card</strong> to access the network
+      </div>
+    
+      <h3>🔹 Examples of Cellular Technologies</h3>
+    
+      <div class="info-card">
+        <ul>
+          <li><strong>2G</strong> → Voice calls & SMS</li>
+          <li><strong>3G</strong> → Internet + calls</li>
+          <li><strong>4G (LTE)</strong> → High-speed mobile internet</li>
+          <li><strong>5G</strong> → Ultra-low latency, IoT, AR/VR</li>
+        </ul>
+      </div>
+    
+      <h3>🔹 Why Licensed Spectrum?</h3>
+    
+      <div class="info-card">
+        Licensed spectrum is used to:
+        <ul>
+          <li>Prevent interference</li>
+          <li>Ensure controlled usage</li>
+          <li>Provide reliable communication</li>
+        </ul>
+      </div>
+    
+      <h3>🔹 Where Cellular Networks Are Used</h3>
+    
+      <div class="info-card">
+        <ul>
+          <li>Mobile phones</li>
+          <li>Mobile hotspots</li>
+          <li>IoT devices</li>
+          <li>Vehicles (connected cars)</li>
+        </ul>
+      </div>
+    
+      <h3>🔹 Pros & Cons</h3>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages</strong>
+        <ul>
+          <li>Works almost everywhere (wide coverage)</li>
+          <li>Supports mobility</li>
+          <li>Managed quality of service</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>Costly compared to Wi-Fi</li>
+          <li>Speed varies with network load</li>
+          <li>Depends on signal strength</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>CCST Memory Trick</strong><br><br>
+        SIM card = Cellular network<br>
+        Licensed spectrum = controlled & reliable<br>
+        5G = low latency + future tech
+      </div>
+    
     </section>
+    <section class="content-section">
+
+      <h2>Sources of Interference</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE (VERY IMPORTANT)</strong><br><br>
+        <strong>Interference</strong> = Anything that disturbs or weakens network signals
+      </div>
+    
+      <h3>⚡ 4️⃣ Sources of Interference</h3>
+    
+      <p>
+        <strong>Interference</strong> occurs when unwanted signals or obstacles
+        reduce the quality, speed, or reliability of a network connection.
+      </p>
+    
+      <!-- ELECTRICAL -->
+      <h3>📛 A) Electrical Devices</h3>
+    
+      <div class="info-card">
+        Electrical devices generate electromagnetic noise that can
+        interfere with network signals.
+        <ul>
+          <li>Microwave ovens</li>
+          <li>Refrigerators</li>
+          <li>Power lines</li>
+        </ul>
+      </div>
+    
+      <!-- WIRELESS -->
+      <h3>📶 B) Wireless Devices</h3>
+    
+      <div class="info-card">
+        Multiple wireless devices using the same frequency can
+        cause signal overlap.
+        <ul>
+          <li>Bluetooth devices</li>
+          <li>Other Wi-Fi networks (neighbors)</li>
+          <li>Baby monitors</li>
+          <li>Cordless phones</li>
+        </ul>
+      </div>
+    
+      <!-- PHYSICAL -->
+      <h3>🧱 C) Physical Obstacles</h3>
+    
+      <div class="info-card">
+        Physical objects can block or weaken wireless signals.
+        <ul>
+          <li>Walls</li>
+          <li>Metal objects</li>
+          <li>Furniture</li>
+          <li>Elevators</li>
+        </ul>
+      </div>
+    
+      <!-- ENVIRONMENT -->
+      <h3>🌦️ D) Environmental Factors</h3>
+    
+      <div class="info-card">
+        Environmental conditions can affect signal quality,
+        especially in long-range wireless links.
+        <ul>
+          <li>Weather (rain, storms)</li>
+          <li>Long distance from signal source</li>
+        </ul>
+      </div>
+    
+      <!-- EXAM TIP -->
+      <div class="info-card">
+        🧠 <strong>Exam Tip (VERY IMPORTANT)</strong><br><br>
+        <strong>2.4 GHz</strong> suffers more interference than <strong>5 GHz</strong>
+      </div>
+    
+      <!-- REDUCTION -->
+      <h3>🛠️ How to Reduce Interference (Extra Knowledge)</h3>
+    
+      <div class="info-card">
+        ✔ Use <strong>5 GHz</strong> or <strong>6 GHz</strong> Wi-Fi<br>
+        ✔ Change Wi-Fi channel<br>
+        ✔ Place router in an open, central location<br>
+        ✔ Use wired connection when possible<br>
+        ✔ Upgrade to <strong>Wi-Fi 6 / Wi-Fi 6E</strong>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Memory Trick</strong><br><br>
+        More devices + lower frequency = more interference<br>
+        Higher frequency = cleaner signal
+      </div>
+    
+    </section>
+    
 
   </main>
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TCP/IP Model – Networking eBook</title>
+  <title>Endpoint Devices</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="../../assets/css/templatecss.css" />
@@ -14,65 +14,1071 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1>TCP/IP Model</h1>
-    <p class="subtitle">Foundation of modern computer networking</p>
+    <h1>Endpoint Devices</h1>
+    <p class="subtitle">Explore common endpoint devices such as IoT devices, computers,
+      mobile devices, IP phones, printers, and servers.</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
-
-    <!-- Section -->
     <section class="content-section">
-      <h2>What is the TCP/IP Model?</h2>
-      <p>
-        The TCP/IP model is a conceptual framework that explains how data
-        is transmitted across networks. It is the backbone of the Internet
-        and most modern networking systems.
+
+      <h1 class="main-heading">🌍 1️⃣ IoT Devices (Internet of Things)</h1>
+    
+      <p class="intro-text">
+        IoT devices are small smart electronic devices connected to a network (usually the Internet)
+        that can collect data, communicate, and act automatically without human interaction.
       </p>
+    
+      <img
+        src="../../assets/images/smart-home-with-iot-devices.jpeg"
+        alt="Smart Home IoT Devices"
+        class="content-image"
+      />
+    
+      <h2 class="section-heading">🔹 What are IoT Devices? (Simple Words)</h2>
+      <p>
+        IoT devices are designed to observe the physical world and report it digitally.
+      </p>
+    
+      <div class="info-card">
+        <strong>Exam Line:</strong><br>
+        Physical World + Sensors + Internet + Software
+      </div>
+    
+      <h2 class="section-heading">🔧 Key Components of an IoT Device</h2>
+    
+      <h3 class="sub-heading">1️⃣ Sensors / Actuators</h3>
+      <ul>
+        <li><strong>Sensors:</strong> Temperature, Humidity, Motion, Light</li>
+        <li><strong>Actuators:</strong> Turn ON/OFF, Rotate motor, Open valve</li>
+      </ul>
+    
+      <h3 class="sub-heading">2️⃣ Processing Unit (Microcontroller)</h3>
+      <p>
+        The microcontroller acts as the brain of the IoT device (ESP32, Arduino, ARM chips).
+        It reads sensor data, processes it, and sends it to the network.
+      </p>
+    
+      <h3 class="sub-heading">3️⃣ Network Interface</h3>
+      <ul>
+        <li>Wi-Fi</li>
+        <li>Bluetooth</li>
+        <li>Zigbee</li>
+        <li>Cellular (NB-IoT, LTE-M)</li>
+      </ul>
+    
+      <h3 class="sub-heading">4️⃣ Power Source</h3>
+      <ul>
+        <li>Battery</li>
+        <li>Rechargeable cell</li>
+        <li>Solar power (Industrial IoT)</li>
+      </ul>
+    
+      <h2 class="section-heading">🔹 Common Examples of IoT Devices</h2>
+    
+      <h3 class="sub-heading">🏠 Smart Home</h3>
+      <ul>
+        <li>Smart bulbs – control brightness and color via app</li>
+        <li>Smart fans – auto-adjust speed based on temperature</li>
+        <li>Smart plugs – remote ON/OFF control</li>
+      </ul>
+    
+      <h3 class="sub-heading">⌚ Wearables</h3>
+      <ul>
+        <li>Heart rate monitoring</li>
+        <li>Step counting</li>
+        <li>Sleep tracking</li>
+      </ul>
+    
+      <img
+        src="../../assets/images/Smartwatch-IoT-Device.webp"
+        alt="Smartwatch IoT Device"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">🏭 Industrial IoT (IIoT)</h3>
+      <p>
+        Industrial IoT is used for machine vibration monitoring, predictive maintenance,
+        and energy consumption tracking.
+      </p>
+    
+      <img
+        src="../../assets/images/Smart-Factory-Using-IoT.jpg"
+        alt="Industrial IoT Smart Factory"
+        class="content-image"
+      />
+    
+      <h2 class="section-heading">🌐 Network Characteristics of IoT Devices</h2>
+    
+      <h3 class="sub-heading">📡 Mostly Wireless</h3>
+      <p>
+        IoT devices avoid cables because they allow easy installation, mobility, and low cost.
+      </p>
+    
+      <h3 class="sub-heading">🔌 Communication Technologies</h3>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Technology</th>
+            <th>Range</th>
+            <th>Power</th>
+            <th>Use Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wi-Fi</td>
+            <td>Medium</td>
+            <td>High</td>
+            <td>Smart Homes</td>
+          </tr>
+          <tr>
+            <td>Bluetooth</td>
+            <td>Short</td>
+            <td>Very Low</td>
+            <td>Wearables</td>
+          </tr>
+          <tr>
+            <td>Zigbee</td>
+            <td>Medium</td>
+            <td>Low</td>
+            <td>Smart Lighting</td>
+          </tr>
+          <tr>
+            <td>Cellular (NB-IoT)</td>
+            <td>Long</td>
+            <td>Medium</td>
+            <td>Smart Meters</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <h2 class="section-heading">🔁 Real-World IoT Data Flow</h2>
+    
+      <pre class="flow-box">
+    Temperature Sensor
+            ↓
+    Wi-Fi Router
+            ↓
+    Cloud Server
+            ↓
+    Mobile App Dashboard
+      </pre>
+    
+      <h2 class="section-heading">✅ Advantages of IoT Devices</h2>
+      <ul>
+        <li>Automation without manual control</li>
+        <li>Remote monitoring</li>
+        <li>Energy efficiency</li>
+        <li>Data-driven decisions</li>
+      </ul>
+    
+      <h2 class="section-heading">❌ Disadvantages of IoT Devices</h2>
+      <ul>
+        <li>Security risks</li>
+        <li>Limited processing power</li>
+        <li>Internet dependency</li>
+        <li>Battery limitations</li>
+      </ul>
+    
+      <div class="exam-tip">
+        <strong>Exam Tip:</strong> IoT = Sensors + Network + Cloud + Automation
+      </div>
+    
     </section>
-
-    <!-- Section -->
     <section class="content-section">
-      <h2>Layers of the TCP/IP Model</h2>
 
-      <article class="info-card">
-        <h3>Application Layer</h3>
-        <p>
-          Provides network services directly to user applications.
-          Examples include HTTP, FTP, SMTP, and DNS.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Transport Layer</h3>
-        <p>
-          Responsible for end-to-end communication, reliability,
-          flow control, and error handling (TCP & UDP).
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Internet Layer</h3>
-        <p>
-          Handles logical addressing and routing using IP, ICMP,
-          and related protocols.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Network Access Layer</h3>
-        <p>
-          Manages physical data transmission through Ethernet,
-          Wi-Fi, ARP, and network hardware.
-        </p>
-      </article>
+      <h1 class="main-heading">💻 2️⃣ Computers & Mobile Devices</h1>
+    
+      <p class="intro-text">
+        Computers and mobile devices are the most common endpoint devices in any network.
+      </p>
+    
+      <h2 class="section-heading">🔹 What are Computers & Mobile Devices?</h2>
+      <p>
+        Endpoint devices are devices where users directly interact with the network
+        to send or receive data. They are called endpoints because data starts and ends at them.
+      </p>
+    
+      <ul>
+        <li>Browsing a website</li>
+        <li>Joining a video call</li>
+        <li>Sending an email</li>
+      </ul>
+    
+      <h2 class="section-heading">🔹 Types of Computers & Mobile Devices</h2>
+    
+      <h3 class="sub-heading">🖥️ Desktop Computers</h3>
+      <p>
+        Desktop computers are fixed-location devices usually connected using wired Ethernet.
+        They offer high performance and stable network connectivity.
+      </p>
+    
+      <ul>
+        <li>Used in offices</li>
+        <li>Computer labs</li>
+        <li>Server rooms (as workstations)</li>
+      </ul>
+    
+      <div class="info-card">
+        <strong>Best For:</strong> Stable and high-speed networking
+      </div>
+    
+      <img
+        src="../../assets/images/pc-computer.jpg"
+        alt="Desktop Computer"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">💻 Laptops</h3>
+      <p>
+        Laptops are portable computers that mainly use Wi-Fi and sometimes Ethernet.
+      </p>
+    
+      <ul>
+        <li>Education</li>
+        <li>Office work</li>
+        <li>Development</li>
+        <li>Networking labs (Cisco Packet Tracer, Wireshark)</li>
+      </ul>
+    
+      <img
+        src="../../assets/images/laptop.webp"
+        alt="Laptop Computer"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">📱 Smartphones</h3>
+      <p>
+        Smartphones are fully mobile devices that connect using Wi-Fi or cellular networks
+        such as 4G and 5G.
+      </p>
+    
+      <ul>
+        <li>Calls</li>
+        <li>Internet browsing</li>
+        <li>Apps</li>
+        <li>Cloud services</li>
+      </ul>
+    
+      <div class="info-card">
+        Smartphones today are powerful endpoints, almost equal to computers.
+      </div>
+    
+      <img
+        src="../../assets/images/smartphone.webp"
+        alt="Smartphone Device"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">📲 Tablets</h3>
+      <p>
+        Tablets are larger than smartphones and smaller than laptops.
+        They are mostly Wi-Fi based.
+      </p>
+    
+      <ul>
+        <li>Education</li>
+        <li>Hospitals</li>
+        <li>Presentations</li>
+      </ul>
+    
+      <h2 class="section-heading">🌐 Network Connectivity (Very Important)</h2>
+    
+      <h3 class="sub-heading">🔌 1️⃣ Wired Connectivity — Ethernet</h3>
+      <p>
+        Wired connectivity uses Ethernet cables with RJ-45 connectors.
+        It provides stable, high-speed, and low-interference communication.
+      </p>
+    
+      <ul>
+        <li>High speed</li>
+        <li>Stable connection</li>
+        <li>Low interference</li>
+      </ul>
+    
+      <pre class="flow-box">
+    Desktop
+       ↓
+    Ethernet Cable
+       ↓
+    Switch
+       ↓
+    Router
+       ↓
+    Internet
+      </pre>
+    
+      <h3 class="sub-heading">📶 2️⃣ Wireless Connectivity — Wi-Fi</h3>
+      <p>
+        Wi-Fi uses radio waves to connect devices through access points or wireless routers.
+      </p>
+    
+      <ul>
+        <li>Mobility</li>
+        <li>Easy installation</li>
+        <li>Interference possible</li>
+      </ul>
+    
+      <pre class="flow-box">
+    Laptop
+       ↓
+    Wi-Fi Signal
+       ↓
+    Wireless Router
+       ↓
+    Internet
+      </pre>
+    
+      <h3 class="sub-heading">📡 3️⃣ Cellular Connectivity (Mobile Devices)</h3>
+      <p>
+        Cellular connectivity uses licensed spectrum and requires a SIM card.
+      </p>
+    
+      <ul>
+        <li>4G LTE</li>
+        <li>5G</li>
+      </ul>
+    
+      <div class="info-card">
+        ✔ Works anywhere<br>
+        ✔ Independent of Wi-Fi<br>
+        ❌ Costly data plans
+      </div>
+    
+      <pre class="flow-box">
+    Smartphone
+       ↓
+    5G Tower
+       ↓
+    ISP Network
+       ↓
+    Internet
+      </pre>
+    
+      <h2 class="section-heading">🔁 Example: Laptop Internet Access</h2>
+    
+      <pre class="flow-box">
+    Laptop
+       ↓
+    Wi-Fi Signal
+       ↓
+    Wireless Router
+       ↓
+    ISP Network
+       ↓
+    Internet
+      </pre>
+    
+      <ol>
+        <li>Laptop sends request</li>
+        <li>Router forwards it</li>
+        <li>ISP routes traffic</li>
+        <li>Website responds</li>
+        <li>Laptop displays webpage</li>
+      </ol>
+    
+      <h2 class="section-heading">🔹 Functions of Computers & Mobile Devices</h2>
+    
+      <ul>
+        <li><strong>Browsing:</strong> Websites, research, online learning</li>
+        <li><strong>Email:</strong> Sending and receiving messages</li>
+        <li><strong>Video Calls:</strong> Zoom, Meet, Teams (high bandwidth & low latency)</li>
+        <li><strong>File Sharing:</strong> Upload, download, cloud storage</li>
+        <li><strong>Application Access:</strong> Web apps, cloud apps, enterprise software</li>
+      </ul>
+    
+      <h2 class="section-heading">⚙️ Network Characteristics (Extra Knowledge)</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>High Data Usage</td>
+            <td>Much higher than IoT devices</td>
+          </tr>
+          <tr>
+            <td>User-Controlled</td>
+            <td>Manual operation by users</td>
+          </tr>
+          <tr>
+            <td>Multiple Protocols</td>
+            <td>HTTP, HTTPS, FTP, TCP, UDP</td>
+          </tr>
+          <tr>
+            <td>More Secure</td>
+            <td>Security updates and patches possible</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <h2 class="section-heading">❗ Common Issues</h2>
+    
+      <ul>
+        <li>Malware and viruses</li>
+        <li>Weak passwords</li>
+        <li>Public Wi-Fi risks</li>
+        <li>High bandwidth consumption</li>
+      </ul>
+    
+      <div class="exam-tip">
+        <strong>Exam Tip:</strong> Computers and mobile devices are the primary endpoint
+        devices and the most common attack targets in networks.
+      </div>
+    
     </section>
-
-    <!-- Image Section -->
     <section class="content-section">
-      <h2 class="image-heading">TCP/IP Model Diagram</h2>
-      <img src="../../assets/images/tcp-ip.png" alt="TCP/IP Model Diagram" class="content-image">
+
+      <h1 class="main-heading">☎️ 3️⃣ IP Phones (VoIP Phones)</h1>
+    
+      <p class="intro-text">
+        An IP Phone is a telephone device that uses an IP (Internet Protocol) network
+        to make and receive calls instead of traditional telephone lines.
+      </p>
+    
+      <div class="info-card">
+        <strong>Technology Used:</strong> VoIP (Voice over IP)
+      </div>
+    
+      <h2 class="section-heading">🔹 What is an IP Phone?</h2>
+      <p>
+        In simple words, voice is converted into digital data packets and sent over a network.
+      </p>
+    
+      <ul>
+        <li><strong>Old System:</strong> Analog voice → PSTN</li>
+        <li><strong>IP Phone:</strong> Digital voice → IP Network</li>
+      </ul>
+    
+      <img
+        src="../../assets/images/IP-Phones.png"
+        alt="IP Phones"
+        class="content-image"
+      />
+    
+      <h2 class="section-heading">🧠 How IP Phones Work (Very Important)</h2>
+    
+      <h3 class="sub-heading">🎙️ Call Process (Step-by-Step)</h3>
+    
+      <ol>
+        <li>You speak into the IP phone</li>
+        <li>Voice is converted into digital data</li>
+        <li>Data is packetized (split into packets)</li>
+        <li>Packets travel over LAN / Internet</li>
+        <li>Destination IP phone receives packets</li>
+        <li>Packets are converted back to voice</li>
+      </ol>
+    
+      <div class="info-card">
+        <strong>Protocols Used:</strong><br>
+        SIP (Session Initiation Protocol)<br>
+        RTP (Real-time Transport Protocol)
+      </div>
+    
+      <h2 class="section-heading">🔌 Connectivity of IP Phones</h2>
+    
+      <h3 class="sub-heading">1️⃣ Ethernet (Most Common)</h3>
+      <p>
+        IP phones usually connect using RJ-45 Ethernet cables to a network switch or router.
+      </p>
+    
+      <ul>
+        <li>Uses Ethernet cable</li>
+        <li>Connects to switch or router</li>
+        <li>Often powered using PoE (Power over Ethernet)</li>
+      </ul>
+    
+      <pre class="flow-box">
+    IP Phone
+       ↓
+    Ethernet Cable
+       ↓
+    PoE Switch
+      </pre>
+    
+      <h3 class="sub-heading">2️⃣ Wi-Fi (Less Common)</h3>
+      <p>
+        Wi-Fi based IP phones are used when cabling is difficult.
+        They are slightly less stable than Ethernet.
+      </p>
+    
+      <ul>
+        <li>Used in small offices</li>
+        <li>Temporary setups</li>
+      </ul>
+    
+      <h2 class="section-heading">🔁 Real-World Call Flow Example</h2>
+    
+      <pre class="flow-box">
+    IP Phone (Office A)
+            ↓
+    Network Switch
+            ↓
+    VoIP / SIP Server
+            ↓
+    Internet
+            ↓
+    VoIP Server
+            ↓
+    IP Phone (Office B)
+      </pre>
+    
+      <p>
+        Entire calls travel as digital data packets, not analog signals.
+      </p>
+    
+      <div style="background-color: white; display: inline-block; padding: 10px;">
+        <img
+          src="../../assets/images/IP-Phones-diagram.svg"
+          alt="IP Phone Call Flow Diagram"
+          class="content-image"
+        />
+      </div>
+    
+      <h2 class="section-heading">🔹 Key Features of IP Phones</h2>
+    
+      <ul>
+        <li><strong>Voice Calls:</strong> Local and international calls (cheaper than PSTN)</li>
+        <li><strong>Video Calls:</strong> Supported on advanced IP phones</li>
+        <li><strong>Conference Calls:</strong> Multiple users in one call</li>
+        <li><strong>Call Management:</strong> Forwarding, hold, voicemail, caller ID</li>
+      </ul>
+    
+      <div class="info-card">
+        These features are software-based, not hardware-limited.
+      </div>
+    
+      <h2 class="section-heading">⚙️ Network Characteristics (Extra Knowledge)</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Real-time Traffic</td>
+            <td>Sensitive to delay and jitter</td>
+          </tr>
+          <tr>
+            <td>Uses UDP Mostly</td>
+            <td>Faster delivery than TCP</td>
+          </tr>
+          <tr>
+            <td>QoS Required</td>
+            <td>Voice traffic must be prioritized</td>
+          </tr>
+          <tr>
+            <td>Low Bandwidth</td>
+            <td>~64–100 kbps per call</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <h2 class="section-heading">✅ Advantages of IP Phones</h2>
+    
+      <ul>
+        <li>Cheap calls, especially international</li>
+        <li>Uses existing Internet connection</li>
+        <li>Easy integration with LAN</li>
+        <li>Advanced software-based features</li>
+        <li>Easy scalability</li>
+      </ul>
+    
+      <h2 class="section-heading">❌ Disadvantages of IP Phones</h2>
+    
+      <ul>
+        <li>Network dependency</li>
+        <li>Poor network causes echo, delay, voice breaking</li>
+        <li>Requires PoE switch or external power</li>
+        <li>No calls during Internet failure</li>
+      </ul>
+    
+      <h2 class="section-heading">🔐 Security Concerns (Exam Extra)</h2>
+    
+      <ul>
+        <li>Call interception</li>
+        <li>SIP attacks</li>
+        <li>Denial of Service (DoS)</li>
+      </ul>
+    
+      <div class="exam-tip">
+        <strong>Security Solutions:</strong> Use SRTP encryption, VLAN for voice,
+        and strong authentication.
+      </div>
+    
     </section>
+    <section class="content-section">
+
+      <h1 class="main-heading">🖨️ 4️⃣ Printers (Network Printers)</h1>
+    
+      <p class="intro-text">
+        A network printer is a printer that is connected to a network (LAN or WLAN)
+        instead of being connected to a single computer.
+      </p>
+    
+      <div class="info-card">
+        <strong>Simple Idea:</strong> One printer, many computers
+      </div>
+    
+      <h2 class="section-heading">🔹 What is a Network Printer?</h2>
+      <p>
+        Network printers allow multiple users and devices to share the same printer
+        over a network.
+      </p>
+    
+      <img
+        src="../../assets/images/Network-printer-setup.webp"
+        alt="Network Printer Setup"
+        class="content-image"
+      />
+    
+      <h2 class="section-heading">🔹 Types of Printers (Based on Connectivity)</h2>
+    
+      <h3 class="sub-heading">🔌 1️⃣ Wired Network Printer</h3>
+      <p>
+        Wired network printers are connected using Ethernet (RJ-45) cables
+        to a switch or router.
+      </p>
+    
+      <ul>
+        <li>Stable connection</li>
+        <li>Fast printing</li>
+        <li>Less interference</li>
+      </ul>
+    
+      <pre class="flow-box">
+    PC
+     ↓
+    Switch
+     ↓
+    Network Printer
+      </pre>
+    
+      <img
+        src="../../assets/images/wired-printer.gif"
+        alt="Wired Network Printer"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">📶 2️⃣ Wireless Network Printer</h3>
+      <p>
+        Wireless network printers use Wi-Fi to connect through a wireless router
+        or access point.
+      </p>
+    
+      <ul>
+        <li>Flexible placement</li>
+        <li>No cables required</li>
+        <li>Interference possible</li>
+      </ul>
+    
+      <pre class="flow-box">
+    Laptop
+     ↓
+    Wi-Fi
+     ↓
+    Router
+     ↓
+    Printer
+      </pre>
+    
+      <h3 class="sub-heading">🖥️ 3️⃣ Printer via Print Server</h3>
+      <p>
+        In this setup, printers are connected to a dedicated print server.
+        This is common in offices, colleges, and enterprises.
+      </p>
+    
+      <ul>
+        <li>Centralized management</li>
+        <li>User control and logging</li>
+      </ul>
+    
+      <h2 class="section-heading">🌐 How Network Printing Works (Step-by-Step)</h2>
+    
+      <h3 class="sub-heading">🖨️ Print Flow Example</h3>
+    
+      <pre class="flow-box">
+    User Computer
+          ↓
+    Print Request (Data)
+          ↓
+    Network (LAN / Wi-Fi)
+          ↓
+    Printer / Print Server
+          ↓
+    Printed Document
+      </pre>
+    
+      <ol>
+        <li>User clicks Print</li>
+        <li>Computer sends print job</li>
+        <li>Job is queued in printer memory</li>
+        <li>Printer processes the data</li>
+        <li>Printed paper comes out</li>
+      </ol>
+    
+      <div class="info-card">
+        If many users print at the same time, a <strong>print queue</strong> is created.
+      </div>
+    
+      <img
+        src="../../assets/images/printer-diagram.jpg"
+        alt="Network Printing Flow Diagram"
+        class="content-image"
+      />
+    
+      <h2 class="section-heading">🔹 Common Types of Network Printers</h2>
+    
+      <ul>
+        <li><strong>Laser Printers:</strong> Fast, used in offices, high-volume printing</li>
+        <li><strong>Inkjet Printers:</strong> Home and small offices, color printing</li>
+        <li><strong>Multifunction Printers (MFP):</strong> Print, Scan, Copy, Fax</li>
+      </ul>
+    
+      <div class="info-card">
+        Most modern MFPs are network-enabled.
+      </div>
+    
+      <h2 class="section-heading">🔧 Network Characteristics of Printers</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Endpoint Device</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Data Type</td>
+            <td>Print jobs</td>
+          </tr>
+          <tr>
+            <td>Bandwidth</td>
+            <td>Moderate</td>
+          </tr>
+          <tr>
+            <td>Shared Resource</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>IP Address</td>
+            <td>Required</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <p>
+        Network printers have an IP address, MAC address,
+        and a web interface for configuration.
+      </p>
+    
+      <h2 class="section-heading">⚙️ Printer Protocols (Exam Useful)</h2>
+    
+      <ul>
+        <li>IPP (Internet Printing Protocol)</li>
+        <li>LPD / LPR</li>
+        <li>SMB / CIFS</li>
+        <li>RAW / Port 9100</li>
+      </ul>
+    
+      <h2 class="section-heading">✅ Advantages of Network Printers</h2>
+    
+      <ul>
+        <li>Resource sharing (one printer for many users)</li>
+        <li>Cost saving</li>
+        <li>Centralized management</li>
+        <li>Flexible printer location</li>
+      </ul>
+    
+      <h2 class="section-heading">❌ Disadvantages of Network Printers</h2>
+    
+      <ul>
+        <li>Network dependency</li>
+        <li>Security risks</li>
+        <li>Queue delays during heavy usage</li>
+      </ul>
+    
+      <h2 class="section-heading">🔐 Security Considerations (Very Important)</h2>
+    
+      <ul>
+        <li>Set strong admin passwords</li>
+        <li>Disable unused services</li>
+        <li>Use user authentication</li>
+        <li>Place printers in a secure VLAN</li>
+      </ul>
+    
+      <div class="exam-tip">
+        <strong>Exam Tip:</strong> Network printers are often ignored in security,
+        making them easy attack targets.
+      </div>
+    
+    </section>
+    <section class="content-section">
+
+      <h1 class="main-heading">🖥️ 5️⃣ Servers</h1>
+    
+      <p class="intro-text">
+        A server is a powerful computer that provides services, resources,
+        or data to other devices (called clients) over a network.
+      </p>
+    
+      <div class="info-card">
+        <strong>Simple Idea:</strong><br>
+        Server = Provider | Client = Consumer
+      </div>
+    
+      <h2 class="section-heading">🔹 What is a Server? (Clear & Simple)</h2>
+      <p>
+        Unlike normal computers, servers are designed to serve requests instead of
+        browsing or performing end-user tasks.
+      </p>
+    
+      <ul>
+        <li>Servers serve, not browse</li>
+        <li>Clients request, servers respond</li>
+      </ul>
+    
+      <h2 class="section-heading">🔁 Client–Server Model (Very Important)</h2>
+    
+      <pre class="flow-box">
+    Client (PC / Mobile / IoT)
+            ↓ Request
+            ↓
+          Server
+            ↑ Response
+      </pre>
+    
+      <ul>
+        <li>Browser requests webpage → Web server responds</li>
+        <li>Phone requests email → Mail server responds</li>
+        <li>PC requests file → File server responds</li>
+      </ul>
+    
+      <img
+        src="../../assets/images/servers-backview.jpg"
+        alt="Client Server Communication"
+        class="content-image"
+      />
+    
+      <h2 class="section-heading">🔹 Types of Servers (Exam Must-Know)</h2>
+    
+      <h3 class="sub-heading">🌐 1️⃣ Web Server</h3>
+      <p>
+        Web servers host websites and web applications and respond to HTTP or HTTPS requests.
+      </p>
+    
+      <ul>
+        <li>Company websites</li>
+        <li>Student portals</li>
+      </ul>
+    
+      <div class="info-card">
+        <strong>Technologies:</strong> Apache, Nginx
+      </div>
+    
+      <h3 class="sub-heading">📁 2️⃣ File Server</h3>
+      <p>
+        File servers store and share files across a network, commonly used in offices and colleges.
+      </p>
+    
+      <ul>
+        <li>Shared folders</li>
+        <li>Backup storage</li>
+      </ul>
+    
+      <div class="info-card">
+        <strong>Protocols:</strong> SMB, FTP
+      </div>
+    
+      <h3 class="sub-heading">🗄️ 3️⃣ Database Server</h3>
+      <p>
+        Database servers store structured data and respond to queries from applications.
+      </p>
+    
+      <ul>
+        <li>Student records</li>
+        <li>Banking databases</li>
+      </ul>
+    
+      <div class="info-card">
+        <strong>Examples:</strong> MySQL, PostgreSQL
+      </div>
+    
+      <h3 class="sub-heading">📧 4️⃣ Mail Server</h3>
+      <p>
+        Mail servers send and receive emails for users and organizations.
+      </p>
+    
+      <ul>
+        <li>Gmail servers</li>
+        <li>Office mail systems</li>
+      </ul>
+    
+      <div class="info-card">
+        <strong>Protocols:</strong> SMTP (Send), POP3 / IMAP (Receive)
+      </div>
+    
+      <h3 class="sub-heading">📞 5️⃣ VoIP Server</h3>
+      <p>
+        VoIP servers manage IP phone calls and control call routing.
+      </p>
+    
+      <ul>
+        <li>Corporate offices</li>
+        <li>Call centers</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔐 6️⃣ Authentication Server</h3>
+      <p>
+        Authentication servers verify users and control access to network resources.
+      </p>
+    
+      <ul>
+        <li>Login systems</li>
+        <li>Active Directory</li>
+      </ul>
+    
+      <h2 class="section-heading">🧱 Server Hardware Characteristics (Extra Knowledge)</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CPU</td>
+            <td>High-performance processors</td>
+          </tr>
+          <tr>
+            <td>RAM</td>
+            <td>Large capacity (32GB–1TB+)</td>
+          </tr>
+          <tr>
+            <td>Storage</td>
+            <td>RAID, SSD</td>
+          </tr>
+          <tr>
+            <td>Network</td>
+            <td>Multiple NICs</td>
+          </tr>
+          <tr>
+            <td>Uptime</td>
+            <td>24×7 operation</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <div class="info-card">
+        Servers are built for reliability, not portability.
+      </div>
+    
+      <img
+        src="../../assets/images/server-room.jpg"
+        alt="Server Room"
+        class="content-image"
+      />
+    
+      <h2 class="section-heading">🌐 Server Connectivity</h2>
+      <ul>
+        <li>Mostly wired Ethernet</li>
+        <li>Connected to core switches and data center networks</li>
+        <li>Uses static IP address</li>
+        <li>Often placed in server racks</li>
+      </ul>
+    
+      <img
+        src="../../assets/images/server-cloud-infrastructure-work.png"
+        alt="Server Cloud Infrastructure"
+        class="content-image"
+      />
+    
+      <h2 class="section-heading">☁️ Physical vs Cloud Servers (Exam Favorite)</h2>
+    
+      <h3 class="sub-heading">🏢 Physical (On-Premises) Server</h3>
+      <ul>
+        <li>Owned and maintained by organization</li>
+        <li>High control</li>
+        <li>High cost</li>
+      </ul>
+    
+      <h3 class="sub-heading">☁️ Cloud Server</h3>
+      <ul>
+        <li>Hosted by cloud provider</li>
+        <li>Scalable</li>
+        <li>Pay-as-you-go</li>
+      </ul>
+    
+      <h2 class="section-heading">⚙️ How Servers Work (Step-by-Step Example)</h2>
+    
+      <h3 class="sub-heading">🌐 Website Access Flow</h3>
+    
+      <pre class="flow-box">
+    User Browser
+         ↓
+    Internet
+         ↓
+    Web Server
+         ↓
+    Application Logic
+         ↓
+    Database Server
+         ↑
+    Response (HTML Page)
+      </pre>
+    
+      <h2 class="section-heading">✅ Advantages of Servers</h2>
+    
+      <ul>
+        <li>Centralized resources (data, applications, services)</li>
+        <li>Better security and controlled access</li>
+        <li>Easy scalability</li>
+      </ul>
+    
+      <h2 class="section-heading">❌ Disadvantages of Servers</h2>
+    
+      <ul>
+        <li>High cost (hardware, maintenance, power, cooling)</li>
+        <li>Single point of failure if not redundant</li>
+        <li>Requires skilled administrators</li>
+      </ul>
+    
+      <h2 class="section-heading">🔐 Security Considerations (Very Important)</h2>
+    
+      <ul>
+        <li>Strong authentication</li>
+        <li>Regular updates and patching</li>
+        <li>Firewalls</li>
+        <li>Backup and recovery</li>
+      </ul>
+    
+      <div class="exam-tip">
+        <strong>Exam Tips:</strong><br>
+        One-line definition: A server is a network device that provides services or resources to clients.<br>
+        Golden line: Servers respond to requests; clients initiate requests.<br>
+        Remember: Always-on, high power, central role in networks.
+      </div>
+    
+    </section>
+    
+
 
   </main>
 
