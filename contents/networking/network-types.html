@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TCP/IP Model – Networking eBook</title>
+  <title>Network types & topologies</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="../../assets/css/templatecss.css" />
@@ -14,72 +14,748 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1>TCP/IP Model</h1>
-    <p class="subtitle">Foundation of modern computer networking</p>
+    <h1>Network types & topologies</h1>
+    <p class="subtitle">Understanding different network configurations</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
-    <!-- Section -->
     <section class="content-section">
-      <h2>What is the TCP/IP Model?</h2>
+
+      <h2>Network Types</h2>
+    
+      <!-- LAN -->
+      <h3>🏠 1️⃣ LAN – Local Area Network</h3>
+    
       <p>
-        The TCP/IP model is a conceptual framework that explains how data
-        is transmitted across networks. It is the backbone of the Internet
-        and most modern networking systems.
+        A <strong>LAN (Local Area Network)</strong> connects devices within a small area like:
+        home, office, or school lab.
       </p>
+    
+      <div class="info-card">
+        📌 Covers one building or room
+      </div>
+    
+      <h3 class="image-heading">Local Area Network (LAN)</h3>
+      <img src="../../assets/images/LAN.png" alt="LAN Network" class="content-image" />
+    
+      <div class="info-card">
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>Computers in your home connected to Wi-Fi</li>
+          <li>Office PCs connected to a switch</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages</strong>
+        <ul>
+          <li>Very fast (high throughput)</li>
+          <li>Low latency</li>
+          <li>Easy to manage</li>
+          <li>Low cost</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>Limited area</li>
+          <li>Needs maintenance</li>
+          <li>Security depends on admin</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> LAN = Switch + Ethernet / Wi-Fi
+      </div>
+    
+      <!-- WAN -->
+      <h3>🌍 2️⃣ WAN – Wide Area Network</h3>
+    
+      <p>
+        A <strong>WAN (Wide Area Network)</strong> connects networks across large distances
+        such as cities, countries, or continents.
+      </p>
+    
+      <div class="info-card">
+        📌 Internet is the biggest WAN
+      </div>
+    
+      <h3 class="image-heading">Wide Area Network (WAN)</h3>
+      <img src="../../assets/images/WAN.jpg" alt="WAN Network" class="content-image" />
+    
+      <div class="info-card">
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>Bank branches connected across India</li>
+          <li>Office in India connected to a US server</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages</strong>
+        <ul>
+          <li>Global connectivity</li>
+          <li>Resource sharing over distance</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>Expensive</li>
+          <li>Higher latency</li>
+          <li>Slower than LAN</li>
+          <li>ISP dependent</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> WAN = Router + ISP
+      </div>
+    
+      <!-- MAN -->
+      <h3>🏙️ 3️⃣ MAN – Metropolitan Area Network</h3>
+    
+      <p>
+        A <strong>MAN (Metropolitan Area Network)</strong> covers a city-sized area.
+      </p>
+    
+      <div class="info-card">
+        📌 Bigger than LAN, smaller than WAN
+      </div>
+    
+      <h3 class="image-heading">Metropolitan Area Network (MAN)</h3>
+      <img src="../../assets/images/MAN.png" alt="MAN Network" class="content-image" />
+    
+      <div class="info-card">
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>City-wide cable TV network</li>
+          <li>University campuses across a city</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages</strong>
+        <ul>
+          <li>High-speed city connectivity</li>
+          <li>Cost-effective compared to WAN</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>More complex than LAN</li>
+          <li>Security challenges</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> MAN is rare but important for exams
+      </div>
+    
+      <!-- CAN -->
+      <h3>🏫 4️⃣ CAN – Campus Area Network</h3>
+    
+      <p>
+        A <strong>CAN (Campus Area Network)</strong> connects multiple LANs within a campus.
+      </p>
+    
+      <div class="info-card">
+        📌 Controlled by one organization
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>College with multiple buildings</li>
+          <li>IT company campus</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages</strong>
+        <ul>
+          <li>High speed</li>
+          <li>Centralized control</li>
+          <li>Better security than WAN</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>Costly infrastructure</li>
+          <li>Limited to campus</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> CAN = Multiple LANs + one owner
+      </div>
+    
+      <!-- PAN -->
+      <h3>📱 5️⃣ PAN – Personal Area Network</h3>
+    
+      <p>
+        A <strong>PAN (Personal Area Network)</strong> connects devices around one person.
+      </p>
+    
+      <div class="info-card">
+        📌 Range: Few meters
+      </div>
+    
+      <h3 class="image-heading">Personal Area Network (PAN)</h3>
+      <img src="../../assets/images/PAN.webp" alt="PAN Network" class="content-image" />
+    
+      <div class="info-card">
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>Bluetooth headphones</li>
+          <li>Phone connected to smartwatch</li>
+          <li>Laptop hotspot</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages</strong>
+        <ul>
+          <li>Very low cost</li>
+          <li>Easy to set up</li>
+          <li>Portable</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>Very short range</li>
+          <li>Low speed</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> PAN usually uses Bluetooth
+      </div>
+    
+      <!-- WLAN -->
+      <h3>📡 6️⃣ WLAN – Wireless LAN</h3>
+    
+      <p>
+        A <strong>WLAN</strong> is a wireless version of LAN using Wi-Fi instead of cables.
+      </p>
+    
+      <h3 class="image-heading">WLAN (Wireless LAN)</h3>
+      <img src="../../assets/images/network-latency.png" alt="WLAN Network" class="content-image" />
+    
+      <div class="info-card">
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>Home Wi-Fi</li>
+          <li>Café Wi-Fi</li>
+          <li>Office Wi-Fi</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages</strong>
+        <ul>
+          <li>No cables</li>
+          <li>Easy mobility</li>
+          <li>Flexible</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>Lower throughput than wired LAN</li>
+          <li>Interference</li>
+          <li>Security risks</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> WLAN = LAN + Wireless
+      </div>
+    
+      <!-- COMPARISON -->
+      <h3>🧩 Quick Comparison Table (Exam Friendly)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Network Type</th>
+            <th>Area Covered</th>
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td>PAN</td>
+            <td>Few meters</td>
+            <td>Bluetooth</td>
+          </tr>
+          <tr>
+            <td>LAN</td>
+            <td>Building</td>
+            <td>Home / Office</td>
+          </tr>
+          <tr>
+            <td>WLAN</td>
+            <td>Building</td>
+            <td>Wi-Fi</td>
+          </tr>
+          <tr>
+            <td>CAN</td>
+            <td>Campus</td>
+            <td>College</td>
+          </tr>
+          <tr>
+            <td>MAN</td>
+            <td>City</td>
+            <td>Cable network</td>
+          </tr>
+          <tr>
+            <td>WAN</td>
+            <td>Country / World</td>
+            <td>Internet</td>
+          </tr>
+        </table>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Memory Trick (Very Easy)</strong><br><br>
+        <strong>Please Let College Make World</strong><br>
+        PAN → LAN → CAN → MAN → WAN
+      </div>
+    
     </section>
-
-    <!-- Section -->
     <section class="content-section">
-      <h2>Layers of the TCP/IP Model</h2>
 
-      <article class="info-card">
-        <h3>Application Layer</h3>
-        <p>
-          Provides network services directly to user applications.
-          Examples include HTTP, FTP, SMTP, and DNS.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Transport Layer</h3>
-        <p>
-          Responsible for end-to-end communication, reliability,
-          flow control, and error handling (TCP & UDP).
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Internet Layer</h3>
-        <p>
-          Handles logical addressing and routing using IP, ICMP,
-          and related protocols.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Network Access Layer</h3>
-        <p>
-          Manages physical data transmission through Ethernet,
-          Wi-Fi, ARP, and network hardware.
-        </p>
-      </article>
+      <h2>Network Topologies</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE</strong><br><br>
+        <strong>Topology</strong> = How devices are connected and how data flows
+      </div>
+    
+      <div class="info-card">
+        There are two views:
+        <ul>
+          <li><strong>Physical topology</strong> → Actual cable & device layout</li>
+          <li><strong>Logical topology</strong> → How data moves (often different)</li>
+        </ul>
+      </div>
+    
+      <!-- STAR -->
+      <h3>⭐ 1️⃣ Star Topology (MOST COMMON)</h3>
+    
+      <p>
+        In a <strong>Star Topology</strong>, all devices connect to one
+        central device such as a <strong>switch or hub</strong>.
+      </p>
+    
+      <div class="info-card">
+        PC ─┐<br>
+        PC ─┼── Switch ── Internet<br>
+        PC ─┘
+      </div>
+    
+      <h3 class="image-heading">Star Topology</h3>
+      <img src="../../assets/images/star-topology.png" alt="Star Topology" class="content-image" />
+    
+      <div class="info-card">
+        🧠 <strong>Where you see it</strong>
+        <ul>
+          <li>Home networks</li>
+          <li>Offices</li>
+          <li>Labs</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages</strong>
+        <ul>
+          <li>Easy to install & manage</li>
+          <li>One cable failure affects only one device</li>
+          <li>Easy troubleshooting</li>
+          <li>High performance with switch</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>Central device failure = whole network down</li>
+          <li>More cables required</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> Star topology is the default choice today
+      </div>
+    
+      <!-- BUS -->
+      <h3>🚌 2️⃣ Bus Topology</h3>
+    
+      <p>
+        In a <strong>Bus Topology</strong>, all devices share one main cable
+        called the <strong>backbone</strong>.
+      </p>
+    
+      <div class="info-card">
+        PC ──── PC ──── PC ──── PC
+      </div>
+    
+      <h3 class="image-heading">Bus Topology</h3>
+      <img src="../../assets/images/Bus-Topology.jpg" alt="Bus Topology" class="content-image" />
+    
+      <div class="info-card">
+        🧠 <strong>Where you see it</strong>
+        <ul>
+          <li>Old networks</li>
+          <li>Small temporary setups</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages</strong>
+        <ul>
+          <li>Low cost</li>
+          <li>Simple design</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>Backbone cable failure = whole network down</li>
+          <li>Hard to troubleshoot</li>
+          <li>Collisions happen</li>
+          <li>Poor scalability</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> Rare today, but asked in exams
+      </div>
+    
+      <!-- RING -->
+      <h3>🔁 3️⃣ Ring Topology</h3>
+    
+      <p>
+        In a <strong>Ring Topology</strong>, each device connects to two others,
+        forming a circular ring.
+      </p>
+    
+      <div class="info-card">
+        PC → PC → PC → PC → back to PC
+      </div>
+    
+      <h3 class="image-heading">Ring Topology</h3>
+      <img src="../../assets/images/ring-topology.png" alt="Ring Topology" class="content-image" />
+    
+      <div class="info-card">
+        🧠 <strong>Where you see it</strong>
+        <ul>
+          <li>Old telecom systems</li>
+          <li>Token Ring (IBM – historical)</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages</strong>
+        <ul>
+          <li>No collisions</li>
+          <li>Equal access for all devices</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>One device failure breaks the ring</li>
+          <li>Difficult to add/remove devices</li>
+          <li>Slower than star topology</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> Token passes one-by-one
+      </div>
+    
+      <!-- MESH -->
+      <h3>🕸️ 4️⃣ Mesh Topology</h3>
+    
+      <p>
+        In a <strong>Mesh Topology</strong>, devices connect to many or all other devices.
+      </p>
+    
+      <div class="info-card">
+        <strong>Types:</strong>
+        <ul>
+          <li>Full Mesh → Every device connects to every device</li>
+          <li>Partial Mesh → Some devices are fully connected</li>
+        </ul>
+      </div>
+    
+      <h3 class="image-heading">Mesh Topology</h3>
+      <img src="../../assets/images/Mesh-Topology.png" alt="Mesh Topology" class="content-image" />
+    
+      <div class="info-card">
+        🧠 <strong>Where you see it</strong>
+        <ul>
+          <li>Data centers</li>
+          <li>WAN links</li>
+          <li>Wireless mesh networks</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages</strong>
+        <ul>
+          <li>Very reliable</li>
+          <li>No single point of failure</li>
+          <li>Best fault tolerance</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>Very expensive</li>
+          <li>Complex cabling</li>
+          <li>Hard to manage</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> Used where reliability is critical
+      </div>
+    
+      <!-- HYBRID -->
+      <h3>🔀 5️⃣ Hybrid Topology</h3>
+    
+      <p>
+        A <strong>Hybrid Topology</strong> is a combination of two or more topologies.
+      </p>
+    
+      <div class="info-card">
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>Star + Bus</li>
+          <li>Star + Mesh</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Where you see it</strong>
+        <ul>
+          <li>Large organizations</li>
+          <li>Enterprises</li>
+          <li>Campuses</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages</strong>
+        <ul>
+          <li>Flexible</li>
+          <li>Scalable</li>
+          <li>Reliable</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>Complex design</li>
+          <li>Higher cost</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> Real networks are often hybrid
+      </div>
+    
+      <!-- COMPARISON -->
+      <h3>🧩 Comparison Table (Exam Ready)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Topology</th>
+            <th>Cost</th>
+            <th>Reliability</th>
+            <th>Used Today</th>
+          </tr>
+          <tr>
+            <td>Star</td>
+            <td>Medium</td>
+            <td>High</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>Bus</td>
+            <td>Low</td>
+            <td>Low</td>
+            <td>❌ Rare</td>
+          </tr>
+          <tr>
+            <td>Ring</td>
+            <td>Medium</td>
+            <td>Medium</td>
+            <td>❌ Rare</td>
+          </tr>
+          <tr>
+            <td>Mesh</td>
+            <td>Very High</td>
+            <td>Very High</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>Hybrid</td>
+            <td>High</td>
+            <td>High</td>
+            <td>✅ Yes</td>
+          </tr>
+        </table>
+      </div>
+    
     </section>
-
-    <!-- Image Section -->
     <section class="content-section">
-      <h2 class="image-heading">TCP/IP Model Diagram</h2>
-      <img src="../../assets/images/tcp-ip.png" alt="TCP/IP Model Diagram" class="content-image">
+
+      <h2>Physical vs Logical Topology</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE</strong><br><br>
+        <strong>Physical topology</strong> = How devices are physically connected<br>
+        <strong>Logical topology</strong> = How data actually flows
+      </div>
+    
+      <p>
+        In networking, topology can be viewed in <strong>two different ways</strong>.
+        Many students get confused, but once you understand this section,
+        troubleshooting becomes very easy.
+      </p>
+    
+      <!-- PHYSICAL -->
+      <h3>🔌 Physical Topology</h3>
+    
+      <p>
+        <strong>Physical topology</strong> refers to the
+        <strong>actual layout of cables, devices, and hardware</strong>.
+      </p>
+    
+      <div class="info-card">
+        🧠 Think of physical topology as:<br>
+        <strong>“What you can see and touch”</strong>
+      </div>
+    
+      <div class="info-card">
+        <strong>Includes:</strong>
+        <ul>
+          <li>Cables (Ethernet, fiber)</li>
+          <li>Switches</li>
+          <li>Routers</li>
+          <li>Physical device placement</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Easy Example</strong><br><br>
+        • PCs connected to a switch using Ethernet cables<br>
+        • Wi-Fi router placed in the center of the office<br><br>
+        👉 This is <strong>physical topology</strong>
+      </div>
+    
+      <div class="info-card">
+        📌 <strong>Common Physical Topologies</strong>
+        <ul>
+          <li>Star</li>
+          <li>Bus</li>
+          <li>Ring</li>
+          <li>Mesh</li>
+        </ul>
+      </div>
+    
+      <!-- LOGICAL -->
+      <h3>🔄 Logical Topology</h3>
+    
+      <p>
+        <strong>Logical topology</strong> describes
+        <strong>how data moves inside the network</strong>,
+        regardless of physical connections.
+      </p>
+    
+      <div class="info-card">
+        🧠 Think of logical topology as:<br>
+        <strong>“How communication actually happens”</strong>
+      </div>
+    
+      <div class="info-card">
+        <strong>Controlled by:</strong>
+        <ul>
+          <li>Protocols</li>
+          <li>Network rules</li>
+          <li>Data flow logic</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Easy Example</strong><br><br>
+        Even if computers are physically connected in a <strong>star</strong>,
+        data may flow in a <strong>logical bus</strong> or <strong>logical ring</strong>
+        depending on technology.
+      </div>
+    
+      <div class="info-card">
+        📌 <strong>Examples</strong>
+        <ul>
+          <li>Ethernet → Logical Bus</li>
+          <li>Token Ring → Logical Ring</li>
+          <li>Wi-Fi → Logical shared medium</li>
+        </ul>
+      </div>
+    
+      <!-- COMPARISON -->
+      <h3>🧩 Physical vs Logical Topology (Side-by-Side)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Feature</th>
+            <th>Physical Topology</th>
+            <th>Logical Topology</th>
+          </tr>
+          <tr>
+            <td>Definition</td>
+            <td>Actual cable & device layout</td>
+            <td>How data flows</td>
+          </tr>
+          <tr>
+            <td>Focus</td>
+            <td>Hardware</td>
+            <td>Communication</td>
+          </tr>
+          <tr>
+            <td>Visible?</td>
+            <td>✅ Yes</td>
+            <td>❌ No</td>
+          </tr>
+          <tr>
+            <td>Depends on</td>
+            <td>Cables & devices</td>
+            <td>Protocols & logic</td>
+          </tr>
+          <tr>
+            <td>Changes easily?</td>
+            <td>❌ Hard</td>
+            <td>✅ Easier</td>
+          </tr>
+        </table>
+      </div>
+    
+      <!-- CCST -->
+      <h3>🛠️ CCST Troubleshooting Logic (VERY IMPORTANT)</h3>
+    
+      <div class="info-card">
+        ❌ Problem: Network not working<br><br>
+    
+        <strong>Technician steps:</strong><br>
+        1️⃣ Check <strong>physical topology</strong><br>
+        &nbsp;&nbsp;• Cable unplugged?<br>
+        &nbsp;&nbsp;• Switch powered ON?<br><br>
+    
+        2️⃣ Check <strong>logical topology</strong><br>
+        &nbsp;&nbsp;• IP configured?<br>
+        &nbsp;&nbsp;• VLAN / routing issue?<br><br>
+    
+        👉 Physical first, logical next
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Memory Trick (Exam Ready)</strong><br><br>
+        Physical = Hardware & cables<br>
+        Logical = Data flow & rules
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>CCST Exam Must-Knows</strong><br><br>
+        ✔ Physical topology is visible<br>
+        ✔ Logical topology is invisible<br>
+        ✔ One physical topology can have different logical topology<br>
+        ✔ Always troubleshoot physical before logical
+      </div>
+    
     </section>
+    
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
-    <a href="osi-model.html">⬅ Back to Content</a>
-    <a href="protocols.html">Next Content ➡</a>
+    <a href="home.html">⬅ Back to Content</a>
+    <a href="cloud-vs-onprem.html">Next Content ➡</a>
   </nav>
 
   <!-- External Script -->

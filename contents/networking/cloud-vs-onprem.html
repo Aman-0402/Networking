@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TCP/IP Model – Networking eBook</title>
+  <title>Cloud vs On-Premises Services</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="../../assets/css/templatecss.css" />
@@ -14,72 +14,560 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1>TCP/IP Model</h1>
-    <p class="subtitle">Foundation of modern computer networking</p>
+    <h1>Cloud vs On-Premises Services</h1>
+    <p class="subtitle">Compare public, private, and hybrid cloud models, SaaS, PaaS, IaaS, and modern remote/hybrid work environments.</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
-    <!-- Section -->
     <section class="content-section">
-      <h2>What is the TCP/IP Model?</h2>
+
+      <h2>Cloud vs On-Premises Services</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE</strong><br><br>
+        <strong>On-Premises</strong> = Everything is in your office<br>
+        <strong>Cloud</strong> = Everything is on the internet (provider’s data center)
+      </div>
+    
+      <!-- ON-PREMISES -->
+      <h3>🏢 What is On-Premises?</h3>
+    
       <p>
-        The TCP/IP model is a conceptual framework that explains how data
-        is transmitted across networks. It is the backbone of the Internet
-        and most modern networking systems.
+        <strong>On-Premises</strong> means servers, storage, and software are installed
+        inside your own building. You buy, manage, and maintain everything yourself.
       </p>
+    
+      <div class="info-card">
+        🧠 Think of it as:<br>
+        Owning your own generator instead of using electricity from the grid ⚡
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>Company server room</li>
+          <li>College ERP hosted on campus</li>
+          <li>Bank internal servers</li>
+        </ul>
+      </div>
+    
+      <h3 class="image-heading">On-Premises vs Cloud (Basic Idea)</h3>
+      <img
+        src="../../assets/images/On-premises-vs-Cloud-base.webp"
+        alt="On-Premises vs Cloud"
+        class="content-image"
+      />
+    
+      <div class="info-card">
+        ✅ <strong>Advantages of On-Premises</strong>
+        <ul>
+          <li>Full control over data</li>
+          <li>Better for strict security rules</li>
+          <li>Works without internet (local access)</li>
+          <li>Custom hardware & software</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages of On-Premises</strong>
+        <ul>
+          <li>Very high initial cost</li>
+          <li>Needs IT staff</li>
+          <li>Maintenance & upgrades are your headache</li>
+          <li>Not easily scalable</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> On-prem = control but costly
+      </div>
+    
+      <!-- CLOUD -->
+      <h3>☁️ What is Cloud Computing?</h3>
+    
+      <p>
+        <strong>Cloud computing</strong> means servers and software are hosted by
+        a cloud provider and accessed over the internet. You pay only for what you use.
+      </p>
+    
+      <div class="info-card">
+        🧠 Think of it as:<br>
+        Using electricity from the grid instead of owning a generator ⚡
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>Gmail</li>
+          <li>Google Drive</li>
+          <li>AWS servers</li>
+          <li>Azure virtual machines</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages of Cloud</strong>
+        <ul>
+          <li>Low initial cost</li>
+          <li>No hardware management</li>
+          <li>Easy scalability</li>
+          <li>Access from anywhere</li>
+          <li>Automatic updates</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages of Cloud</strong>
+        <ul>
+          <li>Internet required</li>
+          <li>Ongoing subscription cost</li>
+          <li>Less control than on-prem</li>
+          <li>Data security depends on provider</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> Cloud = flexible & scalable
+      </div>
+    
+      <!-- DEPLOYMENT MODELS -->
+      <h3>🧩 Cloud Deployment Models (VERY IMPORTANT)</h3>
+    
+      <h4>🌍 1️⃣ Public Cloud</h4>
+    
+      <div class="info-card">
+        📌 Owned by third-party providers<br><br>
+    
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>AWS</li>
+          <li>Microsoft Azure</li>
+          <li>Google Cloud</li>
+        </ul>
+    
+        ✅ <strong>Pros</strong>
+        <ul>
+          <li>Low cost</li>
+          <li>Easy to use</li>
+          <li>Highly scalable</li>
+        </ul>
+    
+        ❌ <strong>Cons</strong>
+        <ul>
+          <li>Less control</li>
+          <li>Shared resources</li>
+        </ul>
+    
+        📌 <strong>Best for:</strong> Startups, students
+      </div>
+    
+      <h4>🏢 2️⃣ Private Cloud</h4>
+    
+      <div class="info-card">
+        📌 Used by one organization only<br><br>
+    
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>Bank cloud</li>
+          <li>Government cloud</li>
+        </ul>
+    
+        ✅ <strong>Pros</strong>
+        <ul>
+          <li>High security</li>
+          <li>Full control</li>
+        </ul>
+    
+        ❌ <strong>Cons</strong>
+        <ul>
+          <li>Expensive</li>
+          <li>Needs management</li>
+        </ul>
+    
+        📌 <strong>Best for:</strong> Banks, defense, healthcare
+      </div>
+    
+      <h4>🔀 3️⃣ Hybrid Cloud (MOST COMMON)</h4>
+    
+      <div class="info-card">
+        📌 Combination of Public + Private cloud<br><br>
+    
+        🧠 <strong>Example</strong>
+        <ul>
+          <li>Sensitive data → Private cloud</li>
+          <li>Website & apps → Public cloud</li>
+        </ul>
+    
+        ✅ <strong>Pros</strong>
+        <ul>
+          <li>Best of both worlds</li>
+          <li>Flexible & secure</li>
+        </ul>
+    
+        ❌ <strong>Cons</strong>
+        <ul>
+          <li>Complex setup</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> Hybrid cloud is widely used today
+      </div>
+    
+      <!-- SERVICE MODELS -->
+      <h3>🧱 Cloud Service Models (SaaS, PaaS, IaaS)</h3>
+    
+      <div class="info-card">
+        🧠 <strong>Easy Memory Trick</strong><br><br>
+        IaaS = Infrastructure<br>
+        PaaS = Platform<br>
+        SaaS = Software
+      </div>
+    
+      <h3 class="image-heading">IaaS vs PaaS vs SaaS (Comparison)</h3>
+      <img
+        src="../../assets/images/COMPARE_LAAS_PAAS_IAAS.png"
+        alt="IaaS vs PaaS vs SaaS"
+        class="content-image"
+      />
+    
+      <h4>🧰 IaaS – Infrastructure as a Service</h4>
+    
+      <div class="info-card">
+        You manage:
+        <ul>
+          <li>OS</li>
+          <li>Applications</li>
+        </ul>
+    
+        Provider gives:
+        <ul>
+          <li>Server</li>
+          <li>Storage</li>
+          <li>Network</li>
+        </ul>
+    
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>AWS EC2</li>
+          <li>Azure VM</li>
+        </ul>
+      </div>
+    
+      <h4>🧑‍💻 PaaS – Platform as a Service</h4>
+    
+      <div class="info-card">
+        You manage:
+        <ul>
+          <li>Applications only</li>
+        </ul>
+    
+        Provider manages:
+        <ul>
+          <li>OS</li>
+          <li>Runtime</li>
+          <li>Servers</li>
+        </ul>
+    
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>Google App Engine</li>
+          <li>Heroku</li>
+        </ul>
+      </div>
+    
+      <h3 class="image-heading">Control Responsibility in IaaS, PaaS & SaaS</h3>
+      <img
+        src="../../assets/images/CONTROL_LAAS_PAAS_IAAS.jpg"
+        alt="Control in IaaS PaaS SaaS"
+        class="content-image"
+      />
+    
+      <h4>🧑‍🎓 SaaS – Software as a Service</h4>
+    
+      <div class="info-card">
+        Provider manages everything.<br>
+        You just use the software.
+        <br><br>
+    
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>Gmail</li>
+          <li>Zoom</li>
+          <li>Google Docs</li>
+        </ul>
+      </div>
+    
+      <!-- COMPARISON -->
+      <h3>🧩 Cloud vs On-Premises (Side-by-Side)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Feature</th>
+            <th>On-Premises</th>
+            <th>Cloud</th>
+          </tr>
+          <tr>
+            <td>Setup cost</td>
+            <td>High</td>
+            <td>Low</td>
+          </tr>
+          <tr>
+            <td>Maintenance</td>
+            <td>Your responsibility</td>
+            <td>Provider</td>
+          </tr>
+          <tr>
+            <td>Scalability</td>
+            <td>Difficult</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>Internet needed</td>
+            <td>❌ No</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>Control</td>
+            <td>Full</td>
+            <td>Limited</td>
+          </tr>
+          <tr>
+            <td>Accessibility</td>
+            <td>Local</td>
+            <td>Anywhere</td>
+          </tr>
+        </table>
+      </div>
+    
+      <!-- CCST -->
+      <h3>🛠️ CCST Troubleshooting Scenarios</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Situation</th>
+            <th>Best Choice</th>
+          </tr>
+          <tr>
+            <td>Small startup</td>
+            <td>Public Cloud</td>
+          </tr>
+          <tr>
+            <td>Bank data</td>
+            <td>Private Cloud</td>
+          </tr>
+          <tr>
+            <td>Mixed workloads</td>
+            <td>Hybrid Cloud</td>
+          </tr>
+          <tr>
+            <td>No internet area</td>
+            <td>On-Premises</td>
+          </tr>
+        </table>
+      </div>
+    
     </section>
-
-    <!-- Section -->
     <section class="content-section">
-      <h2>Layers of the TCP/IP Model</h2>
 
-      <article class="info-card">
-        <h3>Application Layer</h3>
-        <p>
-          Provides network services directly to user applications.
-          Examples include HTTP, FTP, SMTP, and DNS.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Transport Layer</h3>
-        <p>
-          Responsible for end-to-end communication, reliability,
-          flow control, and error handling (TCP & UDP).
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Internet Layer</h3>
-        <p>
-          Handles logical addressing and routing using IP, ICMP,
-          and related protocols.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Network Access Layer</h3>
-        <p>
-          Manages physical data transmission through Ethernet,
-          Wi-Fi, ARP, and network hardware.
-        </p>
-      </article>
+      <h2>Remote Work vs Hybrid Work</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE</strong><br><br>
+        <strong>Remote Work</strong> = Work from anywhere<br>
+        <strong>Hybrid Work</strong> = Office + Remote (mix)<br><br>
+        Networking makes both possible 🌐
+      </div>
+    
+      <!-- REMOTE WORK -->
+      <h3>🧠 What is Remote Work?</h3>
+    
+      <p>
+        <strong>Remote work</strong> means an employee works outside the office
+        and uses the internet and company network to do the job.
+      </p>
+    
+      <div class="info-card">
+        🧠 Think of it as:<br>
+        Office in your home / café / anywhere 🏠☕
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>Software developer working from home</li>
+          <li>Support engineer logging in from another city</li>
+          <li>Trainer teaching online</li>
+        </ul>
+      </div>
+    
+      <h3 class="image-heading">Home Office Network Setup</h3>
+      <img
+        src="../../assets/images/home-office-network-diagram.jpg"
+        alt="Home Office Network Diagram"
+        class="content-image"
+      />
+    
+      <h3>🌐 Networking Needed for Remote Work</h3>
+    
+      <div class="info-card">
+        <ul>
+          <li>Stable internet connection</li>
+          <li>VPN (secure access to company network)</li>
+          <li>Cloud services (email, storage, apps)</li>
+          <li>Video conferencing tools</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages of Remote Work</strong>
+        <ul>
+          <li>Work from anywhere</li>
+          <li>No travel time</li>
+          <li>Flexible schedule</li>
+          <li>Reduced office cost</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages of Remote Work</strong>
+        <ul>
+          <li>Depends fully on internet</li>
+          <li>Security risks (public Wi-Fi)</li>
+          <li>Less team interaction</li>
+          <li>Troubleshooting is harder</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> VPN is very important for remote work security
+      </div>
+    
+      <!-- HYBRID WORK -->
+      <h3>🏢 What is Hybrid Work?</h3>
+    
+      <p>
+        <strong>Hybrid work</strong> means employees work partly from the office
+        and partly from home.
+      </p>
+    
+      <div class="info-card">
+        🧠 Think of it as:<br>
+        3 days office + 2 days home 🗓️
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Examples</strong>
+        <ul>
+          <li>Monday–Wednesday: Office</li>
+          <li>Thursday–Friday: Home</li>
+          <li>Used by IT companies, MNCs, startups</li>
+        </ul>
+      </div>
+    
+      <h3>🌐 Networking Needed for Hybrid Work</h3>
+    
+      <div class="info-card">
+        <ul>
+          <li>Office LAN / WLAN</li>
+          <li>Home internet</li>
+          <li>VPN for remote days</li>
+          <li>Cloud apps for collaboration</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages of Hybrid Work</strong>
+        <ul>
+          <li>Balance between office & home</li>
+          <li>Better collaboration than full remote</li>
+          <li>Flexibility</li>
+          <li>Less office crowd</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages of Hybrid Work</strong>
+        <ul>
+          <li>Network complexity</li>
+          <li>Need secure access everywhere</li>
+          <li>Managing users is harder</li>
+        </ul>
+    
+        📌 <strong>CCST Tip:</strong> Hybrid work needs both LAN + WAN knowledge
+      </div>
+    
+      <!-- VPN -->
+      <h3>🔐 Role of VPN (Very Important for CCST)</h3>
+    
+      <p>
+        A <strong>VPN (Virtual Private Network)</strong> creates a secure tunnel
+        between an employee and the company network.
+      </p>
+    
+      <div class="info-card">
+        🧠 Example:<br>
+        Employee at home → VPN → Office server<br><br>
+        📌 Protects data from hackers
+      </div>
+    
+      <h3 class="image-heading">Remote Access using VPN</h3>
+      <img
+        src="../../assets/images/remote-access-vpn.webp"
+        alt="Remote Access VPN"
+        class="content-image"
+      />
+    
+      <!-- CLOUD -->
+      <h3>☁️ Role of Cloud in Remote & Hybrid Work</h3>
+    
+      <div class="info-card">
+        Cloud helps by providing:
+        <ul>
+          <li>Email (Gmail, Outlook)</li>
+          <li>File sharing (Drive, OneDrive)</li>
+          <li>Apps (HRMS, ERP)</li>
+          <li>Collaboration tools (Zoom, Teams)</li>
+        </ul>
+    
+        📌 Without cloud → remote work is difficult
+      </div>
+    
+      <!-- COMPARISON -->
+      <h3>🧩 Remote Work vs Hybrid Work (Side-by-Side)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Feature</th>
+            <th>Remote Work</th>
+            <th>Hybrid Work</th>
+          </tr>
+          <tr>
+            <td>Work location</td>
+            <td>Anywhere</td>
+            <td>Office + Home</td>
+          </tr>
+          <tr>
+            <td>Office presence</td>
+            <td>❌ No</td>
+            <td>✅ Yes (partial)</td>
+          </tr>
+          <tr>
+            <td>Network type</td>
+            <td>Internet + VPN</td>
+            <td>LAN + WAN + VPN</td>
+          </tr>
+          <tr>
+            <td>Flexibility</td>
+            <td>High</td>
+            <td>Medium–High</td>
+          </tr>
+          <tr>
+            <td>Security needs</td>
+            <td>Very High</td>
+            <td>High</td>
+          </tr>
+        </table>
+      </div>
+    
     </section>
-
-    <!-- Image Section -->
-    <section class="content-section">
-      <h2 class="image-heading">TCP/IP Model Diagram</h2>
-      <img src="../../assets/images/tcp-ip.png" alt="TCP/IP Model Diagram" class="content-image">
-    </section>
+    
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
-    <a href="osi-model.html">⬅ Back to Content</a>
-    <a href="protocols.html">Next Content ➡</a>
+    <a href="home.html">⬅ Back to Content</a>
+    <a href="network-protocols.html">Next Content ➡</a>
   </nav>
 
   <!-- External Script -->

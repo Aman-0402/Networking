@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TCP/IP Model – Networking eBook</title>
+  <title>Network Applications & Protocols</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="../../assets/css/templatecss.css" />
@@ -14,72 +14,328 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1>TCP/IP Model</h1>
-    <p class="subtitle">Foundation of modern computer networking</p>
+    <h1>Network Applications & Protocols</h1>
+    <p class="subtitle">Learn how TCP vs UDP works and understand key protocols
+      like FTP, HTTP, DHCP, DNS, ICMP, and NTP.</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
-    <!-- Section -->
     <section class="content-section">
-      <h2>What is the TCP/IP Model?</h2>
-      <p>
-        The TCP/IP model is a conceptual framework that explains how data
-        is transmitted across networks. It is the backbone of the Internet
-        and most modern networking systems.
-      </p>
+
+      <h2>Network Protocols</h2>
+    
+      <div class="info-card">
+        🔹 <strong>What are Network Protocols?</strong><br><br>
+        A <strong>network protocol</strong> is a set of rules and standards that devices
+        follow to communicate with each other over a network.<br><br>
+        👉 Just like humans need a common language to talk,
+        computers need protocols to exchange data.
+      </div>
+    
+      <h3>🧠 Why Network Protocols Are Needed</h3>
+    
+      <div class="info-card">
+        Imagine this situation:
+        <ul>
+          <li>One device sends data too fast</li>
+          <li>Another device expects data slowly</li>
+          <li>One device sends data in English</li>
+          <li>Another understands only Hindi</li>
+        </ul>
+        ❌ Communication fails
+      </div>
+    
+      <div class="info-card">
+        📌 Protocols solve this problem by defining:
+        <ul>
+          <li>How data should look</li>
+          <li>When data should be sent</li>
+          <li>What to do if something goes wrong</li>
+        </ul>
+      </div>
+    
+      <h3 class="image-heading">Network Protocols Across OSI Model</h3>
+      <img
+        src="../../assets/images/OSI-Model-in-protocol-layer.png"
+        alt="OSI Model with Protocol Layers"
+        class="content-image"
+      />
+    
+      <h3>🔧 What Exactly Do Network Protocols Decide?</h3>
+    
+      <h4>1️⃣ How Data Is Sent 📤</h4>
+    
+      <div class="info-card">
+        Protocols define:
+        <ul>
+          <li>Data format (bits, frames, packets)</li>
+          <li>Order of data</li>
+          <li>Speed of transmission</li>
+        </ul>
+    
+        📌 Example:
+        <ul>
+          <li>TCP sends data in sequence</li>
+          <li>UDP sends data without order</li>
+        </ul>
+      </div>
+    
+      <h4>2️⃣ How Data Is Received 📥</h4>
+    
+      <div class="info-card">
+        Protocols decide:
+        <ul>
+          <li>How receiver understands data</li>
+          <li>How data is reassembled</li>
+          <li>How delivery is confirmed</li>
+        </ul>
+    
+        📌 Example:
+        <ul>
+          <li>TCP sends ACK (Acknowledgment)</li>
+          <li>UDP does not confirm delivery</li>
+        </ul>
+      </div>
+    
+      <h4>3️⃣ How Errors Are Handled ⚠️</h4>
+    
+      <div class="info-card">
+        Protocols define:
+        <ul>
+          <li>What happens if data is lost</li>
+          <li>What happens if data is corrupted</li>
+          <li>Whether data should be resent</li>
+        </ul>
+    
+        📌 Example:
+        <ul>
+          <li>TCP retransmits lost packets</li>
+          <li>UDP ignores errors</li>
+        </ul>
+      </div>
+    
+      <h3>🧩 Real-Life Analogy (VERY IMPORTANT 💡)</h3>
+    
+      <div class="info-card">
+        📮 <strong>Sending a Letter (Postal System)</strong>
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Postal System</th>
+            <th>Network Protocol</th>
+          </tr>
+          <tr>
+            <td>Address on envelope</td>
+            <td>IP address</td>
+          </tr>
+          <tr>
+            <td>Registered post</td>
+            <td>TCP</td>
+          </tr>
+          <tr>
+            <td>Normal post</td>
+            <td>UDP</td>
+          </tr>
+          <tr>
+            <td>Post office rules</td>
+            <td>Protocol rules</td>
+          </tr>
+        </table>
+    
+        <br>
+        📌 Without postal rules → letters lost<br>
+        📌 Without network protocols → data communication fails
+      </div>
+    
+      <h3 class="image-heading">Popular Network Protocols Overview</h3>
+      <img
+        src="../../assets/images/explaining-8-popular-network-protocols-in-1-diagram.png"
+        alt="Popular Network Protocols Diagram"
+        class="content-image"
+      />
+    
+      <!-- TCP vs UDP -->
+      <h3>🔹 TCP vs UDP (VERY IMPORTANT)</h3>
+    
+      <h4>🔵 TCP (Transmission Control Protocol)</h4>
+    
+      <div class="info-card">
+        ✔ Reliable delivery<br>
+        ✔ Error checking<br>
+        ✔ Data arrives in order<br><br>
+    
+        <strong>Characteristics:</strong>
+        <ul>
+          <li>Slower</li>
+          <li>Connection-oriented</li>
+        </ul>
+    
+        <strong>Used when accuracy matters:</strong>
+        <ul>
+          <li>Web browsing</li>
+          <li>Email</li>
+          <li>File transfer</li>
+        </ul>
+      </div>
+    
+      <h4>🟠 UDP (User Datagram Protocol)</h4>
+    
+      <div class="info-card">
+        ✔ Fast data transfer<br>
+        ❌ No delivery guarantee<br><br>
+    
+        <strong>Characteristics:</strong>
+        <ul>
+          <li>Faster</li>
+          <li>Connectionless</li>
+        </ul>
+    
+        <strong>Used when speed matters:</strong>
+        <ul>
+          <li>Video streaming</li>
+          <li>Online games</li>
+          <li>Voice calls</li>
+        </ul>
+      </div>
+    
+      <h3 class="image-heading">TCP vs UDP Comparison</h3>
+      <img
+        src="../../assets/images/udp-vs-tcp.jpg"
+        alt="TCP vs UDP"
+        class="content-image"
+      />
+    
+      <div class="info-card">
+        🧠 <strong>Exam Trick</strong><br>
+        Banking → TCP<br>
+        YouTube → UDP
+      </div>
+    
+      <!-- FTP -->
+      <h3>🔹 FTP, SFTP, TFTP (File Transfer)</h3>
+    
+      <div class="info-card">
+        <strong>FTP</strong><br>
+        • Not secure (plain text)<br>
+        • Port: 21<br>
+        • Rarely used today
+      </div>
+    
+      <div class="info-card">
+        <strong>SFTP</strong><br>
+        • Secure (uses SSH encryption)<br>
+        • Port: 22<br>
+        • Preferred in companies
+      </div>
+    
+      <div class="info-card">
+        <strong>TFTP</strong><br>
+        • Very simple<br>
+        • No authentication<br>
+        • Port: 69 (UDP)<br>
+        • Used for router/switch configs
+      </div>
+    
+      <!-- HTTP -->
+      <h3>🔹 HTTP & HTTPS</h3>
+    
+      <div class="info-card">
+        <strong>HTTP</strong><br>
+        • No encryption<br>
+        • Port: 80
+      </div>
+    
+      <div class="info-card">
+        <strong>HTTPS</strong><br>
+        • Encrypted (SSL/TLS)<br>
+        • Port: 443<br>
+        • Used by modern websites
+      </div>
+    
+      <!-- DHCP DNS -->
+      <h3>🔹 DHCP & DNS (CORE SERVICES)</h3>
+    
+      <div class="info-card">
+        <strong>DHCP</strong><br>
+        Automatically assigns IP, subnet, gateway, DNS<br>
+        📌 Without DHCP → manual IP needed
+      </div>
+    
+      <div class="info-card">
+        <strong>DNS</strong><br>
+        Converts name to IP<br>
+        google.com → 142.250.182.14
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Exam Trap</strong><br>
+        DNS does ❌ NOT assign IP<br>
+        DHCP does ❌ NOT convert names
+      </div>
+    
+      <!-- ICMP NTP -->
+      <h3>🔹 ICMP & NTP (Support Tools)</h3>
+    
+      <div class="info-card">
+        <strong>ICMP</strong><br>
+        • Error reporting<br>
+        • Used by ping & traceroute
+      </div>
+    
+      <div class="info-card">
+        <strong>NTP</strong><br>
+        • Synchronizes time<br>
+        • Important for logs & security
+      </div>
+    
+      <!-- MASTER TABLE -->
+      <h3>🧠 MASTER TABLE (EXAM READY)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr><th>Protocol</th><th>Purpose</th><th>Port</th></tr>
+          <tr><td>TCP</td><td>Reliable delivery</td><td>—</td></tr>
+          <tr><td>UDP</td><td>Fast delivery</td><td>—</td></tr>
+          <tr><td>FTP</td><td>File transfer</td><td>21</td></tr>
+          <tr><td>SFTP</td><td>Secure file transfer</td><td>22</td></tr>
+          <tr><td>TFTP</td><td>Device config</td><td>69</td></tr>
+          <tr><td>HTTP</td><td>Web</td><td>80</td></tr>
+          <tr><td>HTTPS</td><td>Secure web</td><td>443</td></tr>
+          <tr><td>DHCP</td><td>IP assignment</td><td>67/68</td></tr>
+          <tr><td>DNS</td><td>Name resolution</td><td>53</td></tr>
+          <tr><td>ICMP</td><td>Ping / errors</td><td>—</td></tr>
+          <tr><td>NTP</td><td>Time sync</td><td>123</td></tr>
+        </table>
+      </div>
+    
+      <h3>🛠️ CCST Troubleshooting Scenarios</h3>
+    
+      <div class="info-card">
+        ❌ Website not opening → Check DNS / HTTPS<br>
+        ❌ PC has no IP → Check DHCP<br>
+        ❌ Can’t ping server → ICMP blocked / network issue<br>
+        ❌ File transfer insecure → Use SFTP, not FTP
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Memory Tricks</strong><br><br>
+        DHCP = Gives IP<br>
+        DNS = Names to IP<br>
+        HTTPS = Secure<br>
+        ICMP = Ping<br>
+        NTP = Time
+      </div>
+    
     </section>
-
-    <!-- Section -->
-    <section class="content-section">
-      <h2>Layers of the TCP/IP Model</h2>
-
-      <article class="info-card">
-        <h3>Application Layer</h3>
-        <p>
-          Provides network services directly to user applications.
-          Examples include HTTP, FTP, SMTP, and DNS.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Transport Layer</h3>
-        <p>
-          Responsible for end-to-end communication, reliability,
-          flow control, and error handling (TCP & UDP).
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Internet Layer</h3>
-        <p>
-          Handles logical addressing and routing using IP, ICMP,
-          and related protocols.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Network Access Layer</h3>
-        <p>
-          Manages physical data transmission through Ethernet,
-          Wi-Fi, ARP, and network hardware.
-        </p>
-      </article>
-    </section>
-
-    <!-- Image Section -->
-    <section class="content-section">
-      <h2 class="image-heading">TCP/IP Model Diagram</h2>
-      <img src="../../assets/images/tcp-ip.png" alt="TCP/IP Model Diagram" class="content-image">
-    </section>
+    
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
-    <a href="osi-model.html">⬅ Back to Content</a>
-    <a href="protocols.html">Next Content ➡</a>
+    <a href="home.html">⬅ Back to Content</a>
+    <a href="private-public-ip.html">Next Content ➡</a>
   </nav>
 
   <!-- External Script -->

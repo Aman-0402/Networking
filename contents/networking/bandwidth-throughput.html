@@ -21,6 +21,638 @@
   <!-- Main Content -->
   <main class="content-wrapper">
 
+    <section class="content-section">
+
+      <h2>Bandwidth vs Throughput</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>Remember This Line (CCST GOLD)</strong><br><br>
+        <strong>Bandwidth</strong> = Capacity<br>
+        <strong>Throughput</strong> = Actual speed<br><br>
+        👉 If you remember only this, you’ll already score marks ✅
+      </div>
+    
+      <h3>🛣️ Real-World Analogy (VERY IMPORTANT 💡)</h3>
+    
+      <div class="info-card">
+        🚗 <strong>Highway Example</strong><br><br>
+    
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Real Life</th>
+            <th>Networking</th>
+          </tr>
+          <tr>
+            <td>Width of road</td>
+            <td>Bandwidth</td>
+          </tr>
+          <tr>
+            <td>Cars actually moving</td>
+            <td>Throughput</td>
+          </tr>
+        </table>
+    
+        <br>
+        🛣️ 6-lane highway → High bandwidth<br>
+        🚦 Traffic jam → Low throughput<br><br>
+    
+        📌 Wide road ≠ smooth traffic<br>
+        📌 High bandwidth ≠ high speed
+      </div>
+    
+      <!-- IMAGE 1 -->
+      <h3 class="image-heading">Bandwidth Analogy (Highway Example)</h3>
+      <img
+        src="../../assets/images/BandwidthAnalogy_in_car.jpg"
+        alt="Bandwidth vs Throughput Highway Analogy"
+        class="content-image"
+      />
+    
+      <h3>📶 What is Bandwidth?</h3>
+    
+      <p>
+        <strong>Bandwidth</strong> is the <strong>maximum data capacity</strong>
+        of a network link.
+      </p>
+    
+      <div class="info-card">
+        📌 It tells:
+        <ul>
+          <li>How much data <strong>can be sent</strong></li>
+        </ul>
+        ❌ Not how much is actually sent
+      </div>
+    
+      <h3>🔧 Bandwidth is Measured in</h3>
+    
+      <div class="info-card">
+        • bps (bits per second)<br>
+        • Mbps<br>
+        • Gbps
+      </div>
+    
+      <h3>🧠 Easy Example</h3>
+    
+      <div class="info-card">
+        Your internet plan says:<br>
+        <strong>100 Mbps</strong><br><br>
+        👉 This is <strong>bandwidth</strong>, not guaranteed speed
+      </div>
+    
+      <h3>🚀 What is Throughput?</h3>
+    
+      <p>
+        <strong>Throughput</strong> is the <strong>actual amount of data</strong>
+        successfully transferred per second.
+      </p>
+    
+      <div class="info-card">
+        📌 Throughput depends on:
+        <ul>
+          <li>Network congestion</li>
+          <li>Distance</li>
+          <li>Hardware quality</li>
+          <li>Protocol overhead (TCP/IP)</li>
+          <li>Errors & retransmissions</li>
+        </ul>
+      </div>
+    
+      <h3>🧠 Easy Example</h3>
+    
+      <div class="info-card">
+        You have <strong>100 Mbps bandwidth</strong>,<br>
+        but download speed is:<br><br>
+        <strong>65 Mbps</strong><br><br>
+        👉 <strong>65 Mbps = Throughput</strong>
+      </div>
+    
+      <!-- IMAGE 2 -->
+      <h3 class="image-heading">Bandwidth vs Throughput Diagram</h3>
+      <img
+        src="../../assets/images/Bandwidth-vs-Throughput_Diagram.png"
+        alt="Bandwidth vs Throughput Diagram"
+        class="content-image"
+      />
+    
+      <h3>🧩 Bandwidth vs Throughput (Side-by-Side)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Feature</th>
+            <th>Bandwidth</th>
+            <th>Throughput</th>
+          </tr>
+          <tr>
+            <td>Meaning</td>
+            <td>Maximum capacity</td>
+            <td>Actual speed</td>
+          </tr>
+          <tr>
+            <td>Nature</td>
+            <td>Theoretical</td>
+            <td>Practical</td>
+          </tr>
+          <tr>
+            <td>Changes?</td>
+            <td>Usually fixed</td>
+            <td>Changes often</td>
+          </tr>
+          <tr>
+            <td>Affected by traffic</td>
+            <td>❌ No</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>Exam trap</td>
+            <td>Confused with speed</td>
+            <td>Real speed</td>
+          </tr>
+        </table>
+    
+        <br>
+        📌 <strong>Exam Tip:</strong><br>
+        Speed test shows <strong>throughput</strong>, not bandwidth
+      </div>
+    
+      <!-- IMAGE 3 -->
+      <h3 class="image-heading">Speed Test Shows Throughput</h3>
+      <img
+        src="../../assets/images/speedtest.png"
+        alt="Internet Speed Test Throughput"
+        class="content-image"
+      />
+    
+      <h3>🔄 Why Throughput is Always Less than Bandwidth</h3>
+    
+      <div class="info-card">
+        Common reasons:
+        <ul>
+          <li>🚦 Network congestion</li>
+          <li>📦 Protocol overhead (TCP/IP headers)</li>
+          <li>❌ Packet loss</li>
+          <li>📡 Wi-Fi interference</li>
+          <li>🧱 Old or weak hardware</li>
+        </ul>
+    
+        📌 High bandwidth ≠ High throughput
+      </div>
+    
+      <h3>🛠️ CCST Troubleshooting Scenario (Real-Life)</h3>
+    
+      <div class="info-card">
+        ❌ User says:<br>
+        “I have a 200 Mbps plan, but internet is slow”<br><br>
+    
+        <strong>Your Technician Logic:</strong><br>
+        1️⃣ Bandwidth is OK (ISP plan)<br>
+        2️⃣ Check throughput<br>
+        3️⃣ Possible issues:
+        <ul>
+          <li>Too many connected users</li>
+          <li>Wi-Fi interference</li>
+          <li>Old router</li>
+          <li>Background downloads</li>
+        </ul>
+    
+        ✔ You now sound like a real support technician 👨‍💻
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Memory Tricks (Quick Recall)</strong><br><br>
+        Bandwidth = Pipe size<br>
+        Throughput = Water flow
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>CCST Exam Must-Knows</strong><br><br>
+        ✔ Bandwidth = Maximum capacity<br>
+        ✔ Throughput = Actual performance<br>
+        ✔ Throughput ≤ Bandwidth<br>
+        ✔ Wi-Fi often reduces throughput<br>
+        ✔ Speed test shows throughput, not bandwidth
+      </div>
+    
+    </section>
+    <section class="content-section">
+
+      <h2>Latency, Delay & Jitter</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE (Remember This!)</strong><br><br>
+        <strong>Latency</strong> = Time delay<br>
+        <strong>Bandwidth</strong> = How much data<br>
+        <strong>Throughput</strong> = How fast data actually moves
+      </div>
+    
+      <h3>🚦 Real-World Analogy (VERY IMPORTANT 💡)</h3>
+    
+      <div class="info-card">
+        🚚 <strong>Courier Delivery Example</strong><br><br>
+    
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Real Life</th>
+            <th>Networking</th>
+          </tr>
+          <tr>
+            <td>Time taken by courier</td>
+            <td>Latency</td>
+          </tr>
+          <tr>
+            <td>Number of parcels truck can carry</td>
+            <td>Bandwidth</td>
+          </tr>
+          <tr>
+            <td>Parcels delivered per hour</td>
+            <td>Throughput</td>
+          </tr>
+          <tr>
+            <td>Irregular delivery times</td>
+            <td>Jitter</td>
+          </tr>
+        </table>
+    
+        <br>
+        📌 Big truck → High bandwidth<br>
+        📌 Fast road → Low latency<br>
+        📌 Traffic & signals cause delay and jitter
+      </div>
+    
+      <!-- IMAGE 1 -->
+      <h3 class="image-heading">Latency Explained (Network Delay)</h3>
+      <img
+        src="../../assets/images/network-latency.png"
+        alt="Network Latency Diagram"
+        class="content-image"
+      />
+    
+      <h3>⏱️ What is Latency?</h3>
+    
+      <p>
+        <strong>Latency</strong> is the <strong>time taken</strong> for data to travel
+        from sender to receiver.
+      </p>
+    
+      <div class="info-card">
+        📌 Measured in:<br>
+        <strong>Milliseconds (ms)</strong>
+      </div>
+    
+      <h3>🧠 Easy Example</h3>
+    
+      <div class="info-card">
+        You click a website<br>
+        Page opens after <strong>200 ms</strong><br><br>
+        👉 <strong>200 ms = latency</strong>
+      </div>
+    
+      <h3>🔧 Typical Latency Values</h3>
+    
+      <div class="info-card">
+        0–20 ms → Excellent<br>
+        20–50 ms → Good<br>
+        50–100 ms → Acceptable<br>
+        &gt;100 ms → Slow / noticeable delay<br><br>
+        📌 Online gaming & video calls need <strong>low latency</strong>
+      </div>
+    
+      <!-- IMAGE 2 -->
+      <h3 class="image-heading">High Ping vs Low Ping</h3>
+      <img
+        src="../../assets/images/high-vs-low-ping.webp"
+        alt="High Ping vs Low Ping"
+        class="content-image"
+      />
+    
+      <h3>🕒 What is Delay?</h3>
+    
+      <p>
+        <strong>Delay</strong> is the <strong>total waiting time</strong> data experiences.
+      </p>
+    
+      <div class="info-card">
+        Delay includes:
+        <ul>
+          <li>Processing delay (device thinking time)</li>
+          <li>Queuing delay (waiting in line)</li>
+          <li>Transmission delay (sending bits)</li>
+          <li>Propagation delay (distance)</li>
+        </ul>
+    
+        👉 In simple terms:<br>
+        <strong>Delay = All types of waiting combined</strong>
+      </div>
+    
+      <div class="info-card">
+        📌 Many books use <strong>latency</strong> and <strong>delay</strong>
+        interchangeably (CCST safe)
+      </div>
+    
+      <h3>📉 What is Jitter?</h3>
+    
+      <p>
+        <strong>Jitter</strong> is the <strong>variation in latency over time</strong>.
+      </p>
+    
+      <div class="info-card">
+        📌 If packets arrive:
+        <ul>
+          <li>Sometimes fast</li>
+          <li>Sometimes slow</li>
+        </ul>
+        👉 That variation is <strong>jitter</strong>
+      </div>
+    
+      <h3>🧠 Easy Example</h3>
+    
+      <div class="info-card">
+        🎧 Voice call audio:<br>
+        “Hello … … are … you … there?”<br><br>
+        📌 Audio breaks because packets arrive unevenly<br>
+        👉 This is a <strong>jitter problem</strong>
+      </div>
+    
+      <!-- IMAGE 3 -->
+      <h3 class="image-heading">Bandwidth vs Latency</h3>
+      <img
+        src="../../assets/images/Bandwidth-vs-Latency.jpg"
+        alt="Bandwidth vs Latency"
+        class="content-image"
+      />
+    
+      <h3>🧩 Latency vs Delay vs Jitter (Side-by-Side)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Term</th>
+            <th>Meaning</th>
+            <th>Problem Causes</th>
+          </tr>
+          <tr>
+            <td>Latency</td>
+            <td>Time delay</td>
+            <td>Distance, routing</td>
+          </tr>
+          <tr>
+            <td>Delay</td>
+            <td>Total waiting time</td>
+            <td>Congestion, processing</td>
+          </tr>
+          <tr>
+            <td>Jitter</td>
+            <td>Uneven delay</td>
+            <td>Network instability</td>
+          </tr>
+        </table>
+      </div>
+    
+      <h3>🎮 Why Latency Matters (Real Uses)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Activity</th>
+            <th>Needs</th>
+          </tr>
+          <tr>
+            <td>Online gaming</td>
+            <td>Low latency</td>
+          </tr>
+          <tr>
+            <td>Video calls</td>
+            <td>Low latency + low jitter</td>
+          </tr>
+          <tr>
+            <td>File download</td>
+            <td>High throughput</td>
+          </tr>
+          <tr>
+            <td>Streaming</td>
+            <td>Low jitter</td>
+          </tr>
+        </table>
+    
+        📌 Speed alone is not enough!
+      </div>
+    
+      <h3>🛠️ CCST Troubleshooting Scenario</h3>
+    
+      <div class="info-card">
+        ❌ User complaint:<br>
+        “Internet speed is good but video call is lagging”<br><br>
+    
+        <strong>Technician Thinking:</strong><br>
+        ✔ Bandwidth is OK<br>
+        ❌ Latency or jitter issue<br><br>
+    
+        Possible reasons:
+        <ul>
+          <li>Wi-Fi interference</li>
+          <li>Too many users</li>
+          <li>Long distance server</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Memory Tricks (Exam Ready)</strong><br><br>
+        Latency = How long it takes<br>
+        Delay = Waiting time<br>
+        Jitter = Uneven arrival<br><br>
+    
+        Or simply:<br>
+        <strong>Latency = delay, Jitter = unstable delay</strong>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>CCST Exam Must-Knows</strong><br><br>
+        ✔ Low latency = fast response<br>
+        ✔ High latency = slow reaction<br>
+        ✔ Jitter affects voice & video<br>
+        ✔ Speed test ≠ latency test<br>
+        ✔ Ping command checks latency
+      </div>
+    
+    </section>
+    <section class="content-section">
+
+      <h2>Speed Test vs iPerf</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE (Remember This!)</strong><br><br>
+        <strong>Speed Test</strong> → Tests internet speed (ISP side)<br>
+        <strong>iPerf</strong> → Tests network performance (your network)<br><br>
+        👉 This line alone solves many troubleshooting questions ✅
+      </div>
+    
+      <h3>🚦 Why Do We Need Speed Testing?</h3>
+    
+      <p>
+        As a network technician, users often complain:
+      </p>
+    
+      <div class="info-card">
+        ❌ “Internet is slow”<br>
+        ❌ “Speed is not as promised”<br>
+        ❌ “Network performance is bad”
+      </div>
+    
+      <p>
+        To find the real issue, we must know:
+        <strong>Is the problem with ISP or inside the local network?</strong>
+      </p>
+    
+      <h3>📊 What is a Speed Test?</h3>
+    
+      <p>
+        A <strong>Speed Test</strong> measures the speed of your internet connection
+        between your device and an <strong>external server on the internet</strong>.
+      </p>
+    
+      <div class="info-card">
+        🔧 What Speed Test checks:
+        <ul>
+          <li>Download speed</li>
+          <li>Upload speed</li>
+          <li>Ping (latency)</li>
+        </ul>
+    
+        📌 Common tools:
+        <ul>
+          <li>Speedtest.net</li>
+          <li>Fast.com</li>
+          <li>Google Speed Test</li>
+        </ul>
+      </div>
+    
+      <h3>🧠 Easy Example</h3>
+    
+      <div class="info-card">
+        Your internet plan: <strong>200 Mbps</strong><br>
+        Speed test result: <strong>180 Mbps</strong><br><br>
+        👉 ISP is working fine
+      </div>
+    
+      <div class="info-card">
+        📌 Speed Test result depends on:
+        <ul>
+          <li>ISP quality</li>
+          <li>Distance to server</li>
+          <li>Internet congestion</li>
+        </ul>
+      </div>
+    
+      <h3>📈 What is iPerf?</h3>
+    
+      <p>
+        <strong>iPerf</strong> is a professional network testing tool used to measure
+        <strong>actual throughput inside a network</strong>.
+      </p>
+    
+      <div class="info-card">
+        🔧 What iPerf checks:
+        <ul>
+          <li>Bandwidth between two devices</li>
+          <li>Throughput</li>
+          <li>Packet loss</li>
+          <li>Jitter (for UDP)</li>
+        </ul>
+    
+        📌 iPerf works in:
+        <ul>
+          <li>LAN (Local Area Network)</li>
+          <li>WAN</li>
+          <li>Data centers</li>
+        </ul>
+      </div>
+    
+      <h3>🧠 Easy Example</h3>
+    
+      <div class="info-card">
+        Speed Test shows: <strong>200 Mbps</strong><br>
+        iPerf shows: <strong>60 Mbps</strong><br><br>
+        👉 Problem is inside the <strong>local network</strong> (Wi-Fi, cable, switch)
+      </div>
+    
+      <h3>🧩 Speed Test vs iPerf (Side-by-Side)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Feature</th>
+            <th>Speed Test</th>
+            <th>iPerf</th>
+          </tr>
+          <tr>
+            <td>Tests</td>
+            <td>Internet speed</td>
+            <td>Network performance</td>
+          </tr>
+          <tr>
+            <td>Server location</td>
+            <td>On the internet</td>
+            <td>Inside your network</td>
+          </tr>
+          <tr>
+            <td>Measures</td>
+            <td>Download / Upload / Ping</td>
+            <td>Throughput / Jitter / Packet loss</td>
+          </tr>
+          <tr>
+            <td>Used by</td>
+            <td>Normal users</td>
+            <td>Network engineers</td>
+          </tr>
+          <tr>
+            <td>Detects LAN issues</td>
+            <td>❌ No</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>CCST relevance</td>
+            <td>Basic</td>
+            <td>Very important</td>
+          </tr>
+        </table>
+      </div>
+    
+      <h3>🛠️ CCST Troubleshooting Scenario (VERY IMPORTANT)</h3>
+    
+      <div class="info-card">
+        ❌ User says:<br>
+        “Internet speed is fine, but file transfer inside office is slow”<br><br>
+    
+        <strong>Technician Logic:</strong><br>
+        ✔ Speed Test → OK<br>
+        ❌ iPerf → Low throughput<br><br>
+    
+        👉 Issue is inside:
+        <ul>
+          <li>Wi-Fi interference</li>
+          <li>Bad cable</li>
+          <li>Old switch</li>
+          <li>Network congestion</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Memory Trick (Exam Ready)</strong><br><br>
+        Speed Test = ISP check 🌍<br>
+        iPerf = Network check 🏠
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>CCST Exam Must-Knows</strong><br><br>
+        ✔ Speed Test checks internet speed<br>
+        ✔ iPerf checks internal network performance<br>
+        ✔ Good Speed Test + Bad iPerf = LAN problem<br>
+        ✔ iPerf is used by network engineers<br>
+        ✔ Speed Test ≠ network performance test
+      </div>
+    
+    </section>
+    
 
   </main>
 

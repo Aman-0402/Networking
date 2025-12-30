@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TCP/IP Model – Networking eBook</title>
+  <title>Private vs Public IP Addressing</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="../../assets/css/templatecss.css" />
@@ -14,72 +14,308 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1>TCP/IP Model</h1>
-    <p class="subtitle">Foundation of modern computer networking</p>
+    <h1>Private vs Public IP Addressing</h1>
+    <p class="subtitle">Understand private and public IP addressing, address classes,
+      and how NAT enables internal networks to access the internet.</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
-    <!-- Section -->
     <section class="content-section">
-      <h2>What is the TCP/IP Model?</h2>
+
+      <h2>Private vs Public IP Addressing</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE (Remember This!)</strong><br><br>
+        <strong>Private IP</strong> = Used inside a network (not reachable from internet)<br>
+        <strong>Public IP</strong> = Used on the internet (globally reachable)<br><br>
+        👉 If you remember this → many CCST questions become easy ✅
+      </div>
+    
+      <h3>🔢 What is an IP Address? (Quick Recap)</h3>
+    
+      <div class="info-card">
+        An <strong>IP address</strong> is a unique number that identifies a device on a network.<br><br>
+        🧠 Example: <strong>192.168.1.10</strong>
+      </div>
+    
+      <!-- PRIVATE IP -->
+      <h3>🏠 What is a Private IP Address?</h3>
+    
       <p>
-        The TCP/IP model is a conceptual framework that explains how data
-        is transmitted across networks. It is the backbone of the Internet
-        and most modern networking systems.
+        A <strong>private IP address</strong> is used inside a local network (LAN) and
+        <strong>cannot be accessed directly from the internet</strong>.
       </p>
+    
+      <div class="info-card">
+        📌 Assigned by:
+        <ul>
+          <li>Router (using DHCP)</li>
+        </ul>
+    
+        📌 Used in:
+        <ul>
+          <li>Homes</li>
+          <li>Offices</li>
+          <li>Schools</li>
+        </ul>
+      </div>
+    
+      <h3 class="image-heading">Private vs Public IP Concept</h3>
+      <img
+        src="../../assets/images/Private-and-Public-IP-Address.png"
+        alt="Private vs Public IP Address"
+        class="content-image"
+      />
+    
+      <h3>🔐 Private IP Address Ranges (VERY IMPORTANT)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Class</th>
+            <th>Private IP Range</th>
+          </tr>
+          <tr>
+            <td>Class A</td>
+            <td>10.0.0.0 – 10.255.255.255</td>
+          </tr>
+          <tr>
+            <td>Class B</td>
+            <td>172.16.0.0 – 172.31.255.255</td>
+          </tr>
+          <tr>
+            <td>Class C</td>
+            <td>192.168.0.0 – 192.168.255.255</td>
+          </tr>
+        </table>
+      </div>
+    
+      <h3 class="image-heading">Classes of IP Addresses</h3>
+      <img
+        src="../../assets/images/classes_of_ip_addresses.jpg"
+        alt="IP Address Classes"
+        class="content-image"
+      />
+    
+      <div class="info-card">
+        🧠 <strong>Easy Example</strong><br><br>
+        Laptop IP: 192.168.1.10<br>
+        Phone IP: 192.168.1.11<br><br>
+        👉 Both are <strong>private IPs</strong>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages of Private IP</strong>
+        <ul>
+          <li>Free to use</li>
+          <li>Secure (not internet-reachable)</li>
+          <li>Reusable in different networks</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>Cannot access internet directly</li>
+          <li>Needs NAT to go online</li>
+        </ul>
+      </div>
+    
+      <!-- PUBLIC IP -->
+      <h3>🌍 What is a Public IP Address?</h3>
+    
+      <p>
+        A <strong>public IP address</strong> is a globally unique address
+        that is reachable on the internet.
+      </p>
+    
+      <div class="info-card">
+        📌 Assigned by:
+        <ul>
+          <li>ISP (Internet Service Provider)</li>
+        </ul>
+    
+        📌 Used for:
+        <ul>
+          <li>Websites</li>
+          <li>Servers</li>
+          <li>Routers facing the internet</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Easy Example</strong><br><br>
+        Google server IP: 142.250.182.14<br>
+        Home router public IP: 103.21.244.0<br><br>
+        👉 These are <strong>public IPs</strong>
+      </div>
+    
+      <div class="info-card">
+        ✅ <strong>Advantages of Public IP</strong>
+        <ul>
+          <li>Internet reachable</li>
+          <li>Required for hosting websites</li>
+          <li>Globally unique</li>
+        </ul>
+    
+        ❌ <strong>Disadvantages</strong>
+        <ul>
+          <li>Limited availability</li>
+          <li>Less secure (exposed to internet)</li>
+          <li>Usually costs money</li>
+        </ul>
+      </div>
+    
+      <!-- COMPARISON -->
+      <h3>🧩 Private vs Public IP (Side-by-Side)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Feature</th>
+            <th>Private IP</th>
+            <th>Public IP</th>
+          </tr>
+          <tr>
+            <td>Scope</td>
+            <td>Local network</td>
+            <td>Internet</td>
+          </tr>
+          <tr>
+            <td>Reachable from internet</td>
+            <td>❌ No</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>Reusable</td>
+            <td>✅ Yes</td>
+            <td>❌ No</td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td>Free</td>
+            <td>Paid</td>
+          </tr>
+          <tr>
+            <td>Example</td>
+            <td>192.168.1.10</td>
+            <td>142.250.182.14</td>
+          </tr>
+        </table>
+      </div>
+    
+      <!-- NAT -->
+      <h3>🔁 What is NAT? (Network Address Translation)</h3>
+    
+      <p>
+        <strong>NAT</strong> converts private IP addresses into a public IP address
+        so devices can access the internet.
+      </p>
+    
+      <div class="info-card">
+        📌 NAT runs on:
+        <ul>
+          <li>Routers</li>
+          <li>Firewalls</li>
+        </ul>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Why NAT is Needed?</strong><br><br>
+        • Private IPs cannot go to internet directly<br>
+        • Public IPs are limited<br><br>
+        👉 NAT solves both problems ✅
+      </div>
+    
+      <h3 class="image-heading">NAT Working (Home Network)</h3>
+      <img
+        src="../../assets/images/Typical-configuration-of-a-home-network-using-NAT.png"
+        alt="Home Network NAT"
+        class="content-image"
+      />
+    
+      <h3 class="image-heading">Network Address Translation Diagram</h3>
+      <img
+        src="../../assets/images/network-address-translation-diagram.png"
+        alt="NAT Diagram"
+        class="content-image"
+      />
+    
+      <div class="info-card">
+        🏠 <strong>Real-World NAT Example</strong><br><br>
+        Laptop: 192.168.1.10<br>
+        Phone: 192.168.1.11<br><br>
+        Router public IP: 103.21.244.0<br><br>
+        👉 Many devices share <strong>one public IP</strong>
+      </div>
+    
+      <h3>🧩 Types of NAT (Basic Awareness)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Type</th>
+            <th>Meaning</th>
+          </tr>
+          <tr>
+            <td>Static NAT</td>
+            <td>One private → one public</td>
+          </tr>
+          <tr>
+            <td>Dynamic NAT</td>
+            <td>Private → public from pool</td>
+          </tr>
+          <tr>
+            <td>PAT (Most common)</td>
+            <td>Many private → one public (using ports)</td>
+          </tr>
+        </table>
+    
+        📌 PAT = Port Address Translation<br>
+        📌 Used in almost all home routers
+      </div>
+    
+      <!-- CCST -->
+      <h3>🛠️ CCST Troubleshooting Scenarios</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Problem</th>
+            <th>Likely Area</th>
+          </tr>
+          <tr>
+            <td>Device has IP but no internet</td>
+            <td>NAT / Router issue</td>
+          </tr>
+          <tr>
+            <td>Website hosted but not reachable</td>
+            <td>Public IP / NAT</td>
+          </tr>
+          <tr>
+            <td>Local devices work, internet fails</td>
+            <td>NAT misconfiguration</td>
+          </tr>
+        </table>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Memory Tricks (Exam Gold 🥇)</strong><br><br>
+        Private IP = Inside<br>
+        Public IP = Outside<br>
+        NAT = Translator<br>
+        Class C = Home networks
+      </div>
+    
     </section>
-
-    <!-- Section -->
-    <section class="content-section">
-      <h2>Layers of the TCP/IP Model</h2>
-
-      <article class="info-card">
-        <h3>Application Layer</h3>
-        <p>
-          Provides network services directly to user applications.
-          Examples include HTTP, FTP, SMTP, and DNS.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Transport Layer</h3>
-        <p>
-          Responsible for end-to-end communication, reliability,
-          flow control, and error handling (TCP & UDP).
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Internet Layer</h3>
-        <p>
-          Handles logical addressing and routing using IP, ICMP,
-          and related protocols.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Network Access Layer</h3>
-        <p>
-          Manages physical data transmission through Ethernet,
-          Wi-Fi, ARP, and network hardware.
-        </p>
-      </article>
-    </section>
-
-    <!-- Image Section -->
-    <section class="content-section">
-      <h2 class="image-heading">TCP/IP Model Diagram</h2>
-      <img src="../../assets/images/tcp-ip.png" alt="TCP/IP Model Diagram" class="content-image">
-    </section>
+    
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
-    <a href="osi-model.html">⬅ Back to Content</a>
-    <a href="protocols.html">Next Content ➡</a>
+    <a href="home.html">⬅ Back to Content</a>
+    <a href="ipv4-subnetting.html">Next Content ➡</a>
   </nav>
 
   <!-- External Script -->
