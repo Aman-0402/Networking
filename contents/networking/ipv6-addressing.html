@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TCP/IP Model – Networking eBook</title>
+  <title>IPv6 Addressing</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="../../assets/css/templatecss.css" />
@@ -14,72 +14,317 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1>TCP/IP Model</h1>
-    <p class="subtitle">Foundation of modern computer networking</p>
+    <h1>IPv6 Addressing</h1>
+    <p class="subtitle"> Explore IPv6 address structure, address types, and prefix
+      formats designed to replace IPv4.</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
-    <!-- Section -->
     <section class="content-section">
-      <h2>What is the TCP/IP Model?</h2>
+
+      <h2>IPv6 Addressing</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE (Remember This First)</strong><br><br>
+        <strong>IPv6</strong> = Bigger address space to replace IPv4<br><br>
+        📌 IPv6 was created because IPv4 addresses are running out
+      </div>
+    
+      <!-- WHAT IS IPV6 -->
+      <h3>🔢 What is IPv6 Addressing?</h3>
+    
       <p>
-        The TCP/IP model is a conceptual framework that explains how data
-        is transmitted across networks. It is the backbone of the Internet
-        and most modern networking systems.
+        An <strong>IPv6 address</strong> is a <strong>128-bit address</strong>
+        used to identify devices on a network.
       </p>
+    
+      <div class="info-card">
+        🧠 Compare:<br><br>
+        IPv4 → 32 bits ❌ (limited)<br>
+        IPv6 → 128 bits ✅ (huge)<br><br>
+        👉 IPv6 can provide billions of addresses for every person on Earth 🌍
+      </div>
+    
+      <h3 class="image-heading">IPv6 – 128 Bit Address Space</h3>
+      <img
+        src="../../assets/images/IPv6-128bits.png"
+        alt="IPv6 128 bit address"
+        class="content-image"
+      />
+    
+      <!-- FORMAT -->
+      <h3>✍️ IPv6 Address Format (Easy)</h3>
+    
+      <div class="info-card">
+        🔹 <strong>How IPv6 Looks</strong><br><br>
+        <strong>2001:0db8:85a3:0000:0000:8a2e:0370:7334</strong><br><br>
+        📌 Key points:
+        <ul>
+          <li>Written in hexadecimal (0–9, a–f)</li>
+          <li>8 groups (blocks)</li>
+          <li>Each block = 16 bits</li>
+          <li>Blocks separated by <strong>:</strong></li>
+        </ul>
+      </div>
+    
+      <h3 class="image-heading">Basic IPv6 Address Structure</h3>
+      <img
+        src="../../assets/images/basic-IPv6-address.png"
+        alt="IPv6 address format"
+        class="content-image"
+      />
+    
+      <!-- SHORTENING -->
+      <h3>✂️ IPv6 Shortening Rules (VERY IMPORTANT)</h3>
+    
+      <div class="info-card">
+        <strong>Rule 1: Remove leading zeros</strong><br>
+        <code>0db8 → db8</code><br><br>
+    
+        <strong>Rule 2: Replace continuous zeros with ::</strong><br>
+        <code>2001:0db8:0000:0000:0000:0000:0000:0001</code><br>
+        ↓<br>
+        <code>2001:db8::1</code><br><br>
+    
+        📌 <strong>::</strong> can be used <strong>only once</strong> in an address
+      </div>
+    
+      <!-- TYPES -->
+      <h3>🧩 IPv6 Address Types (VERY IMPORTANT FOR CCST)</h3>
+    
+      <h4>🟦 1️⃣ Unicast Address</h4>
+    
+      <div class="info-card">
+        📌 One-to-one communication<br><br>
+        🧠 Meaning: One sender → One receiver<br><br>
+    
+        <strong>Common Unicast Types</strong>
+        <ul>
+          <li>Global Unicast → Public IPv6 (internet-routable)</li>
+          <li>Link-Local → Local network only</li>
+        </ul>
+    
+        🧠 Example:<br>
+        <strong>2001:db8::10</strong><br><br>
+        👉 Similar to IPv4 public & private IP
+      </div>
+    
+      <h4>🟩 2️⃣ Multicast Address</h4>
+    
+      <div class="info-card">
+        📌 One-to-many communication<br><br>
+        🧠 Meaning: One sender → Multiple receivers<br><br>
+    
+        🧠 Example:<br>
+        <strong>ff02::1</strong><br><br>
+    
+        👉 Sends data to all devices in a group<br>
+        📌 IPv6 uses <strong>multicast instead of broadcast</strong>
+      </div>
+    
+      <h4>🟨 3️⃣ Anycast Address</h4>
+    
+      <div class="info-card">
+        📌 One-to-nearest (best) receiver<br><br>
+        🧠 Meaning:
+        <ul>
+          <li>Same IPv6 address assigned to multiple devices</li>
+          <li>Data goes to the closest one</li>
+        </ul>
+    
+        🧠 Examples:
+        <ul>
+          <li>DNS servers</li>
+          <li>CDN servers</li>
+        </ul>
+    
+        👉 Improves speed & reliability
+      </div>
+    
+      <h3 class="image-heading">IPv6 Address Types</h3>
+      <img
+        src="../../assets/images/ipv6_address_types.png"
+        alt="IPv6 address types"
+        class="content-image"
+      />
+    
+      <!-- BROADCAST -->
+      <h3>❌ What About Broadcast?</h3>
+    
+      <div class="info-card">
+        🚫 IPv6 has <strong>NO broadcast</strong><br><br>
+        📌 Broadcast is replaced by <strong>multicast</strong>
+      </div>
+    
+      <h3>🧩 IPv6 Address Types (Summary Table)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Type</th>
+            <th>Communication</th>
+            <th>Example Use</th>
+          </tr>
+          <tr>
+            <td>Unicast</td>
+            <td>One → One</td>
+            <td>Web browsing</td>
+          </tr>
+          <tr>
+            <td>Multicast</td>
+            <td>One → Many</td>
+            <td>Routing updates</td>
+          </tr>
+          <tr>
+            <td>Anycast</td>
+            <td>One → Nearest</td>
+            <td>DNS, CDN</td>
+          </tr>
+          <tr>
+            <td>Broadcast</td>
+            <td>❌ Not used</td>
+            <td>Replaced by multicast</td>
+          </tr>
+        </table>
+      </div>
+    
+      <!-- PREFIX -->
+      <h3>📍 IPv6 Prefix & Prefix Notation (CIDR Style)</h3>
+    
+      <p>
+        An <strong>IPv6 prefix</strong> tells which part of the address is the network.
+      </p>
+    
+      <div class="info-card">
+        📌 Similar to subnet mask in IPv4<br>
+        📌 Uses slash notation
+      </div>
+    
+      <div class="info-card">
+        🧠 Example:<br><br>
+        <strong>2001:db8:abcd:0012::/64</strong><br><br>
+        👉 First 64 bits = Network<br>
+        👉 Last 64 bits = Host<br><br>
+        📌 <strong>/64</strong> is the MOST COMMON prefix in IPv6
+      </div>
+    
+      <div class="info-card">
+        <strong>Common IPv6 Prefix Lengths</strong>
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Prefix</th>
+            <th>Meaning</th>
+            <th>Usage</th>
+          </tr>
+          <tr>
+            <td>/64</td>
+            <td>Standard subnet</td>
+            <td>LAN networks</td>
+          </tr>
+          <tr>
+            <td>/48</td>
+            <td>Large organization</td>
+            <td>ISP allocation</td>
+          </tr>
+          <tr>
+            <td>/128</td>
+            <td>Single device</td>
+            <td>Loopback</td>
+          </tr>
+        </table>
+    
+        📌 <strong>CCST Tip:</strong> If you see IPv6 → assume <strong>/64</strong>
+      </div>
+    
+      <!-- IPV4 VS IPV6 -->
+      <h3>🧠 IPv4 vs IPv6 (Quick Comparison)</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Feature</th>
+            <th>IPv4</th>
+            <th>IPv6</th>
+          </tr>
+          <tr>
+            <td>Address size</td>
+            <td>32-bit</td>
+            <td>128-bit</td>
+          </tr>
+          <tr>
+            <td>Format</td>
+            <td>Decimal</td>
+            <td>Hexadecimal</td>
+          </tr>
+          <tr>
+            <td>NAT needed</td>
+            <td>✅ Yes</td>
+            <td>❌ No</td>
+          </tr>
+          <tr>
+            <td>Broadcast</td>
+            <td>✅ Yes</td>
+            <td>❌ No</td>
+          </tr>
+          <tr>
+            <td>Multicast</td>
+            <td>Limited</td>
+            <td>Built-in</td>
+          </tr>
+        </table>
+      </div>
+    
+      <h3 class="image-heading">IPv4 vs IPv6 Comparison</h3>
+      <img
+        src="../../assets/images/Brief-comparison-of-IPv4-and-IPv6.png"
+        alt="IPv4 vs IPv6 comparison"
+        class="content-image"
+      />
+    
+      <!-- TROUBLESHOOTING -->
+      <h3>🛠️ CCST Troubleshooting Examples</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Symptom</th>
+            <th>Likely Cause</th>
+          </tr>
+          <tr>
+            <td>Device has IPv6 but no internet</td>
+            <td>Gateway / prefix issue</td>
+          </tr>
+          <tr>
+            <td>Neighbor discovery fails</td>
+            <td>Link-local issue</td>
+          </tr>
+          <tr>
+            <td>Network flood</td>
+            <td>Wrong multicast config</td>
+          </tr>
+        </table>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Memory Tricks (Exam Gold 🥇)</strong><br><br>
+        IPv6 = Big address<br>
+        No broadcast<br>
+        /64 is standard<br>
+        :: = compressed zeros<br>
+        Unicast, Multicast, Anycast
+      </div>
+    
     </section>
-
-    <!-- Section -->
-    <section class="content-section">
-      <h2>Layers of the TCP/IP Model</h2>
-
-      <article class="info-card">
-        <h3>Application Layer</h3>
-        <p>
-          Provides network services directly to user applications.
-          Examples include HTTP, FTP, SMTP, and DNS.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Transport Layer</h3>
-        <p>
-          Responsible for end-to-end communication, reliability,
-          flow control, and error handling (TCP & UDP).
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Internet Layer</h3>
-        <p>
-          Handles logical addressing and routing using IP, ICMP,
-          and related protocols.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Network Access Layer</h3>
-        <p>
-          Manages physical data transmission through Ethernet,
-          Wi-Fi, ARP, and network hardware.
-        </p>
-      </article>
-    </section>
-
-    <!-- Image Section -->
-    <section class="content-section">
-      <h2 class="image-heading">TCP/IP Model Diagram</h2>
-      <img src="../../assets/images/tcp-ip.png" alt="TCP/IP Model Diagram" class="content-image">
-    </section>
+    
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
-    <a href="osi-model.html">⬅ Back to Content</a>
-    <a href="protocols.html">Next Content ➡</a>
+    <a href="home.html">⬅ Back to Content</a>
+    <a href="network-cables.html">Next Content ➡</a>
   </nav>
 
   <!-- External Script -->

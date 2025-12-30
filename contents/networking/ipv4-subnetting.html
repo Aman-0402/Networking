@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TCP/IP Model – Networking eBook</title>
+  <title>IPv4 Addressing & Subnetting</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="../../assets/css/templatecss.css" />
@@ -14,72 +14,264 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1>TCP/IP Model</h1>
-    <p class="subtitle">Foundation of modern computer networking</p>
+    <h1>IPv4 Addressing & Subnetting</h1>
+    <p class="subtitle"> Learn subnet concepts including CIDR (slash notation), subnet
+      masks, broadcast domains, and how subnet calculators work.</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
-    <!-- Section -->
     <section class="content-section">
-      <h2>What is the TCP/IP Model?</h2>
+
+      <h2>IPv4 Addressing & Subnetting</h2>
+    
+      <div class="info-card">
+        ⭐ <strong>CCST GOLD LINE (Remember This First)</strong><br><br>
+        <strong>Subnetting</strong> = Dividing one big network into smaller networks<br><br>
+        👉 If you understand this idea, everything below becomes simple ✅
+      </div>
+    
+      <!-- IPv4 -->
+      <h3>🔢 What is IPv4 Addressing?</h3>
+    
       <p>
-        The TCP/IP model is a conceptual framework that explains how data
-        is transmitted across networks. It is the backbone of the Internet
-        and most modern networking systems.
+        An <strong>IPv4 address</strong> is a <strong>32-bit number</strong>
+        used to identify a device on a network.
       </p>
+    
+      <div class="info-card">
+        📌 Written in <strong>dotted decimal format</strong><br><br>
+        🧠 Example: <strong>192.168.1.10</strong><br><br>
+        • 4 parts (octets)<br>
+        • Each part: 0–255<br>
+        • Total = 32 bits (8 + 8 + 8 + 8)
+      </div>
+    
+      <!-- SUBNET -->
+      <h3>🧩 What is a Subnet? (Very Important)</h3>
+    
+      <p>
+        A <strong>subnet (sub-network)</strong> is a smaller network
+        created from a bigger network.
+      </p>
+    
+      <div class="info-card">
+        🧠 Think like this:<br><br>
+        🏘️ One big society<br>
+        Divide it into blocks (A, B, C)<br>
+        👉 Each block = <strong>Subnet</strong>
+      </div>
+    
+      <div class="info-card">
+        🔹 <strong>Why Subnetting is Needed</strong>
+        <ul>
+          <li>Reduce network traffic</li>
+          <li>Improve performance</li>
+          <li>Better security</li>
+          <li>Easy management</li>
+        </ul>
+        📌 Without subnetting → network becomes noisy & slow
+      </div>
+    
+      <!-- SUBNET MASK -->
+      <h3>🧱 Subnet Mask (Core Concept)</h3>
+    
+      <p>
+        A <strong>subnet mask</strong> tells which part of the IP is
+        <strong>network</strong> and which part is <strong>host</strong>.
+      </p>
+    
+      <div class="info-card">
+        🧠 Example:<br><br>
+        IP Address: <strong>192.168.1.10</strong><br>
+        Subnet Mask: <strong>255.255.255.0</strong><br><br>
+        👉 First 3 octets = Network<br>
+        👉 Last octet = Hosts
+      </div>
+    
+      <h3 class="image-heading">Subnet Mask Operation</h3>
+      <img
+        src="../../assets/images/mask-operation-ip-network-scheme.jpg"
+        alt="Subnet Mask Operation"
+        class="content-image"
+      />
+    
+      <div class="info-card">
+        <strong>Common Subnet Masks</strong>
+        <table style="width:100%; border-collapse:collapse;">
+          <tr><th>Subnet Mask</th><th>Meaning</th></tr>
+          <tr><td>255.0.0.0</td><td>Class A</td></tr>
+          <tr><td>255.255.0.0</td><td>Class B</td></tr>
+          <tr><td>255.255.255.0</td><td>Class C</td></tr>
+        </table>
+        📌 Most home networks use <strong>255.255.255.0</strong>
+      </div>
+    
+      <!-- CIDR -->
+      <h3>✂️ CIDR / Slash Notation (VERY IMPORTANT)</h3>
+    
+      <p>
+        <strong>CIDR (Classless Inter-Domain Routing)</strong>
+        uses slash notation to show how many bits belong to the network.
+      </p>
+    
+      <div class="info-card">
+        🧠 Example:<br><br>
+        <strong>192.168.1.0/24</strong><br><br>
+        👉 24 bits = Network<br>
+        👉 8 bits = Host<br><br>
+        📌 /24 = 255.255.255.0
+      </div>
+    
+      <h3 class="image-heading">Subnetting & CIDR Visualization</h3>
+      <img
+        src="../../assets/images/ip-subnetting-subnet-masking.png"
+        alt="CIDR and Subnetting"
+        class="content-image"
+      />
+    
+      <div class="info-card">
+        <strong>Common CIDR Values</strong>
+        <table style="width:100%; border-collapse:collapse;">
+          <tr><th>CIDR</th><th>Subnet Mask</th><th>Total IPs</th></tr>
+          <tr><td>/24</td><td>255.255.255.0</td><td>256</td></tr>
+          <tr><td>/25</td><td>255.255.255.128</td><td>128</td></tr>
+          <tr><td>/26</td><td>255.255.255.192</td><td>64</td></tr>
+          <tr><td>/27</td><td>255.255.255.224</td><td>32</td></tr>
+          <tr><td>/28</td><td>255.255.255.240</td><td>16</td></tr>
+        </table>
+        📌 Usable hosts = <strong>Total − 2</strong>
+      </div>
+    
+      <!-- BROADCAST -->
+      <h3>📣 Broadcast Address (Very Important)</h3>
+    
+      <p>
+        A <strong>broadcast address</strong> is the <strong>last IP</strong>
+        in a subnet, used to send data to all devices.
+      </p>
+    
+      <div class="info-card">
+        🧠 Example:<br><br>
+        Network: <strong>192.168.1.0/24</strong><br>
+        Broadcast: <strong>192.168.1.255</strong><br><br>
+        👉 Message sent to .255 reaches everyone 📢
+      </div>
+    
+      <!-- BROADCAST DOMAIN -->
+      <h3>📡 What is a Broadcast Domain?</h3>
+    
+      <div class="info-card">
+        A <strong>broadcast domain</strong> is a group of devices
+        that receive broadcast messages.
+      </div>
+    
+      <div class="info-card">
+        📌 Key rule:<br>
+        • Switch → same broadcast domain<br>
+        • Router → breaks broadcast domain
+      </div>
+    
+      <h3 class="image-heading">Broadcast Domain Example</h3>
+      <img
+        src="../../assets/images/Computer-Network-Broadcast-Domain-Collision.png"
+        alt="Broadcast Domain"
+        class="content-image"
+      />
+    
+      <!-- SUBNETTING EXAMPLE -->
+      <h3>🧩 Subnetting Example (Step-by-Step – EASY)</h3>
+    
+      <div class="info-card">
+        🎯 <strong>Requirement</strong><br><br>
+        Network: <strong>192.168.1.0/24</strong><br>
+        Need: <strong>4 subnets</strong>
+      </div>
+    
+      <div class="info-card">
+        🔹 Step 1: Borrow bits<br>
+        /24 → <strong>/26</strong><br>
+        Subnet Mask: <strong>255.255.255.192</strong>
+      </div>
+    
+      <div style="display: block; background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <h3 class="image-heading">Subnet Division Direction</h3>
+        <img
+          src="../../assets/images/subneting-drection.png"
+          alt="Subnetting Direction"
+          class="content-image"
+        />
+      </div>
+    
+      <div class="info-card">
+        <strong>🔹 Step 2: Subnets Created</strong>
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <th>Subnet</th>
+            <th>Network</th>
+            <th>Broadcast</th>
+            <th>Usable Hosts</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>192.168.1.0</td>
+            <td>192.168.1.63</td>
+            <td>.1 – .62</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>192.168.1.64</td>
+            <td>192.168.1.127</td>
+            <td>.65 – .126</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>192.168.1.128</td>
+            <td>192.168.1.191</td>
+            <td>.129 – .190</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>192.168.1.192</td>
+            <td>192.168.1.255</td>
+            <td>.193 – .254</td>
+          </tr>
+        </table>
+        📌 Each subnet = separate broadcast domain
+      </div>
+    
+      <!-- TROUBLESHOOTING -->
+      <h3>🛠️ CCST Troubleshooting Scenarios</h3>
+    
+      <div class="info-card">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr><th>Problem</th><th>Likely Issue</th></tr>
+          <tr><td>Devices can’t communicate</td><td>Wrong subnet mask</td></tr>
+          <tr><td>Broadcast traffic too high</td><td>Large broadcast domain</td></tr>
+          <tr><td>IP conflict</td><td>Overlapping subnets</td></tr>
+          <tr><td>Internet works, LAN fails</td><td>Subnet misconfiguration</td></tr>
+        </table>
+      </div>
+    
+      <div class="info-card">
+        🧠 <strong>Memory Tricks (Exam Gold 🥇)</strong><br><br>
+        Subnet = Smaller network<br>
+        /24 = 255.255.255.0<br>
+        Broadcast = Last IP<br>
+        Usable hosts = Total − 2<br>
+        Router breaks broadcast domain
+      </div>
+    
     </section>
-
-    <!-- Section -->
-    <section class="content-section">
-      <h2>Layers of the TCP/IP Model</h2>
-
-      <article class="info-card">
-        <h3>Application Layer</h3>
-        <p>
-          Provides network services directly to user applications.
-          Examples include HTTP, FTP, SMTP, and DNS.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Transport Layer</h3>
-        <p>
-          Responsible for end-to-end communication, reliability,
-          flow control, and error handling (TCP & UDP).
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Internet Layer</h3>
-        <p>
-          Handles logical addressing and routing using IP, ICMP,
-          and related protocols.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <h3>Network Access Layer</h3>
-        <p>
-          Manages physical data transmission through Ethernet,
-          Wi-Fi, ARP, and network hardware.
-        </p>
-      </article>
-    </section>
-
-    <!-- Image Section -->
-    <section class="content-section">
-      <h2 class="image-heading">TCP/IP Model Diagram</h2>
-      <img src="../../assets/images/tcp-ip.png" alt="TCP/IP Model Diagram" class="content-image">
-    </section>
+    
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
-    <a href="osi-model.html">⬅ Back to Content</a>
-    <a href="protocols.html">Next Content ➡</a>
+    <a href="home.html">⬅ Back to Content</a>
+    <a href="ipv6-addressing.html">Next Content ➡</a>
   </nav>
 
   <!-- External Script -->
