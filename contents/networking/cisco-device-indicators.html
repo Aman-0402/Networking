@@ -14,21 +14,434 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1></h1>
-    <p class="subtitle"></p>
+    <h1>Cisco device status indicators</h1>
+    <p class="subtitle">Understanding LED lights on Cisco devices</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
+    <section class="content-section">
 
+      <h1 class="main-heading">🔌 Cisco Device Status Indicators</h1>
+    
+      <p class="intro-text">
+        Status indicators are LED lights on Cisco routers, switches, and access points
+        that show power status, link connectivity, data activity, and errors or faults.
+        These indicators are widely used in devices from Cisco Systems.
+      </p>
+    
+      <h2 class="section-heading">1️⃣ Link Light Color</h2>
+    
+      <p>
+        Link light color is the fastest troubleshooting tool on Cisco network devices.
+        Without using CLI or software, just by observing the LED color,
+        you can identify most physical and basic logical issues.
+      </p>
+    
+      <h2 class="section-heading">🔌 What Is a Link Light?</h2>
+    
+      <p>
+        A link light (LED) is a small indicator near the Ethernet port that tells:
+      </p>
+    
+      <ul>
+        <li>If the cable is connected</li>
+        <li>If the port is active</li>
+        <li>If the connection is healthy</li>
+        <li>If there is an error or block</li>
+      </ul>
+    
+      <p><strong>Found on:</strong></p>
+      <ul>
+        <li>Switch ports</li>
+        <li>Router interfaces</li>
+        <li>NIC (Network Interface Cards)</li>
+        <li>Wireless access points</li>
+      </ul>
+    
+      <img
+        src="../../assets/images/Cisco-LED-lights-cisco-switches.jpg"
+        alt="Cisco Switch LED Indicators"
+        class="content-image"
+      />
+    
+      <h2 class="section-heading">🎨 Link Light Colors Explained</h2>
+    
+      <h3 class="sub-heading">🟢 GREEN LIGHT — NORMAL / WORKING</h3>
+    
+      <p><strong>What Green means:</strong></p>
+      <ul>
+        <li>Physical connection is successful</li>
+        <li>Port is enabled</li>
+        <li>No error on the link</li>
+        <li>Device is ready to communicate</li>
+      </ul>
+    
+      <div class="info-card">
+        Green = Everything is OK
+      </div>
+    
+      <p><strong>Real-life examples:</strong></p>
+      <ul>
+        <li>Home router LAN port → Green → Internet works</li>
+        <li>Office PC → Switch → Router → All ports green → Network stable</li>
+      </ul>
+    
+      <p><strong>Cisco Packet Tracer example:</strong></p>
+      <ul>
+        <li>Connect PC to switch</li>
+        <li>After a few seconds, LED turns green</li>
+        <li>Ping works successfully</li>
+      </ul>
+    
+      <div class="info-card">
+        Solid Green = Connected, no traffic<br>
+        Blinking Green = Data transfer happening
+      </div>
+    
+      <div class="exam-tip">
+        If the question says “LED is green”, assume the link is good unless stated otherwise.
+      </div>
+    
+      <h3 class="sub-heading">🟠 AMBER / ORANGE LIGHT — WAITING / BLOCKED / ISSUE</h3>
+    
+      <p><strong>What Amber means:</strong></p>
+      <ul>
+        <li>Port is initializing</li>
+        <li>Spanning Tree Protocol (STP) is blocking</li>
+        <li>Security violation</li>
+        <li>Configuration issue</li>
+      </ul>
+    
+      <div class="info-card">
+        Amber does not always mean failure, but it always needs attention.
+      </div>
+    
+      <p><strong>Real-life example:</strong></p>
+      <ul>
+        <li>New PC plugged into office switch</li>
+        <li>Port shows orange for ~30 seconds</li>
+        <li>Then turns green</li>
+      </ul>
+    
+      <p><strong>Reason:</strong> STP prevents network loops before allowing traffic.</p>
+    
+      <p><strong>Cisco Packet Tracer example:</strong></p>
+      <ul>
+        <li>Switch-to-switch connection</li>
+        <li>Port turns orange</li>
+        <li>After delay → turns green</li>
+      </ul>
+    
+      <div class="info-card">
+        Beginners think: “Cable is wrong” ❌<br>
+        Actual reason: “STP is working” ✅
+      </div>
+    
+      <p><strong>Problem scenarios with Amber:</strong></p>
+      <ul>
+        <li>Wrong VLAN</li>
+        <li>Port security violation</li>
+        <li>Port not in forwarding state</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Amber = Port is not forwarding traffic yet
+      </div>
+    
+      <h3 class="sub-heading">🔴 RED LIGHT — CRITICAL FAILURE (RARE)</h3>
+    
+      <p><strong>What Red means:</strong></p>
+      <ul>
+        <li>Serious hardware issue</li>
+        <li>Port or device failure</li>
+        <li>Power supply problem</li>
+      </ul>
+    
+      <p><strong>Mostly seen in:</strong></p>
+      <ul>
+        <li>Enterprise routers</li>
+        <li>Modular switches</li>
+      </ul>
+    
+      <p><strong>Real-life example:</strong></p>
+      <ul>
+        <li>Data center switch power LED turns red</li>
+        <li>Switch shuts down → Network outage</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Red LED = Device or port failure
+      </div>
+    
+      <h3 class="sub-heading">⚫ NO LIGHT — NO LINK / NO POWER</h3>
+    
+      <p><strong>What No Light means:</strong></p>
+      <ul>
+        <li>Cable unplugged</li>
+        <li>Device powered off</li>
+        <li>Port administratively disabled</li>
+        <li>Faulty cable or NIC</li>
+      </ul>
+    
+      <p><strong>Real-life example:</strong></p>
+      <ul>
+        <li>PC not connecting</li>
+        <li>Ethernet LED OFF</li>
+        <li>Loose cable → Fix cable → Green light appears</li>
+      </ul>
+    
+      <p><strong>Packet Tracer example:</strong></p>
+      <ul>
+        <li>Cable removed → No LED</li>
+        <li>Port shutdown command → No LED</li>
+      </ul>
+    
+      <div class="exam-tip">
+        No light = Check physical connection first
+      </div>
+    
+      <h2 class="section-heading">📊 Quick Comparison Table (Exam Ready)</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>LED Color</th>
+            <th>Meaning</th>
+            <th>Network State</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🟢 Green</td>
+            <td>Normal</td>
+            <td>Working</td>
+          </tr>
+          <tr>
+            <td>🟠 Amber</td>
+            <td>Blocked / Initializing</td>
+            <td>Check configuration</td>
+          </tr>
+          <tr>
+            <td>🔴 Red</td>
+            <td>Hardware failure</td>
+            <td>Critical</td>
+          </tr>
+          <tr>
+            <td>⚫ Off</td>
+            <td>No link</td>
+            <td>Cable / power issue</td>
+          </tr>
+        </tbody>
+      </table>
+    
+    </section>
+    <section class="content-section">
+
+      <h1 class="main-heading">✨ Blinking vs Solid States</h1>
+    
+      <p class="intro-text">
+        Understanding blinking vs solid LEDs tells you whether data is flowing or not.
+        This is a core CCST exam topic and extremely useful in real-world troubleshooting
+        on devices from Cisco Systems.
+      </p>
+    
+      <h2 class="section-heading">🔌 What Do LED States Mean?</h2>
+    
+      <p>
+        After the link light color confirms the connection (green or amber),
+        the LED behavior (solid or blinking) tells you what the link is doing.
+      </p>
+    
+      <!-- SOLID GREEN -->
+      <h2 class="section-heading">🔵 SOLID LIGHT — LINK PRESENT, NO DATA</h2>
+    
+      <ul>
+        <li>Physical link is up</li>
+        <li>Port is ready</li>
+        <li>No data is currently passing</li>
+      </ul>
+    
+      <div class="info-card">
+        Connection exists, but it is quiet.
+      </div>
+    
+      <img
+        src="../../assets/images/solid-green-ethernet-port.webp"
+        alt="Solid Green Ethernet Port"
+        class="content-image"
+      />
+    
+      <img
+        src="../../assets/images/solid-green-network-device-static-leds.webp"
+        alt="Solid Green Static LEDs on Network Device"
+        class="content-image"
+      />
+    
+      <p><strong>Packet Tracer:</strong> PC connected but idle → LED stays solid green</p>
+    
+      <div class="exam-tip">
+        Solid LED ≠ problem. It means idle link.
+      </div>
+    
+      <!-- BLINKING GREEN -->
+      <h2 class="section-heading">✨ BLINKING LIGHT — DATA IS FLOWING</h2>
+    
+      <ul>
+        <li>Data is being transmitted</li>
+        <li>Traffic is flowing</li>
+        <li>Link is actively used</li>
+      </ul>
+    
+      <div class="info-card">
+        Packets are moving!
+      </div>
+    
+      <img
+        src="../../assets/images/blinking-light-LAN-ports-LED.png"
+        alt="Blinking Green Ethernet LED"
+        class="content-image"
+      />
+    
+      <img
+        src="../../assets/images/blinking-light-Switch-ws-c2960x.jpg"
+        alt="Blinking Switch Port LEDs"
+        class="content-image"
+      />
+    
+      <p><strong>Packet Tracer:</strong> Ping running → LEDs blink continuously</p>
+    
+      <div class="exam-tip">
+        Blinking = healthy traffic
+      </div>
+    
+      <!-- GREEN COMPARISON -->
+      <h2 class="section-heading">🟢 Solid Green vs Blinking Green</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>State</th>
+            <th>Meaning</th>
+            <th>Network OK?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Solid Green</td>
+            <td>Link present, idle</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>Blinking Green</td>
+            <td>Data transfer</td>
+            <td>✅ Yes</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <!-- AMBER STATES -->
+      <h2 class="section-heading">🟠 Amber Blinking vs Solid Amber</h2>
+    
+      <h3 class="sub-heading">🟠 Solid Amber</h3>
+      <ul>
+        <li>Port blocked</li>
+        <li>Not forwarding traffic</li>
+        <li>Usually due to STP</li>
+      </ul>
+    
+      <img
+        src="../../assets/images/solid-green-syst-and-rps-amber-stable.jpg"
+        alt="Solid Amber LED on Cisco Switch"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">🟠 Blinking Amber</h3>
+      <ul>
+        <li>Port initializing</li>
+        <li>Temporary state</li>
+        <li>STP convergence</li>
+      </ul>
+    
+      <img
+        src="../../assets/images/blinking-amber-switch-port.png"
+        alt="Blinking Amber Switch Port"
+        class="content-image"
+      />
+    
+      <img
+        src="../../assets/images/blinking-amber-catalyst-2960x-24ts-l.jpg"
+        alt="Blinking Amber Cisco Catalyst Switch"
+        class="content-image"
+      />
+    
+      <img
+        src="../../assets/images/blinking-amber-cisco-nexcus-9300.png"
+        alt="Blinking Amber Cisco Nexus Switch"
+        class="content-image"
+      />
+    
+      <img
+        src="../../assets/images/blinking-light-Ethernet_LEDs_BlinkingAmber.gif"
+        alt="Blinking Amber Ethernet LED Animation"
+        class="content-image"
+      />
+    
+      <div class="exam-tip">
+        Amber = Not forwarding traffic yet
+      </div>
+    
+      <!-- OFF STATE -->
+      <h2 class="section-heading">⚫ OFF vs BLINKING</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>LED State</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Off</td>
+            <td>No link / No power</td>
+          </tr>
+          <tr>
+            <td>Blinking</td>
+            <td>Active traffic</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <!-- TROUBLESHOOTING -->
+      <h2 class="section-heading">🧠 Real-World Troubleshooting Scenarios</h2>
+    
+      <h3 class="sub-heading">🔧 Internet Slow</h3>
+      <p>LED blinking very fast → Network congestion → Check bandwidth</p>
+    
+      <h3 class="sub-heading">🔧 Can’t Ping</h3>
+      <p>LED solid green, no blinking → Check IP / firewall</p>
+    
+      <h3 class="sub-heading">🔧 New Switch Connection</h3>
+      <p>LED blinking amber → Wait for STP convergence</p>
+    
+      <div class="exam-tip">
+        🟢 Solid = Silent<br>
+        ✨ Blinking = Busy<br>
+        🟠 Amber = Attention<br>
+        ⚫ Off = Offline
+      </div>
+    
+    </section>
+    
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
     <a href="home.html">⬅ Back</a>
-    <a href="cisco-device-indicators.html">Next ➡</a>
+    <a href="network-diagrams-cabling.html">Next ➡</a>
   </nav>
 
   <!-- External Script -->

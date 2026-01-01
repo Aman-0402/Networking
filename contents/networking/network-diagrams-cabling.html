@@ -14,21 +14,758 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1></h1>
-    <p class="subtitle"></p>
+    <h1>Cabling Using Network Diagrams</h1>
+    <p class="subtitle">Understand network cabling using diagrams, including patch cables,
+      switches, routers, small topologies, and power or rack layouts.</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
+    <section class="content-section">
 
+      <h1 class="main-heading">🔌 Cabling Using Network Diagrams</h1>
+      <h2 class="section-heading">○ Patch Cables</h2>
+    
+      <p class="intro-text">
+        Cabling is the physical foundation of networking.
+        In network diagrams, patch cables are the most commonly used cables
+        to show and implement real connections—especially in labs, offices,
+        and Cisco Packet Tracer environments.
+      </p>
+    
+      <h2 class="section-heading">🧠 What Is a Patch Cable?</h2>
+    
+      <p>
+        A patch cable is a short Ethernet cable used to connect network devices
+        over short distances.
+      </p>
+    
+      <p><strong>Commonly used to connect:</strong></p>
+      <ul>
+        <li>PC → Switch</li>
+        <li>Switch → Router</li>
+        <li>Switch → Patch Panel</li>
+        <li>Switch → Switch</li>
+      </ul>
+    
+      <div class="info-card">
+        Patch cables are heavily used in Cisco Systems environments.
+      </div>
+    
+      <h2 class="section-heading">🧵 Types of Patch Cables (Based on Wiring)</h2>
+    
+      <img
+        src="../../assets/images/Types of Patch Cables 1.webp"
+        alt="Types of Patch Cables Diagram 1"
+        class="content-image"
+      />
+    
+      <img
+        src="../../assets/images/Types of Patch Cables 2.jpg"
+        alt="Types of Patch Cables Diagram 2"
+        class="content-image"
+      />
+    
+      <img
+        src="../../assets/images/Types of Patch Cables 3.jpeg"
+        alt="Types of Patch Cables Diagram 3"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">1️⃣ Straight-Through Patch Cable (MOST USED)</h3>
+    
+      <p><strong>What it is:</strong></p>
+      <ul>
+        <li>Same wiring on both ends</li>
+        <li>T568A ↔ T568A or T568B ↔ T568B</li>
+      </ul>
+    
+      <div class="info-card">
+        Used to connect <strong>unlike devices</strong>.
+      </div>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Device A</th>
+            <th>Device B</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PC</td>
+            <td>Switch</td>
+          </tr>
+          <tr>
+            <td>Switch</td>
+            <td>Router</td>
+          </tr>
+          <tr>
+            <td>PC</td>
+            <td>Hub</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <div class="exam-tip">
+        Rule to remember: Different devices → Straight cable
+      </div>
+    
+      <h3 class="sub-heading">2️⃣ Crossover Patch Cable</h3>
+    
+      <p><strong>What it is:</strong></p>
+      <ul>
+        <li>Different wiring on each end</li>
+        <li>T568A ↔ T568B</li>
+      </ul>
+    
+      <div class="info-card">
+        Used to connect <strong>like devices</strong>.
+      </div>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Device A</th>
+            <th>Device B</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PC</td>
+            <td>PC</td>
+          </tr>
+          <tr>
+            <td>Switch</td>
+            <td>Switch</td>
+          </tr>
+          <tr>
+            <td>Router</td>
+            <td>Router</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <div class="exam-tip">
+        Modern switches support Auto-MDI/MDIX,
+        but exams still test crossover logic.
+      </div>
+    
+      <h2 class="section-heading">🗺️ Patch Cables in Network Diagrams</h2>
+    
+      <p><strong>How patch cables are shown:</strong></p>
+      <ul>
+        <li>Lines represent cables</li>
+        <li>Straight line = Ethernet patch cable</li>
+        <li>Labels show port numbers and cable type</li>
+      </ul>
+    
+      <img
+        src="../../assets/images/Patch Cables in Network Diagrams.png"
+        alt="Patch Cables in Network Diagrams"
+        class="content-image"
+      />
+    
+      <pre class="flow-box">
+    PC ───(Patch Cable)─── Switch ───(Patch Cable)─── Router
+      </pre>
+    
+      <h2 class="section-heading">🧪 Cisco Packet Tracer – Patch Cable Usage</h2>
+    
+      <img
+        src="../../assets/images/cisco-1.jpg"
+        alt="Cisco Packet Tracer Patch Cable Step 1"
+        class="content-image"
+      />
+    
+      <img
+        src="../../assets/images/cisco -2.png"
+        alt="Cisco Packet Tracer Patch Cable Step 2"
+        class="content-image"
+      />
+    
+      <img
+        src="../../assets/images/cisco-3.png"
+        alt="Cisco Packet Tracer Patch Cable Step 3"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">🔧 Step-by-Step (Exam + Lab)</h3>
+    
+      <ol>
+        <li>Click <strong>Connections (⚡)</strong></li>
+        <li>Select <strong>Copper Straight-Through</strong></li>
+        <li>Click <strong>PC → FastEthernet0</strong></li>
+        <li>Click <strong>Switch → FastEthernet0/1</strong></li>
+        <li>Wait → LED turns green</li>
+      </ol>
+    
+      <div class="info-card">
+        For switch-to-switch connections, choose <strong>Copper Crossover</strong>.
+      </div>
+    
+      <h2 class="section-heading">📊 Patch Cable Categories (Speed Awareness)</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Speed Support</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cat5e</td>
+            <td>1 Gbps</td>
+          </tr>
+          <tr>
+            <td>Cat6</td>
+            <td>1–10 Gbps</td>
+          </tr>
+          <tr>
+            <td>Cat6a</td>
+            <td>10 Gbps</td>
+          </tr>
+          <tr>
+            <td>Cat7</td>
+            <td>10+ Gbps</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <div class="info-card">
+        Higher category = better shielding and higher speed.
+      </div>
+    
+      <h2 class="section-heading">⚠️ Common Cabling Mistakes (Very Important)</h2>
+    
+      <ul>
+        <li>Using crossover instead of straight cable</li>
+        <li>Wrong port selection</li>
+        <li>Damaged patch cable</li>
+        <li>Exceeding 100m Ethernet limit</li>
+      </ul>
+    
+      <h2 class="section-heading">🧠 Real-World Troubleshooting Example</h2>
+    
+      <p><strong>Problem:</strong> PC not connecting</p>
+      <ul>
+        <li>No LED light</li>
+        <li>Diagram shows PC → Switch</li>
+        <li>✔ Use straight-through patch cable</li>
+      </ul>
+    
+    </section>
+    <section class="content-section">
+
+      <h1 class="main-heading">🔀 Switches & Routers</h1>
+    
+      <p class="intro-text">
+        Switches and routers are the core building blocks of any network.
+        If you understand what they do, where they work, and how traffic flows through them,
+        networking becomes easy—both for CCST exams and real networks.
+      </p>
+    
+      <div class="info-card">
+        Widely used in infrastructures built with Cisco Systems devices.
+      </div>
+    
+      <!-- ================= SWITCH ================= -->
+      <h2 class="section-heading">🔁 PART 1: Switch</h2>
+    
+      <img src="../../assets/images/Switch1.png" alt="Network Switch Front View" class="content-image" />
+      <img src="../../assets/images/Switch2.avif" alt="Cisco Switch Example" class="content-image" />
+      <img src="../../assets/images/Switch3.jpg" alt="Enterprise Network Switch" class="content-image" />
+      <img src="../../assets/images/Switch4.png" alt="Switch Ports and LEDs" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is a Switch?</h3>
+      <p>
+        A switch connects multiple devices within the same local network (LAN)
+        and forwards data only to the intended device.
+      </p>
+    
+      <div class="info-card">
+        Operates mainly at <strong>OSI Layer 2 (Data Link Layer)</strong>
+      </div>
+    
+      <h3 class="sub-heading">🧠 How a Switch Works (Step-by-Step)</h3>
+    
+      <ol>
+        <li>PC sends data</li>
+        <li>Switch reads destination MAC address</li>
+        <li>Looks up MAC address table</li>
+        <li>Forwards data only to the correct port</li>
+      </ol>
+    
+      <div class="info-card">
+        This reduces unnecessary traffic and improves performance.
+      </div>
+    
+      <h3 class="sub-heading">🧪 Example (Office LAN)</h3>
+    
+      <pre class="flow-box">
+    PC1 ─┐
+    PC2 ─┼── Switch ─── Printer
+    PC3 ─┘
+      </pre>
+    
+      <ul>
+        <li>All devices communicate locally</li>
+        <li>No internet routing required</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧵 Switch Uses Patch Cables</h3>
+    
+      <ul>
+        <li>PC → Switch (Straight-through)</li>
+        <li>Printer → Switch</li>
+        <li>Server → Switch</li>
+      </ul>
+    
+      <h3 class="sub-heading">✅ Advantages of Switch</h3>
+      <ul>
+        <li>Fast LAN communication</li>
+        <li>Reduces collisions</li>
+        <li>More secure than hubs</li>
+      </ul>
+    
+      <h3 class="sub-heading">❌ Limitations</h3>
+      <ul>
+        <li>Cannot connect different networks</li>
+        <li>Cannot route IP packets</li>
+        <li>No internet decision-making</li>
+      </ul>
+    
+      <!-- ================= ROUTER ================= -->
+      <h2 class="section-heading">🌐 PART 2: Router</h2>
+    
+      <img src="../../assets/images/Router1.jpg" alt="Network Router Front View" class="content-image" />
+      <img src="../../assets/images/Router2.avif" alt="Cisco Router Example" class="content-image" />
+      <img src="../../assets/images/Router3.png" alt="Router Ports Diagram" class="content-image" />
+      <img src="../../assets/images/Router4.webp" alt="Enterprise Router" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is a Router?</h3>
+      <p>
+        A router connects different networks and decides where data should go next.
+      </p>
+    
+      <div class="info-card">
+        Operates at <strong>OSI Layer 3 (Network Layer)</strong>
+      </div>
+    
+      <h3 class="sub-heading">🧠 How a Router Works (Step-by-Step)</h3>
+    
+      <ol>
+        <li>Receives packet</li>
+        <li>Reads destination IP address</li>
+        <li>Checks routing table</li>
+        <li>Forwards packet to next network</li>
+      </ol>
+    
+      <div class="info-card">
+        Router works like a <strong>GPS for data</strong>.
+      </div>
+    
+      <h3 class="sub-heading">🧪 Example (Home Network)</h3>
+    
+      <pre class="flow-box">
+    PC → Switch → Router → Internet
+      </pre>
+    
+      <ul>
+        <li>Router connects LAN to ISP</li>
+        <li>Assigns IP addresses (DHCP)</li>
+        <li>Uses NAT for internet access</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧵 Router Connections</h3>
+      <ul>
+        <li>Switch → Router</li>
+        <li>Router → ISP</li>
+        <li>Router → Router (WAN)</li>
+      </ul>
+    
+      <h3 class="sub-heading">✅ Advantages of Router</h3>
+      <ul>
+        <li>Connects different networks</li>
+        <li>Provides internet access</li>
+        <li>Supports NAT, DHCP, firewall</li>
+      </ul>
+    
+      <h3 class="sub-heading">❌ Limitations</h3>
+      <ul>
+        <li>Slower than switches (packet decisions)</li>
+        <li>More expensive</li>
+        <li>Requires configuration</li>
+      </ul>
+    
+      <!-- ================= COMPARISON ================= -->
+      <h2 class="section-heading">🔍 Switch vs Router (Exam-Ready)</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Switch</th>
+            <th>Router</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OSI Layer</td>
+            <td>Layer 2</td>
+            <td>Layer 3</td>
+          </tr>
+          <tr>
+            <td>Uses</td>
+            <td>MAC Address</td>
+            <td>IP Address</td>
+          </tr>
+          <tr>
+            <td>Connects</td>
+            <td>Devices</td>
+            <td>Networks</td>
+          </tr>
+          <tr>
+            <td>Internet Access</td>
+            <td>❌ No</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>Speed</td>
+            <td>Very fast</td>
+            <td>Slower</td>
+          </tr>
+          <tr>
+            <td>Example</td>
+            <td>Office LAN</td>
+            <td>Home Router</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <!-- ================= PACKET TRACER ================= -->
+      <h2 class="section-heading">🧪 Cisco Packet Tracer – Where You Use Them</h2>
+    
+      <img src="../../assets/images/Switches & Routers cisco 1.jpg" alt="Cisco Packet Tracer Switch and Router Lab 1" class="content-image" />
+      <img src="../../assets/images/Switches & Routers cisco 2.jpg" alt="Cisco Packet Tracer Switch and Router Lab 2" class="content-image" />
+    
+      <pre class="flow-box">
+    PC ─ Switch ─ Router ─ ISP
+      </pre>
+    
+      <ul>
+        <li>Switch LEDs show local activity</li>
+        <li>Router interfaces show network routing</li>
+      </ul>
+    
+      <!-- ================= TROUBLESHOOTING ================= -->
+      <h2 class="section-heading">🧠 Real-World Troubleshooting Scenarios</h2>
+    
+      <h3 class="sub-heading">🔧 Scenario 1: PCs Can’t Talk to Each Other</h3>
+      <ul>
+        <li>Check switch</li>
+        <li>Check cables</li>
+        <li>Verify MAC learning</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔧 Scenario 2: PCs Can Talk but No Internet</h3>
+      <ul>
+        <li>Switch is OK</li>
+        <li>Router misconfigured</li>
+        <li>Check gateway, NAT, routing</li>
+      </ul>
+    
+      <div class="exam-tip">
+        <strong>CCST Memory Tricks:</strong><br>
+        Switch = Local traffic manager<br>
+        Router = Network traffic director<br><br>
+        <strong>Switch talks MAC<br>
+        Router talks IP</strong>
+      </div>
+    
+    </section>
+    <section class="content-section">
+
+      <h1 class="main-heading">🧩 Small Topologies</h1>
+    
+      <p class="intro-text">
+        Small network topologies are simple layouts used in homes, labs, classrooms,
+        and CCST practice. They help you understand how devices connect and how data
+        flows before moving to large networks.
+      </p>
+    
+      <div class="info-card">
+        Commonly built using switches and routers from Cisco Systems.
+      </div>
+    
+      <h2 class="section-heading">⭐ What Is a Small Topology?</h2>
+    
+      <ul>
+        <li>Uses few devices (PCs, switch, router)</li>
+        <li>Covers short distances</li>
+        <li>Easy to design, troubleshoot, and test</li>
+      </ul>
+    
+      <!-- ================= POINT TO POINT ================= -->
+      <h2 class="section-heading">1️⃣ Point-to-Point Topology (Smallest Possible)</h2>
+    
+      <img
+        src="../../assets/images/Point-to-Point Topology.png"
+        alt="Point to Point Topology"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">📌 Structure</h3>
+    
+      <pre class="flow-box">
+    PC ─── PC
+      </pre>
+    
+      <h3 class="sub-heading">🔹 Description</h3>
+      <ul>
+        <li>Direct connection between two devices</li>
+        <li>No switch or router required</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔧 Cable Used</h3>
+      <ul>
+        <li>Crossover cable (older devices)</li>
+        <li>Straight-through cable (Auto-MDI/MDIX devices)</li>
+      </ul>
+    
+      <h3 class="sub-heading">✅ Where Used</h3>
+      <ul>
+        <li>Quick file sharing</li>
+        <li>NIC testing</li>
+        <li>Simple labs</li>
+      </ul>
+    
+      <h3 class="sub-heading">❌ Limitation</h3>
+      <ul>
+        <li>Only two devices</li>
+        <li>No scalability</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Simplest topology = Point-to-Point
+      </div>
+    
+      <!-- ================= SMALL STAR ================= -->
+      <h2 class="section-heading">2️⃣ Small Star Topology (PCs + One Switch)</h2>
+    
+      <img
+        src="../../assets/images/Small Star Topology.png"
+        alt="Small Star Topology"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">📌 Structure</h3>
+    
+      <pre class="flow-box">
+    PC1 ─┐
+    PC2 ─┼── Switch
+    PC3 ─┘
+      </pre>
+    
+      <h3 class="sub-heading">🔹 Description</h3>
+      <ul>
+        <li>All devices connect to a central switch</li>
+        <li>Most common LAN topology</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔧 Cable Used</h3>
+      <ul>
+        <li>Straight-through patch cables</li>
+      </ul>
+    
+      <h3 class="sub-heading">✅ Advantages</h3>
+      <ul>
+        <li>Easy to manage</li>
+        <li>One cable failure doesn’t affect others</li>
+        <li>Fast communication</li>
+      </ul>
+    
+      <h3 class="sub-heading">❌ Limitation</h3>
+      <ul>
+        <li>If switch fails → entire network down</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Most used topology in LAN = Star
+      </div>
+    
+      <!-- ================= STAR + ROUTER ================= -->
+      <h2 class="section-heading">3️⃣ Small Star + Router (Home / Office Network)</h2>
+    
+      <img
+        src="../../assets/images/Small Star + Router.webp"
+        alt="Small Star with Router Topology"
+        class="content-image"
+      />
+    
+      <img
+        src="../../assets/images/Small Star + Router 1.png"
+        alt="Home Network Star Router Topology"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">📌 Structure</h3>
+    
+      <pre class="flow-box">
+    PCs ─ Switch ─ Router ─ Internet
+      </pre>
+    
+      <h3 class="sub-heading">🔹 Description</h3>
+      <ul>
+        <li>Switch handles local communication</li>
+        <li>Router connects LAN to the Internet</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔧 Cables Used</h3>
+      <ul>
+        <li>PC → Switch (Straight-through)</li>
+        <li>Switch → Router (Straight-through)</li>
+      </ul>
+    
+      <h3 class="sub-heading">✅ Used In</h3>
+      <ul>
+        <li>Homes</li>
+        <li>Small offices</li>
+        <li>Training labs</li>
+      </ul>
+    
+      <div class="info-card">
+        Home Wi-Fi routers usually combine <strong>router + switch</strong>.
+      </div>
+    
+      <!-- ================= BUS ================= -->
+      <h2 class="section-heading">4️⃣ Bus Topology (Very Small / Legacy)</h2>
+    
+      <img
+        src="../../assets/images/Bus-Topology.jpg"
+        alt="Bus Topology"
+        class="content-image"
+      />
+    
+      <img
+        src="../../assets/images/The-parts-of-the-bus-network-topology-BNC-connector-terminator-T-connector-and-network-card.webp"
+        alt="Bus Topology Components"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">📌 Structure</h3>
+    
+      <pre class="flow-box">
+    PC ─ PC ─ PC ─ PC
+      </pre>
+    
+      <h3 class="sub-heading">🔹 Description</h3>
+      <ul>
+        <li>All devices share one cable</li>
+        <li>Used in old coaxial Ethernet networks</li>
+      </ul>
+    
+      <h3 class="sub-heading">❌ Problems</h3>
+      <ul>
+        <li>Collisions</li>
+        <li>Difficult troubleshooting</li>
+        <li>Single cable break stops entire network</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Bus topology = Not used today
+      </div>
+    
+      <!-- ================= RING ================= -->
+      <h2 class="section-heading">5️⃣ Ring Topology (Small Lab Concept)</h2>
+    
+      <h3 class="sub-heading">📌 Structure</h3>
+    
+      <pre class="flow-box">
+    PC → PC → PC → PC → (Back to First)
+      </pre>
+    
+      <h3 class="sub-heading">🔹 Description</h3>
+      <ul>
+        <li>Data moves in one direction</li>
+        <li>Each device forwards data to next</li>
+      </ul>
+    
+      <h3 class="sub-heading">❌ Limitation</h3>
+      <ul>
+        <li>One device failure breaks the ring</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Ring topology is mostly theoretical for exams.
+      </div>
+    
+      <!-- ================= COMPARISON ================= -->
+      <h2 class="section-heading">📊 Small Topologies Comparison (Exam-Ready)</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Topology</th>
+            <th>Devices</th>
+            <th>Used Today</th>
+            <th>Key Point</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Point-to-Point</td>
+            <td>2</td>
+            <td>✅ Yes</td>
+            <td>Direct link</td>
+          </tr>
+          <tr>
+            <td>Star</td>
+            <td>Many</td>
+            <td>✅ Yes</td>
+            <td>Central switch</td>
+          </tr>
+          <tr>
+            <td>Star + Router</td>
+            <td>Many</td>
+            <td>✅ Yes</td>
+            <td>Internet access</td>
+          </tr>
+          <tr>
+            <td>Bus</td>
+            <td>Many</td>
+            <td>❌ No</td>
+            <td>Single cable</td>
+          </tr>
+          <tr>
+            <td>Ring</td>
+            <td>Many</td>
+            <td>❌ Rare</td>
+            <td>Circular path</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <h2 class="section-heading">🧠 How to Identify in Exams</h2>
+    
+      <ul>
+        <li>One central switch → Star</li>
+        <li>Two devices only → Point-to-Point</li>
+        <li>Internet involved → Router present</li>
+        <li>Single shared cable → Bus</li>
+      </ul>
+    
+    </section>
+    
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
     <a href="home.html">⬅ Back</a>
-    <a href="cisco-device-indicators.html">Next ➡</a>
+    <a href="network-device-ports.html">Next ➡</a>
   </nav>
 
   <!-- External Script -->
