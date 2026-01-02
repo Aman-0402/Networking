@@ -14,21 +14,304 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1></h1>
-    <p class="subtitle"></p>
+    <h1>Network Device Ports</h1>
+    <p class="subtitle">Explore common network ports such as console, serial, Ethernet,
+      fiber, SFPs, USB ports, and Power over Ethernet (PoE)..</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
+    <section class="content-section">
 
+      <h1 class="main-heading">🔌 Network Device Ports</h1>
+    
+      <p class="intro-text">
+        Network devices such as switches, routers, and firewalls have different ports,
+        each designed for a specific purpose. Knowing which port to use, when, and why
+        is critical for CCST exams, Cisco Packet Tracer, and real installations—
+        especially on devices from Cisco Systems.
+      </p>
+    
+      <!-- ================= CONSOLE ================= -->
+      <h2 class="section-heading">🖥️ 1️⃣ Console Port (Management Port)</h2>
+    
+      <img src="../../assets/images/Console Port.jpg" alt="Cisco Console Port" class="content-image" />
+      <img src="../../assets/images/Console Port 1.jpg" alt="Console Cable Connection" class="content-image" />
+      <img src="../../assets/images/Console Port 2.png" alt="Router Console Port" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is It?</h3>
+      <ul>
+        <li>Used for initial device configuration</li>
+        <li>Out-of-band management (no network required)</li>
+        <li>Direct access to device CLI</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔧 Cable Used</h3>
+      <ul>
+        <li>Console (rollover) cable</li>
+        <li>RJ-45 ↔ USB (modern laptops)</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧠 When Do You Use It?</h3>
+      <ul>
+        <li>First-time setup</li>
+        <li>Password recovery</li>
+        <li>When the network is down</li>
+      </ul>
+    
+      <pre class="flow-box">
+    Laptop ── Console Cable ── Router / Switch
+      </pre>
+    
+      <div class="exam-tip">
+        Console port = Device setup & troubleshooting
+      </div>
+    
+      <!-- ================= SERIAL ================= -->
+      <h2 class="section-heading">🔁 2️⃣ Serial Port (WAN / Legacy)</h2>
+    
+      <img src="../../assets/images/Serial Port.jpg" alt="Serial Port on Router" class="content-image" />
+      <img src="../../assets/images/Serial Port 1.jpg" alt="DCE DTE Serial Cable" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is It?</h3>
+      <ul>
+        <li>Used for WAN connections</li>
+        <li>Common on older routers</li>
+        <li>Supports long-distance communication</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔧 Cable Used</h3>
+      <ul>
+        <li>DCE / DTE serial cable</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧠 Where You See It?</h3>
+      <ul>
+        <li>Router-to-router WAN links</li>
+        <li>Lab environments</li>
+      </ul>
+    
+      <pre class="flow-box">
+    Router ── Serial ── Router
+      </pre>
+    
+      <div class="exam-tip">
+        Serial ports are WAN interfaces
+      </div>
+    
+      <!-- ================= ETHERNET ================= -->
+      <h2 class="section-heading">🌐 3️⃣ Ethernet Ports (MOST COMMON)</h2>
+    
+      <img src="../../assets/images/Ethernet Ports.jpg" alt="Ethernet Ports on Network Device" class="content-image" />
+      <img src="../../assets/images/Ethernet Ports 1.avif" alt="RJ-45 Ethernet Ports" class="content-image" />
+      <img src="../../assets/images/Ethernet Ports 2.webp" alt="Ethernet Switch Ports" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is It?</h3>
+      <ul>
+        <li>Used for LAN communication</li>
+        <li>Uses RJ-45 connector</li>
+        <li>Found on all modern network devices</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔧 Cable Used</h3>
+      <ul>
+        <li>Ethernet patch cable</li>
+        <li>Straight-through</li>
+        <li>Crossover (legacy)</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧠 Speed Types</h3>
+      <ul>
+        <li>FastEthernet (100 Mbps)</li>
+        <li>GigabitEthernet (1 Gbps)</li>
+        <li>10 Gigabit Ethernet</li>
+      </ul>
+    
+      <pre class="flow-box">
+    PC ── Ethernet ── Switch ── Ethernet ── Router
+      </pre>
+    
+      <div class="exam-tip">
+        Ethernet = LAN data traffic
+      </div>
+    
+      <!-- ================= FIBER ================= -->
+      <h2 class="section-heading">4️⃣ Fiber Ports (High Speed & Long Distance)</h2>
+    
+      <img src="../../assets/images/Fiber Ports 1.jpg" alt="Fiber Ports on Switch" class="content-image" />
+      <img src="../../assets/images/Fiber Ports 2.jpg" alt="Fiber Optic Network Ports" class="content-image" />
+      <img src="../../assets/images/Fiber Ports 3.jpg" alt="SFP Fiber Ports" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is It?</h3>
+      <ul>
+        <li>Uses optical fiber</li>
+        <li>Very high speed</li>
+        <li>Very long distance</li>
+        <li>Immune to EMI</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔧 Connector Types</h3>
+      <ul>
+        <li>LC</li>
+        <li>SC</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧠 Used In</h3>
+      <ul>
+        <li>Data centers</li>
+        <li>Backbone links</li>
+        <li>Inter-building connections</li>
+      </ul>
+    
+      <pre class="flow-box">
+    Switch ── Fiber ── Core Switch
+      </pre>
+    
+      <div class="exam-tip">
+        Fiber = Fast + Long distance
+      </div>
+    
+      <!-- ================= SFP ================= -->
+      <h2 class="section-heading">🔌 5️⃣ SFPs (Small Form-factor Pluggable)</h2>
+    
+      <img src="../../assets/images/SFPs 1.avif" alt="SFP Module" class="content-image" />
+      <img src="../../assets/images/SFPs 2.jpg" alt="SFP Inserted in Switch" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is an SFP?</h3>
+      <ul>
+        <li>Removable transceiver module</li>
+        <li>Converts port to fiber or copper</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔧 Types</h3>
+      <ul>
+        <li>Fiber SFP (LC connector)</li>
+        <li>Copper SFP (RJ-45)</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧠 Why SFP Is Important?</h3>
+      <ul>
+        <li>Flexibility</li>
+        <li>Upgrade speed without changing device</li>
+      </ul>
+    
+      <pre class="flow-box">
+    Switch ── SFP ── Fiber Cable ── Switch
+      </pre>
+    
+      <div class="exam-tip">
+        SFP = Pluggable interface
+      </div>
+    
+      <!-- ================= USB ================= -->
+      <h2 class="section-heading">🔋 6️⃣ USB Ports (Management & Storage)</h2>
+    
+      <img src="../../assets/images/USB Port 1.jpg" alt="USB Port on Router" class="content-image" />
+      <img src="../../assets/images/USB Port 2.avif" alt="USB Storage on Network Device" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is It Used For?</h3>
+      <ul>
+        <li>Load or save configuration</li>
+        <li>Backup IOS / firmware</li>
+        <li>Store logs and files</li>
+      </ul>
+    
+      <div class="info-card">
+        Not used for network traffic
+      </div>
+    
+      <pre class="flow-box">
+    USB Drive ── Router USB ── Configuration Backup
+      </pre>
+    
+      <div class="exam-tip">
+        USB = File & config management
+      </div>
+    
+      <!-- ================= POE ================= -->
+      <h2 class="section-heading">⚡ 7️⃣ PoE (Power over Ethernet)</h2>
+    
+      <img src="../../assets/images/PoE 1.webp" alt="Power over Ethernet Diagram" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is PoE?</h3>
+      <ul>
+        <li>Ethernet cable carries data and power</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔧 Devices Powered by PoE</h3>
+      <ul>
+        <li>IP Phones</li>
+        <li>Wireless Access Points</li>
+        <li>CCTV cameras</li>
+        <li>IoT devices</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧠 Benefits</h3>
+      <ul>
+        <li>No separate power cable</li>
+        <li>Cleaner installation</li>
+      </ul>
+    
+      <pre class="flow-box">
+    PoE Switch ── Ethernet ── IP Phone
+      </pre>
+    
+      <div class="exam-tip">
+        PoE = Power + Data on the same cable
+      </div>
+    
+      <!-- ================= COMPARISON ================= -->
+      <h2 class="section-heading">📊 Quick Exam Comparison Table</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Port</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Console</td>
+            <td>Initial setup</td>
+          </tr>
+          <tr>
+            <td>Serial</td>
+            <td>WAN</td>
+          </tr>
+          <tr>
+            <td>Ethernet</td>
+            <td>LAN</td>
+          </tr>
+          <tr>
+            <td>Fiber</td>
+            <td>High-speed / Long distance</td>
+          </tr>
+          <tr>
+            <td>SFP</td>
+            <td>Flexible interface</td>
+          </tr>
+          <tr>
+            <td>USB</td>
+            <td>Config / Storage</td>
+          </tr>
+          <tr>
+            <td>PoE</td>
+            <td>Power + Data</td>
+          </tr>
+        </tbody>
+      </table>
+    
+    </section>
+    
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
     <a href="home.html">⬅ Back</a>
-    <a href="cisco-device-indicators.html">Next ➡</a>
+    <a href="routing-fundamentals.html">Next ➡</a>
   </nav>
 
   <!-- External Script -->

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title></title>
+  <title>Routing Fundamentals</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="../../assets/css/templatecss.css" />
@@ -14,21 +14,726 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1></h1>
-    <p class="subtitle"></p>
+    <h1>Routing Fundamentals</h1>
+    <p class="subtitle">Learn routing basics including default gateways, Layer 2 vs Layer 3
+      devices, and how local and remote networks communicate.</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
+    <section class="content-section">
 
+      <h1 class="main-heading">🌐 Routing Fundamentals – Default Gateway</h1>
+    
+      <p class="intro-text">
+        The default gateway is one of the most important routing concepts.
+        If you understand this properly, routing, internet access, and troubleshooting
+        become simple—both for CCST exams and real networks built on devices from Cisco Systems.
+      </p>
+    
+      <h2 class="section-heading">🚪 What Is a Default Gateway?</h2>
+    
+      <div class="exam-tip">
+        <strong>Definition (Exam-Ready):</strong><br>
+        A default gateway is the router IP address that a device uses
+        to send traffic outside its local network.
+      </div>
+    
+      <div class="info-card">
+        In simple words:<br>
+        “When I don’t know where to send data, I send it to the gateway.”
+      </div>
+    
+      <h2 class="section-heading">🧠 Why Default Gateway Is Needed</h2>
+    
+      <p>
+        A computer can communicate directly only with devices in the same network.
+        To reach other networks or the internet, it needs help from a router.
+      </p>
+    
+      <div class="info-card">
+        That router = <strong>Default Gateway</strong>
+      </div>
+    
+      <h2 class="section-heading">🗺️ How Default Gateway Works (Step-by-Step)</h2>
+    
+      <img
+        src="../../assets/images/How Default Gateway Works 1.webp"
+        alt="Default Gateway Working Diagram 1"
+        class="content-image"
+      />
+    
+      <img
+        src="../../assets/images/How Default Gateway Works 2.jpg"
+        alt="Default Gateway Working Diagram 2"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">Example Network</h3>
+    
+      <pre class="flow-box">
+    PC IP: 192.168.1.10
+    Subnet Mask: 255.255.255.0
+    Default Gateway: 192.168.1.1
+      </pre>
+    
+      <h3 class="sub-heading">Step-by-Step Flow</h3>
+    
+      <ol>
+        <li>PC tries to open google.com</li>
+        <li>Destination IP is not in local network</li>
+        <li>PC sends packet to default gateway</li>
+        <li>Router forwards packet to ISP / Internet</li>
+        <li>Response returns through the same path</li>
+      </ol>
+    
+      <div class="info-card">
+        Local traffic → Direct<br>
+        Outside traffic → Gateway
+      </div>
+    
+      <h2 class="section-heading">🏠 Real-Life Analogy (Very Important)</h2>
+    
+      <ul>
+        <li>Your house = Local network</li>
+        <li>You = PC</li>
+        <li>Main gate = Default gateway</li>
+        <li>Roads outside = Internet</li>
+      </ul>
+    
+      <div class="exam-tip">
+        To go outside your colony, you must exit through the main gate.
+      </div>
+    
+      <h2 class="section-heading">💻 Real-World Example (Home Network)</h2>
+    
+      <pre class="flow-box">
+    Laptop IP: 192.168.0.15
+    Router IP: 192.168.0.1
+    Default Gateway: 192.168.0.1
+      </pre>
+    
+      <ul>
+        <li>✔ Internet works</li>
+        <li>✔ Cloud apps accessible</li>
+        <li>❌ Wrong gateway → No internet</li>
+      </ul>
+    
+      <h2 class="section-heading">🧪 Cisco Packet Tracer Example</h2>
+    
+      <img
+        src="../../assets/images/Cisco Packet Tracer gateway.png"
+        alt="Cisco Packet Tracer Default Gateway Configuration"
+        class="content-image"
+      />
+    
+      <img
+        src="../../assets/images/Cisco Packet Tracer gateway1.jpg"
+        alt="Cisco Packet Tracer Gateway Test"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">PC Configuration Steps</h3>
+    
+      <ol>
+        <li>Click PC</li>
+        <li>Desktop → IP Configuration</li>
+        <li>Enter IP, Subnet Mask, Default Gateway</li>
+      </ol>
+    
+      <pre class="flow-box">
+    IP Address: 192.168.1.10
+    Subnet Mask: 255.255.255.0
+    Default Gateway: 192.168.1.1
+      </pre>
+    
+      <ul>
+        <li>Ping router → ✅</li>
+        <li>Ping another network → ✅</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Without gateway: Local ping works, Internet ping fails
+      </div>
+    
+      <h2 class="section-heading">❌ What Happens If Default Gateway Is Missing or Wrong?</h2>
+    
+      <h3 class="sub-heading">Scenario 1: Gateway Missing</h3>
+      <ul>
+        <li>Local devices reachable</li>
+        <li>Internet access fails</li>
+      </ul>
+    
+      <h3 class="sub-heading">Scenario 2: Wrong Gateway</h3>
+      <ul>
+        <li>Packets go nowhere</li>
+        <li>Request timed out errors</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Local works + Internet fails → Check default gateway
+      </div>
+    
+      <h2 class="section-heading">📊 Default Gateway vs IP Address vs Subnet</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Term</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IP Address</td>
+            <td>Identity of the device</td>
+          </tr>
+          <tr>
+            <td>Subnet Mask</td>
+            <td>Defines local network</td>
+          </tr>
+          <tr>
+            <td>Default Gateway</td>
+            <td>Exit point to other networks</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <div class="info-card">
+        All three must be correct for proper connectivity.
+      </div>
+    
+      <h2 class="section-heading">🧠 Default Gateway on Different Devices</h2>
+    
+      <ul>
+        <li><strong>Computers:</strong> Manual or via DHCP</li>
+        <li><strong>Mobile phones:</strong> Auto-configured via Wi-Fi router</li>
+        <li><strong>Routers:</strong> Default route (0.0.0.0/0)</li>
+      </ul>
+    
+      <h2 class="section-heading">🛣️ Advanced (Extra Knowledge – Exam Boost)</h2>
+    
+      <h3 class="sub-heading">Default Route on Router</h3>
+    
+      <pre class="flow-box">
+    0.0.0.0/0 → ISP Router
+      </pre>
+    
+      <div class="info-card">
+        Meaning: “Send all unknown traffic this way.”
+      </div>
+    
+      <div class="exam-tip">
+        PC uses <strong>default gateway</strong><br>
+        Router uses <strong>default route</strong>
+      </div>
+    
+    </section>
+    <section class="content-section">
+
+      <h1 class="main-heading">🧠 Layer 2 vs Layer 3 Devices</h1>
+    
+      <p class="intro-text">
+        Understanding Layer 2 and Layer 3 devices is a core networking concept.
+        It explains who talks using MAC addresses, who talks using IP addresses,
+        and who can reach the internet.
+      </p>
+    
+      <div class="info-card">
+        This topic is very important for CCST exams, Cisco Packet Tracer labs,
+        and real networks built using Cisco Systems devices.
+      </div>
+    
+      <!-- ================= OSI CONTEXT ================= -->
+      <h2 class="section-heading">📘 Quick OSI Context (Foundation)</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>OSI Layer</th>
+            <th>Name</th>
+            <th>What It Handles</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Layer 2</td>
+            <td>Data Link</td>
+            <td>MAC addresses, frames</td>
+          </tr>
+          <tr>
+            <td>Layer 3</td>
+            <td>Network</td>
+            <td>IP addresses, routing</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <div class="exam-tip">
+        Devices are classified based on which OSI layer they operate on.
+      </div>
+    
+      <!-- ================= LAYER 2 ================= -->
+      <h2 class="section-heading">🔵 Layer 2 Devices</h2>
+    
+      <img src="../../assets/images/Layer 2 Devices 1.jpg" alt="Layer 2 Switch Example" class="content-image" />
+      <img src="../../assets/images/Layer 2 Devices 2.jpg" alt="Layer 2 Network Devices" class="content-image" />
+      <img src="../../assets/images/Layer 2 Devices 3.webp" alt="Layer 2 Switching Concept" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is a Layer 2 Device?</h3>
+    
+      <p>
+        A Layer 2 device forwards data within the same network
+        using <strong>MAC addresses</strong>.
+      </p>
+    
+      <h3 class="sub-heading">🧠 Key Identity</h3>
+      <ul>
+        <li><strong>Uses:</strong> MAC Address</li>
+        <li><strong>Data Unit:</strong> Frame</li>
+        <li><strong>Scope:</strong> Local network (LAN)</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔁 Common Layer 2 Devices</h3>
+      <ul>
+        <li><strong>Switch (Most Important)</strong> – Learns MACs and forwards frames</li>
+        <li><strong>Bridge</strong> – Older technology, rarely used today</li>
+      </ul>
+    
+      <h3 class="sub-heading">⚙️ How a Layer 2 Switch Works (Step-by-Step)</h3>
+    
+      <pre class="flow-box">
+    PC1 (MAC A) → Switch → PC2 (MAC B)
+      </pre>
+    
+      <ol>
+        <li>Frame enters the switch</li>
+        <li>Switch reads destination MAC address</li>
+        <li>Looks up MAC address table</li>
+        <li>Forwards frame to correct port</li>
+      </ol>
+    
+      <div class="info-card">
+        If destination MAC is unknown, the switch floods the frame.
+      </div>
+    
+      <h3 class="sub-heading">🧪 Example (Office LAN)</h3>
+    
+      <pre class="flow-box">
+    PC ─┐
+    PC ─┼── Switch ─── Printer
+    PC ─┘
+      </pre>
+    
+      <ul>
+        <li>Fast communication</li>
+        <li>No IP routing</li>
+        <li>Same subnet</li>
+      </ul>
+    
+      <h3 class="sub-heading">❌ Limitations of Layer 2 Devices</h3>
+      <ul>
+        <li>Cannot connect different networks</li>
+        <li>Cannot route between subnets</li>
+        <li>Cannot access the internet alone</li>
+      </ul>
+    
+      <div class="exam-tip">
+        A Layer 2 switch always needs a router to go outside the LAN.
+      </div>
+    
+      <!-- ================= LAYER 3 ================= -->
+      <h2 class="section-heading">🟢 Layer 3 Devices</h2>
+    
+      <img src="../../assets/images/Layer 3 Devices 1.jpg" alt="Layer 3 Router Example" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is a Layer 3 Device?</h3>
+    
+      <p>
+        A Layer 3 device forwards data between different networks
+        using <strong>IP addresses</strong>.
+      </p>
+    
+      <h3 class="sub-heading">🧠 Key Identity</h3>
+      <ul>
+        <li><strong>Uses:</strong> IP Address</li>
+        <li><strong>Data Unit:</strong> Packet</li>
+        <li><strong>Scope:</strong> Inter-network (LAN ↔ WAN)</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔀 Common Layer 3 Devices</h3>
+      <ul>
+        <li><strong>Router (Most Important)</strong> – Connects networks and provides internet</li>
+        <li><strong>Layer 3 Switch</strong> – Switch + Router combined</li>
+      </ul>
+    
+      <h3 class="sub-heading">⚙️ How a Router Works (Step-by-Step)</h3>
+    
+      <pre class="flow-box">
+    PC → Switch → Router → Internet
+      </pre>
+    
+      <ol>
+        <li>Router receives packet</li>
+        <li>Reads destination IP address</li>
+        <li>Checks routing table</li>
+        <li>Forwards packet to next hop</li>
+      </ol>
+    
+      <h3 class="sub-heading">🧪 Example (Home Network)</h3>
+    
+      <pre class="flow-box">
+    Laptop → Wi-Fi Router → Internet
+      </pre>
+    
+      <div class="info-card">
+        Router is a Layer 3 device and acts as the default gateway.
+      </div>
+    
+      <!-- ================= L3 SWITCH ================= -->
+      <h2 class="section-heading">🧠 Layer 3 Switch</h2>
+    
+      <img src="../../assets/images/Layer 3 Switch 1.webp" alt="Layer 3 Switch Example" class="content-image" />
+      <img src="../../assets/images/Layer 3 Switch 2.jpg" alt="Layer 3 Switch Routing VLANs" class="content-image" />
+    
+      <h3 class="sub-heading">What It Does</h3>
+      <ul>
+        <li>Routes traffic between VLANs</li>
+        <li>Faster than traditional routers</li>
+        <li>Used inside enterprise LANs</li>
+      </ul>
+    
+      <pre class="flow-box">
+    VLAN 10 ─┐
+             ├─ Layer 3 Switch ─ Internet
+    VLAN 20 ─┘
+      </pre>
+    
+      <!-- ================= COMPARISON ================= -->
+      <h2 class="section-heading">🔍 Layer 2 vs Layer 3 (Exam-Ready Comparison)</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Layer 2 Device</th>
+            <th>Layer 3 Device</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OSI Layer</td>
+            <td>Layer 2</td>
+            <td>Layer 3</td>
+          </tr>
+          <tr>
+            <td>Uses</td>
+            <td>MAC Address</td>
+            <td>IP Address</td>
+          </tr>
+          <tr>
+            <td>Data Unit</td>
+            <td>Frame</td>
+            <td>Packet</td>
+          </tr>
+          <tr>
+            <td>Network Scope</td>
+            <td>Same LAN</td>
+            <td>Different networks</td>
+          </tr>
+          <tr>
+            <td>Internet Access</td>
+            <td>❌ No</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>Example</td>
+            <td>Switch</td>
+            <td>Router</td>
+          </tr>
+          <tr>
+            <td>Speed</td>
+            <td>Faster</td>
+            <td>Slightly slower</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <!-- ================= TROUBLESHOOTING ================= -->
+      <h2 class="section-heading">🧠 Real-World Troubleshooting Scenarios</h2>
+    
+      <h3 class="sub-heading">🔧 Scenario 1: PCs Can Talk, No Internet</h3>
+      <ul>
+        <li>Switch is working</li>
+        <li>Router missing or misconfigured</li>
+        <li>👉 Problem at Layer 3</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔧 Scenario 2: One PC Not Communicating</h3>
+      <ul>
+        <li>Router is OK</li>
+        <li>Switch port or MAC issue</li>
+        <li>👉 Problem at Layer 2</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Switch talks MAC<br>
+        Router talks IP
+      </div>
+    
+    </section>
+    <section class="content-section">
+
+      <h1 class="main-heading">🌍 Local vs Remote Networks</h1>
+    
+      <p class="intro-text">
+        Understanding local vs remote networks answers a simple but powerful question:
+        <strong>“Can my device send data directly, or does it need a router?”</strong>
+      </p>
+    
+      <div class="info-card">
+        This concept is at the heart of routing fundamentals, default gateway,
+        and Layer 2 vs Layer 3—and is essential for CCST exams, Cisco Packet Tracer,
+        and real networks using Cisco Systems devices.
+      </div>
+    
+      <!-- ================= BIG IDEA ================= -->
+      <h2 class="section-heading">🧠 The Big Idea (One Line)</h2>
+    
+      <div class="exam-tip">
+        Local network → Same subnet → Direct delivery<br>
+        Remote network → Different subnet → Via router (default gateway)
+      </div>
+    
+      <!-- ================= LOCAL NETWORK ================= -->
+      <h2 class="section-heading">🏠 Local Network</h2>
+    
+      <img
+        src="../../assets/images/Local Network 1.png"
+        alt="Local Network Diagram"
+        class="content-image"
+      />
+    
+      <img
+        src="../../assets/images/Local Network 3.svg"
+        alt="Local Network Communication"
+        class="content-image"
+      />
+    
+      <h3 class="sub-heading">📌 What Is a Local Network?</h3>
+    
+      <ul>
+        <li>Devices are in the <strong>same IP subnet</strong></li>
+        <li>They communicate directly</li>
+        <li>No router is required for delivery</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔑 How a Device Knows It’s Local</h3>
+    
+      <p>
+        The device compares the destination IP address with
+        its own IP address using the subnet mask.
+      </p>
+    
+      <div class="info-card">
+        If both belong to the same network → Local traffic
+      </div>
+    
+      <h3 class="sub-heading">🧪 Example (Same Subnet)</h3>
+    
+      <pre class="flow-box">
+    PC1: 192.168.1.10 /24
+    PC2: 192.168.1.20 /24
+    
+    Network: 192.168.1.0/24
+      </pre>
+    
+      <p><strong>Result:</strong> Local communication</p>
+    
+      <h3 class="sub-heading">📌 Data Path</h3>
+    
+      <pre class="flow-box">
+    PC1 ── Switch ── PC2
+      </pre>
+    
+      <ul>
+        <li>Uses MAC addresses</li>
+        <li>Handled by Layer 2 (switch)</li>
+        <li>No default gateway involved</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧠 Real-Life Analogy</h3>
+    
+      <div class="info-card">
+        Same building → Walk directly to your neighbor’s room<br>
+        No main gate needed
+      </div>
+    
+      <h3 class="sub-heading">🧠 Key Characteristics (Exam-Ready)</h3>
+    
+      <ul>
+        <li>Same subnet</li>
+        <li>Switch-based forwarding</li>
+        <li>Low latency, fast</li>
+        <li>No routing required</li>
+      </ul>
+    
+      <!-- ================= REMOTE NETWORK ================= -->
+      <h2 class="section-heading">🌐 Remote Network</h2>
+    
+      <h3 class="sub-heading">📌 What Is a Remote Network?</h3>
+    
+      <ul>
+        <li>Devices are in <strong>different IP subnets</strong></li>
+        <li>Cannot be reached directly</li>
+        <li>Requires a router (default gateway)</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔑 How a Device Knows It’s Remote</h3>
+    
+      <div class="info-card">
+        If destination IP does NOT match local subnet →<br>
+        Send packet to default gateway
+      </div>
+    
+      <h3 class="sub-heading">🧪 Example (Different Subnet)</h3>
+    
+      <pre class="flow-box">
+    PC: 192.168.1.10 /24
+    Server: 10.0.0.5 /24
+    
+    Local:  192.168.1.0/24
+    Remote: 10.0.0.0/24
+      </pre>
+    
+      <h3 class="sub-heading">📌 Data Path</h3>
+    
+      <pre class="flow-box">
+    PC ─ Switch ─ Router ─ Internet ─ Router ─ Server
+      </pre>
+    
+      <ul>
+        <li>Uses IP addresses</li>
+        <li>Handled by Layer 3 (router)</li>
+        <li>Default gateway is mandatory</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧠 Real-Life Analogy</h3>
+    
+      <div class="info-card">
+        Different city → Exit colony via main gate<br>
+        Travel using highways (routers)
+      </div>
+    
+      <!-- ================= DECISION PROCESS ================= -->
+      <h2 class="section-heading">🔍 How a PC Decides (VERY IMPORTANT)</h2>
+    
+      <ol>
+        <li>PC wants to send data</li>
+        <li>Checks destination IP</li>
+        <li>Applies subnet mask</li>
+        <li>Makes decision:</li>
+      </ol>
+    
+      <div class="exam-tip">
+        Same network → Send directly<br>
+        Different network → Send to default gateway
+      </div>
+    
+      <p>
+        This decision is made <strong>before</strong> any packet leaves the PC.
+      </p>
+    
+      <!-- ================= PACKET TRACER ================= -->
+      <h2 class="section-heading">🧪 Cisco Packet Tracer Behavior</h2>
+    
+      <h3 class="sub-heading">Case 1: Local Ping</h3>
+      <ul>
+        <li>PCs in same subnet</li>
+        <li>Ping works without router</li>
+      </ul>
+    
+      <h3 class="sub-heading">Case 2: Remote Ping</h3>
+      <ul>
+        <li>Different subnets</li>
+        <li>Ping fails ❌ without gateway</li>
+        <li>Ping succeeds ✅ with gateway</li>
+      </ul>
+    
+      <!-- ================= COMPARISON ================= -->
+      <h2 class="section-heading">📊 Local vs Remote (Exam-Ready Comparison)</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Local Network</th>
+            <th>Remote Network</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Subnet</td>
+            <td>Same</td>
+            <td>Different</td>
+          </tr>
+          <tr>
+            <td>Delivery</td>
+            <td>Direct</td>
+            <td>Via router</td>
+          </tr>
+          <tr>
+            <td>Device Used</td>
+            <td>Switch (Layer 2)</td>
+            <td>Router (Layer 3)</td>
+          </tr>
+          <tr>
+            <td>Address Type</td>
+            <td>MAC</td>
+            <td>IP</td>
+          </tr>
+          <tr>
+            <td>Default Gateway</td>
+            <td>❌ Not needed</td>
+            <td>✅ Required</td>
+          </tr>
+          <tr>
+            <td>Speed</td>
+            <td>Faster</td>
+            <td>Slightly slower</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <!-- ================= EXAM TRAPS ================= -->
+      <h2 class="section-heading">🧠 Common Exam Traps</h2>
+    
+      <ul>
+        <li>❌ PCs on same switch are always local → <strong>Wrong (subnet matters)</strong></li>
+        <li>❌ Internet issue means switch problem → <strong>Wrong (usually gateway)</strong></li>
+        <li>✔ Same subnet = Local</li>
+        <li>✔ Different subnet = Remote</li>
+      </ul>
+    
+      <!-- ================= TROUBLESHOOTING ================= -->
+      <h2 class="section-heading">🧠 Troubleshooting Using This Concept</h2>
+    
+      <h3 class="sub-heading">🔧 Local works, Internet doesn’t</h3>
+      <p>👉 Default gateway or router issue</p>
+    
+      <h3 class="sub-heading">🔧 Internet works, one PC can’t talk locally</h3>
+      <p>👉 Switch, VLAN, or subnet issue</p>
+    
+    </section>
+    
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
     <a href="home.html">⬅ Back</a>
-    <a href="cisco-device-indicators.html">Next ➡</a>
+    <a href="switching-fundamentals.html">Next ➡</a>
   </nav>
 
   <!-- External Script -->

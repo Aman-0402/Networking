@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title></title>
+  <title>Switching Fundamentals</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="../../assets/css/templatecss.css" />
@@ -14,21 +14,315 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1></h1>
-    <p class="subtitle"></p>
+    <h1>Switching Fundamentals</h1>
+    <p class="subtitle">Understand switching concepts such as MAC address tables,
+      MAC filtering, and VLAN fundamentals.</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
+    <section class="content-section">
 
+      <h1 class="main-heading">🔁 Switching Fundamentals</h1>
+    
+      <p class="intro-text">
+        MAC address tables, MAC filtering, and VLANs explain how switches think,
+        learn, secure, and segment networks. These are core CCST concepts and are
+        heavily used in Cisco Packet Tracer labs and real networks built using
+        Cisco Systems devices.
+      </p>
+    
+      <!-- ================= PART 1 ================= -->
+      <h2 class="section-heading">🧠 PART 1: MAC Address Tables</h2>
+    
+      <img src="../../assets/images/MAC-address 1.png" alt="MAC Address Table Diagram" class="content-image" />
+      <img src="../../assets/images/MAC-address 2.png" alt="Switch MAC Learning Process" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is a MAC Address Table?</h3>
+    
+      <p>
+        A MAC address table (also called a CAM table) is a memory table inside a
+        switch that maps:
+      </p>
+    
+      <pre class="flow-box">
+    MAC Address  →  Switch Port
+      </pre>
+    
+      <div class="info-card">
+        Purpose: Helps the switch forward frames only to the correct port.
+      </div>
+    
+      <h3 class="sub-heading">🔁 How a Switch Learns MAC Addresses</h3>
+    
+      <h4 class="sub-heading">🧪 Example Network</h4>
+    
+      <pre class="flow-box">
+    PC1 ──(Fa0/1) Switch (Fa0/2)── PC2
+      </pre>
+    
+      <ol>
+        <li>PC1 sends a frame</li>
+        <li>Switch reads the <strong>source MAC</strong></li>
+        <li>Stores it in MAC table</li>
+        <li>If destination MAC is known → forward</li>
+        <li>If unknown → flood to all ports (except incoming)</li>
+      </ol>
+    
+      <h3 class="sub-heading">📊 Sample MAC Address Table</h3>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>MAC Address</th>
+            <th>Port</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AA:BB:CC:11</td>
+            <td>Fa0/1</td>
+          </tr>
+          <tr>
+            <td>DD:EE:FF:22</td>
+            <td>Fa0/2</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <div class="exam-tip">
+        Switches learn <strong>source MAC</strong>, not destination MAC.
+      </div>
+    
+      <h3 class="sub-heading">❌ What If MAC Table Is Empty?</h3>
+      <ul>
+        <li>First frame is flooded</li>
+        <li>Reply populates MAC table</li>
+        <li>Network becomes efficient</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧠 Real-World Benefits</h3>
+      <ul>
+        <li>Faster communication</li>
+        <li>Less network traffic</li>
+        <li>Improved security</li>
+      </ul>
+    
+      <!-- ================= PART 2 ================= -->
+      <h2 class="section-heading">🔐 PART 2: MAC Filtering (MAC-Based Security)</h2>
+    
+      <img src="../../assets/images/MAC Filtering 1.webp" alt="MAC Filtering Concept" class="content-image" />
+      <img src="../../assets/images/MAC Filtering 2.png" alt="MAC Filtering on Switch" class="content-image" />
+      <img src="../../assets/images/MAC Filtering 3.jpg" alt="Unauthorized Device Blocked" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is MAC Filtering?</h3>
+    
+      <p>
+        MAC filtering allows or blocks devices based on their MAC address.
+      </p>
+    
+      <div class="info-card">
+        “Only approved devices are allowed on the network.”
+      </div>
+    
+      <h3 class="sub-heading">🔧 How MAC Filtering Works</h3>
+    
+      <ol>
+        <li>Admin defines allowed MAC addresses</li>
+        <li>Switch checks device MAC</li>
+        <li>Allows or blocks access</li>
+      </ol>
+    
+      <h3 class="sub-heading">🧪 Example (Office Security)</h3>
+    
+      <pre class="flow-box">
+    Allowed:
+    AA:BB:CC:11 (PC)
+    DD:EE:FF:22 (Printer)
+    
+    Unknown laptop → Blocked
+      </pre>
+    
+      <h3 class="sub-heading">✅ Advantages</h3>
+      <ul>
+        <li>Prevents unauthorized access</li>
+        <li>Easy to configure</li>
+      </ul>
+    
+      <h3 class="sub-heading">❌ Limitations (Exam Important)</h3>
+      <ul>
+        <li>MAC spoofing possible</li>
+        <li>Not scalable for large networks</li>
+      </ul>
+    
+      <div class="exam-tip">
+        MAC filtering = Basic security, not foolproof
+      </div>
+    
+      <h3 class="sub-heading">🧠 Where MAC Filtering Is Used</h3>
+      <ul>
+        <li>Switch port security</li>
+        <li>Home Wi-Fi routers</li>
+        <li>Small office networks</li>
+      </ul>
+    
+      <!-- ================= PART 3 ================= -->
+      <h2 class="section-heading">🧩 PART 3: VLAN Concepts</h2>
+    
+      <img src="../../assets/images/VLAN Concepts 1.avif" alt="VLAN Concept Diagram" class="content-image" />
+      <img src="../../assets/images/VLAN Concepts 2.avif" alt="VLAN Segmentation" class="content-image" />
+      <img src="../../assets/images/VLAN Concepts 3.png" alt="Multiple VLANs on Switch" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is a VLAN?</h3>
+    
+      <p>
+        A VLAN (Virtual LAN) is a <strong>logical network</strong> created inside a switch.
+      </p>
+    
+      <div class="info-card">
+        Devices can be separated even if they are on the same physical switch.
+      </div>
+    
+      <h3 class="sub-heading">🧠 Why VLANs Are Needed</h3>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Without VLAN</th>
+            <th>With VLAN</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>One big broadcast domain</td>
+            <td>Separate networks</td>
+          </tr>
+          <tr>
+            <td>More traffic</td>
+            <td>Less broadcast traffic</td>
+          </tr>
+          <tr>
+            <td>Low security</td>
+            <td>Better security</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <h3 class="sub-heading">🧪 Example (Same Switch, Different VLANs)</h3>
+    
+      <pre class="flow-box">
+    Switch
+    ├── VLAN 10 → HR PCs
+    ├── VLAN 20 → IT PCs
+      </pre>
+    
+      <ul>
+        <li>HR and IT are isolated</li>
+        <li>No direct communication</li>
+      </ul>
+    
+      <div class="exam-tip">
+        VLAN = Separate broadcast domains
+      </div>
+    
+      <h3 class="sub-heading">🧠 Key Rule</h3>
+      <div class="info-card">
+        VLANs cannot communicate without a Layer 3 device.
+      </div>
+    
+      <h3 class="sub-heading">🔀 Inter-VLAN Communication</h3>
+      <ul>
+        <li>Router-on-a-stick</li>
+        <li>Layer 3 switch</li>
+      </ul>
+    
+      <h3 class="sub-heading">📊 VLAN Benefits (Exam-Ready)</h3>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th>Explanation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Security</td>
+            <td>Departments isolated</td>
+          </tr>
+          <tr>
+            <td>Performance</td>
+            <td>Reduced broadcast traffic</td>
+          </tr>
+          <tr>
+            <td>Flexibility</td>
+            <td>Logical grouping</td>
+          </tr>
+          <tr>
+            <td>Scalability</td>
+            <td>Easy expansion</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <h3 class="sub-heading">🧠 VLAN IDs (Quick Facts)</h3>
+      <ul>
+        <li>VLAN 1 = Default VLAN</li>
+        <li>VLAN range: 1–4094</li>
+        <li>Each VLAN = separate broadcast domain</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔍 MAC Table + VLAN (IMPORTANT)</h3>
+    
+      <div class="info-card">
+        Switch maintains <strong>separate MAC tables per VLAN</strong>.
+      </div>
+    
+      <pre class="flow-box">
+    VLAN 10: MAC A → Fa0/1
+    VLAN 20: MAC A → Fa0/3
+      </pre>
+    
+      <p>
+        Same MAC address in different VLANs is allowed.
+      </p>
+    
+      <!-- ================= SUMMARY ================= -->
+      <h2 class="section-heading">📊 Switching Fundamentals – Combined Summary</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Concept</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MAC Address Table</td>
+            <td>Efficient forwarding</td>
+          </tr>
+          <tr>
+            <td>MAC Filtering</td>
+            <td>Device-level security</td>
+          </tr>
+          <tr>
+            <td>VLAN</td>
+            <td>Network segmentation</td>
+          </tr>
+        </tbody>
+      </table>
+    
+    </section>
+    
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
     <a href="home.html">⬅ Back</a>
-    <a href="cisco-device-indicators.html">Next ➡</a>
+    <a href="troubleshooting-practices.html">Next ➡</a>
   </nav>
 
   <!-- External Script -->
