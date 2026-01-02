@@ -758,6 +758,232 @@
       </ul>
     
     </section>
+    <section class="content-section">
+
+      <h1 class="main-heading">⚡🗄️ Power & Rack Layout</h1>
+    
+      <p class="intro-text">
+        Power and rack layout are critical parts of network infrastructure design.
+        Even if devices are configured perfectly, wrong power or poor rack layout
+        can bring the entire network down.
+      </p>
+    
+      <div class="info-card">
+        This topic is important for CCST exams, data centers,
+        and real offices using Cisco Systems equipment.
+      </div>
+    
+      <!-- ================= POWER ================= -->
+      <h2 class="section-heading">⚡ PART 1: Power in Network Infrastructure</h2>
+    
+      <img src="../../assets/images/Power in Network Infrastructure.jpg" alt="Power in Network Infrastructure" class="content-image" />
+      <img src="../../assets/images/Power in Network Infrastructure 1.jpg" alt="Network Power Setup Example" class="content-image" />
+      <img src="../../assets/images/Power in Network Infrastructure 2.png" alt="UPS and PDU Power Flow" class="content-image" />
+    
+      <h3 class="sub-heading">🔌 Why Power Matters</h3>
+    
+      <p>Network devices require:</p>
+      <ul>
+        <li>Continuous power</li>
+        <li>Clean (stable) power</li>
+        <li>Backup power</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Without power → no network, no internet, no services
+      </div>
+    
+      <h3 class="sub-heading">1️⃣ Primary Power Source</h3>
+    
+      <p>
+        Primary power comes from the main electrical supply
+        and powers core network devices.
+      </p>
+    
+      <ul>
+        <li>Switches</li>
+        <li>Routers</li>
+        <li>Firewalls</li>
+        <li>Servers</li>
+      </ul>
+    
+      <div class="info-card">
+        Small offices use wall sockets,
+        while data centers use dedicated power circuits.
+      </div>
+    
+      <h3 class="sub-heading">2️⃣ UPS (Uninterruptible Power Supply) – VERY IMPORTANT</h3>
+    
+      <p><strong>What UPS does:</strong></p>
+      <ul>
+        <li>Provides backup power during outages</li>
+        <li>Protects devices from voltage spikes</li>
+        <li>Prevents sudden shutdowns</li>
+      </ul>
+    
+      <p><strong>Example:</strong></p>
+      <ul>
+        <li>Power goes off</li>
+        <li>UPS keeps router and switch ON</li>
+        <li>Internet continues for some time</li>
+      </ul>
+    
+      <div class="exam-tip">
+        UPS = Short-term backup + Power protection
+      </div>
+    
+      <h3 class="sub-heading">3️⃣ PDU (Power Distribution Unit)</h3>
+    
+      <p><strong>What PDU does:</strong></p>
+      <ul>
+        <li>Distributes power to multiple devices</li>
+        <li>Installed inside the rack</li>
+      </ul>
+    
+      <div class="info-card">
+        Example: One UPS → PDU → Multiple network devices
+      </div>
+    
+      <div class="exam-tip">
+        Think of PDU as an extension board for racks
+      </div>
+    
+      <h3 class="sub-heading">4️⃣ Redundant Power Supplies (Enterprise Level)</h3>
+    
+      <p><strong>What it means:</strong></p>
+      <ul>
+        <li>Device has two power inputs</li>
+        <li>If one fails, the other continues</li>
+      </ul>
+    
+      <p><strong>Commonly seen in:</strong></p>
+      <ul>
+        <li>Core switches</li>
+        <li>Enterprise routers</li>
+        <li>Servers</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Redundant power = High availability
+      </div>
+    
+      <!-- ================= RACK ================= -->
+      <h2 class="section-heading">🗄️ PART 2: Rack Layout (Network Rack Design)</h2>
+    
+      <img src="../../assets/images/Rack Layout.png" alt="Network Rack Layout Diagram" class="content-image" />
+      <img src="../../assets/images/Rack Layout 1.webp" alt="Data Center Rack Layout" class="content-image" />
+      <img src="../../assets/images/Rack Layout 2.jpg" alt="Office Network Rack" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is a Network Rack?</h3>
+    
+      <p>
+        A network rack is a metal frame used to mount
+        and organize networking equipment.
+      </p>
+    
+      <ul>
+        <li>Standard size: <strong>19-inch rack</strong></li>
+        <li>Measured in rack units (U)</li>
+        <li>1U = 1.75 inches</li>
+      </ul>
+    
+      <h3 class="sub-heading">📐 Standard Rack Layout (Top → Bottom)</h3>
+    
+      <h4 class="sub-heading">🔝 Top Section</h4>
+      <ul>
+        <li>Patch panels</li>
+        <li>Cable managers</li>
+      </ul>
+    
+      <div class="info-card">
+        Reason: Easy cable routing and clean appearance
+      </div>
+    
+      <h4 class="sub-heading">🖧 Middle Section</h4>
+      <ul>
+        <li>Switches</li>
+        <li>Routers</li>
+        <li>Firewalls</li>
+      </ul>
+    
+      <div class="info-card">
+        Reason: Easy access and proper airflow
+      </div>
+    
+      <h4 class="sub-heading">🔻 Bottom Section</h4>
+      <ul>
+        <li>UPS</li>
+        <li>Heavy power equipment</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Heavy devices always go at the bottom
+      </div>
+    
+      <!-- ================= CABLE MANAGEMENT ================= -->
+      <h2 class="section-heading">🧵 Cable Management in Racks</h2>
+    
+      <img src="../../assets/images/Cable Management in Racks.webp" alt="Proper Cable Management in Rack" class="content-image" />
+      <img src="../../assets/images/Cable Management in Racks 1.webp" alt="Organized Network Rack Cables" class="content-image" />
+    
+      <p><strong>Best practices:</strong></p>
+      <ul>
+        <li>Use patch panels</li>
+        <li>Label all cables</li>
+        <li>Use cable organizers</li>
+        <li>Separate power and data cables</li>
+      </ul>
+    
+      <p><strong>Avoid:</strong></p>
+      <ul>
+        <li>Hanging cables</li>
+        <li>Tangled wires</li>
+        <li>Blocked airflow</li>
+      </ul>
+    
+      <!-- ================= COOLING ================= -->
+      <h2 class="section-heading">🌬️ Cooling & Airflow</h2>
+    
+      <img src="../../assets/images/Cooling & Airflow.jpg" alt="Rack Cooling and Airflow" class="content-image" />
+      <img src="../../assets/images/Cooling & Airflow 1.png" alt="Data Center Airflow Design" class="content-image" />
+    
+      <h3 class="sub-heading">Why Cooling Is Important</h3>
+      <ul>
+        <li>Devices generate heat</li>
+        <li>Heat causes hardware failure</li>
+      </ul>
+    
+      <p><strong>Best practices:</strong></p>
+      <ul>
+        <li>Front-to-back airflow</li>
+        <li>Ventilated racks</li>
+        <li>Cooling fans or AC</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Poor airflow → Overheating → Downtime
+      </div>
+    
+      <!-- ================= SMALL OFFICE ================= -->
+      <h2 class="section-heading">🧠 Small Office Example (Complete Picture)</h2>
+    
+      <pre class="flow-box">
+    [ Patch Panel ]
+    [ Switch ]
+    [ Router ]
+    [ Firewall ]
+    [ Cable Manager ]
+    [ UPS ]
+    [ PDU ]
+      </pre>
+    
+      <ul>
+        <li>✔ Clean</li>
+        <li>✔ Safe</li>
+        <li>✔ Reliable</li>
+      </ul>
+    
+    </section>
     
 
   </main>
