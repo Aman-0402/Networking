@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title></title>
+  <title>Cisco Device Show Commands</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="../../assets/css/templatecss.css" />
@@ -14,21 +14,384 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1></h1>
-    <p class="subtitle"></p>
+    <h1>Cisco Device Show Commands</h1>
+    <p class="subtitle">Learn essential show commands for troubleshooting Cisco devices.</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
+    <section class="content-section">
 
+      <h1 class="main-heading">🧠🖥️ Cisco Device SHOW Commands</h1>
+    
+      <p class="intro-text">
+        Show commands are the <strong>eyes of a network engineer</strong>.
+        They allow you to view configuration, status, routing, hardware,
+        and traffic <strong>without changing anything</strong>.
+        All examples below are based on devices from Cisco Systems.
+      </p>
+    
+      <div class="info-card">
+        Show commands are read-only and safe for troubleshooting.
+      </div>
+    
+      <!-- ================= BASICS ================= -->
+      <h2 class="section-heading">🔑 What Are show Commands?</h2>
+    
+      <p>Show commands are used to:</p>
+      <ul>
+        <li>Verify configuration</li>
+        <li>Check device health</li>
+        <li>Troubleshoot problems</li>
+        <li>Collect information (Help Desk & NOC work)</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Golden Rule: If you are unsure → use a show command first
+      </div>
+    
+      <!-- ================= SHOW RUN ================= -->
+      <h2 class="section-heading">1️⃣ show running-config (show run)</h2>
+    
+      <h3 class="sub-heading">📌 Purpose</h3>
+      <p>
+        Displays the current active configuration stored in RAM.
+      </p>
+    
+      <pre class="flow-box">
+    show running-config
+      </pre>
+    
+      <h3 class="sub-heading">🔍 What You See</h3>
+      <ul>
+        <li>Hostname</li>
+        <li>Interface IP addresses</li>
+        <li>VLANs</li>
+        <li>Routing protocols</li>
+        <li>Encrypted passwords</li>
+        <li>Access control lists</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧪 Example Use</h3>
+      <p>
+        ❓ Users can’t access the internet
+      </p>
+      <ul>
+        <li>Check IP configuration</li>
+        <li>Default gateway</li>
+        <li>NAT</li>
+        <li>VLAN assignments</li>
+      </ul>
+    
+      <div class="exam-tip">
+        show run = what is configured right now
+      </div>
+    
+      <!-- ================= CDP ================= -->
+      <h2 class="section-heading">2️⃣ show cdp neighbors</h2>
+    
+      <h3 class="sub-heading">📌 Purpose</h3>
+      <p>
+        Shows directly connected Cisco devices using
+        <strong>CDP (Cisco Discovery Protocol)</strong>.
+      </p>
+    
+      <pre class="flow-box">
+    show cdp neighbors
+      </pre>
+    
+      <h3 class="sub-heading">🔍 What You See</h3>
+      <ul>
+        <li>Neighbor device name</li>
+        <li>Device type (switch / router)</li>
+        <li>Local interface</li>
+        <li>Remote interface</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧪 Example Use</h3>
+      <p>
+        ❓ Which switch is connected to this port?
+      </p>
+      <p>✔ Use <strong>show cdp neighbors</strong></p>
+    
+      <div class="exam-tip">
+        CDP works only between Cisco devices
+      </div>
+    
+      <!-- ================= IP INT BRIEF ================= -->
+      <h2 class="section-heading">3️⃣ show ip interface brief</h2>
+    
+      <h3 class="sub-heading">📌 Purpose</h3>
+      <p>
+        Provides a quick summary of all interfaces and their status.
+      </p>
+    
+      <pre class="flow-box">
+    show ip interface brief
+      </pre>
+    
+      <h3 class="sub-heading">🔍 Columns Explained</h3>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Column</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Interface</td><td>Port name</td></tr>
+          <tr><td>IP Address</td><td>Assigned IP</td></tr>
+          <tr><td>Status</td><td>Physical state</td></tr>
+          <tr><td>Protocol</td><td>Logical state</td></tr>
+        </tbody>
+      </table>
+    
+      <h3 class="sub-heading">🧠 Important States</h3>
+      <ul>
+        <li><strong>up / up</strong> ✅ → Working</li>
+        <li><strong>down / down</strong> ❌ → Cable or power issue</li>
+        <li><strong>up / down</strong> ⚠️ → Configuration issue</li>
+      </ul>
+    
+      <div class="exam-tip">
+        This is the most used troubleshooting command
+      </div>
+    
+      <!-- ================= ROUTE ================= -->
+      <h2 class="section-heading">4️⃣ show ip route</h2>
+    
+      <h3 class="sub-heading">📌 Purpose</h3>
+      <p>
+        Displays the routing table and how packets are forwarded.
+      </p>
+    
+      <pre class="flow-box">
+    show ip route
+      </pre>
+    
+      <h3 class="sub-heading">🔍 What You Learn</h3>
+      <ul>
+        <li>Connected routes</li>
+        <li>Static routes</li>
+        <li>Default route (0.0.0.0/0)</li>
+        <li>Dynamic routes</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧪 Example Use</h3>
+      <p>
+        ❓ Network can’t reach the internet
+      </p>
+      <p>✔ Check if default route exists</p>
+    
+      <div class="exam-tip">
+        No default route = no internet
+      </div>
+    
+      <!-- ================= VERSION ================= -->
+      <h2 class="section-heading">5️⃣ show version</h2>
+    
+      <h3 class="sub-heading">📌 Purpose</h3>
+      <p>
+        Displays device and operating system information.
+      </p>
+    
+      <pre class="flow-box">
+    show version
+      </pre>
+    
+      <h3 class="sub-heading">🔍 Displays</h3>
+      <ul>
+        <li>IOS version</li>
+        <li>Device model</li>
+        <li>RAM & flash</li>
+        <li>Uptime</li>
+        <li>Serial number (sometimes)</li>
+      </ul>
+    
+      <div class="exam-tip">
+        show version tells what device you are working on
+      </div>
+    
+      <!-- ================= INVENTORY ================= -->
+      <h2 class="section-heading">6️⃣ show inventory</h2>
+    
+      <h3 class="sub-heading">📌 Purpose</h3>
+      <p>
+        Displays detailed hardware inventory information.
+      </p>
+    
+      <pre class="flow-box">
+    show inventory
+      </pre>
+    
+      <h3 class="sub-heading">🔍 Displays</h3>
+      <ul>
+        <li>Product ID (PID)</li>
+        <li>Serial numbers</li>
+        <li>Modules</li>
+        <li>Power supplies</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧪 Example Use</h3>
+      <ul>
+        <li>Asset management</li>
+        <li>Warranty checks</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Inventory = hardware details
+      </div>
+    
+      <!-- ================= MAC TABLE ================= -->
+      <h2 class="section-heading">7️⃣ show mac address-table</h2>
+    
+      <h3 class="sub-heading">📌 Purpose</h3>
+      <p>
+        Displays MAC addresses learned by the switch.
+      </p>
+    
+      <pre class="flow-box">
+    show mac address-table
+      </pre>
+    
+      <h3 class="sub-heading">🔍 Shows</h3>
+      <ul>
+        <li>MAC address</li>
+        <li>VLAN</li>
+        <li>Port</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧪 Example Use</h3>
+      <p>
+        ❓ Which port is this PC connected to?
+      </p>
+      <p>✔ Find MAC → identify port</p>
+    
+      <div class="exam-tip">
+        Switches learn source MAC addresses
+      </div>
+    
+      <!-- ================= INTERFACE ================= -->
+      <h2 class="section-heading">8️⃣ show interface / show interface status</h2>
+    
+      <h3 class="sub-heading">📌 Purpose</h3>
+      <p>
+        Shows detailed interface statistics and health.
+      </p>
+    
+      <pre class="flow-box">
+    show interface fa0/1
+    show interface status
+      </pre>
+    
+      <h3 class="sub-heading">🔍 What You See</h3>
+      <ul>
+        <li>Speed & duplex</li>
+        <li>Errors (CRC, collisions)</li>
+        <li>Bandwidth usage</li>
+        <li>Link state</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧪 Example Use</h3>
+      <p>
+        ❓ Network is slow
+      </p>
+      <ul>
+        <li>Check errors</li>
+        <li>Check speed mismatch</li>
+      </ul>
+    
+      <div class="exam-tip">
+        show interface = deep health check
+      </div>
+    
+      <!-- ================= PRIVILEGE ================= -->
+      <h2 class="section-heading">🔐 9️⃣ Privilege Levels</h2>
+    
+      <h3 class="sub-heading">📌 What Are Privilege Levels?</h3>
+      <p>
+        Privilege levels control what commands a user can execute.
+      </p>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Level</th>
+            <th>Mode</th>
+            <th>Prompt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>User EXEC</td><td>Limited</td><td>&gt;</td></tr>
+          <tr><td>Privileged EXEC</td><td>Full</td><td>#</td></tr>
+        </tbody>
+      </table>
+    
+      <pre class="flow-box">
+    enable
+    disable
+      </pre>
+    
+      <div class="exam-tip">
+        Most show commands require privileged mode
+      </div>
+    
+      <!-- ================= HELP ================= -->
+      <h2 class="section-heading">❓ 🔟 Command Help & Auto-Complete</h2>
+    
+      <h3 class="sub-heading">📌 Help Feature (?)</h3>
+    
+      <pre class="flow-box">
+    show ?
+      </pre>
+    
+      <p>✔ Lists all possible command options</p>
+    
+      <h3 class="sub-heading">📌 Auto-Complete (TAB)</h3>
+    
+      <pre class="flow-box">
+    sho&lt;TAB&gt;
+      </pre>
+    
+      <p>✔ Completes to <strong>show</strong></p>
+    
+      <div class="exam-tip">
+        ? is your best friend in Cisco CLI
+      </div>
+    
+      <!-- ================= SUMMARY ================= -->
+      <h2 class="section-heading">🧠 BIG PICTURE: Which Command for What?</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Problem</th>
+            <th>Command</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Check config</td><td>show running-config</td></tr>
+          <tr><td>See neighbors</td><td>show cdp neighbors</td></tr>
+          <tr><td>Interface status</td><td>show ip interface brief</td></tr>
+          <tr><td>Routing issue</td><td>show ip route</td></tr>
+          <tr><td>Device info</td><td>show version</td></tr>
+          <tr><td>Hardware details</td><td>show inventory</td></tr>
+          <tr><td>Find PC port</td><td>show mac address-table</td></tr>
+          <tr><td>Port errors</td><td>show interface</td></tr>
+        </tbody>
+      </table>
+    
+    </section>
+    
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
     <a href="home.html">⬅ Back</a>
-    <a href="cisco-device-indicators.html">Next ➡</a>
+    <a href="firewall-fundamentals.html">Next ➡</a>
   </nav>
 
   <!-- External Script -->

@@ -22,7 +22,224 @@
   <!-- Main Content -->
   <main class="content-wrapper">
 
+    <section class="content-section">
 
+      <h1 class="main-heading">📡 Packet Capture</h1>
+    
+      <p class="intro-text">
+        Packet capture lets you see exactly what is happening on a network—packet by packet.
+        This skill is essential for CCST exams, network troubleshooting,
+        and real IT/help-desk roles.
+      </p>
+    
+      <div class="info-card">
+        The most widely used packet capture tool is <strong>Wireshark</strong>.
+      </div>
+    
+      <!-- ================= BASICS ================= -->
+      <h2 class="section-heading">🧠 What Is Packet Capture?</h2>
+    
+      <ul>
+        <li>Capturing network packets</li>
+        <li>Inspecting headers and payloads</li>
+        <li>Analyzing traffic behavior</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Packet capture = X-ray of the network
+      </div>
+    
+      <!-- ================= WIRESHARK ================= -->
+      <h2 class="section-heading">🛠️ 1️⃣ Wireshark Usage</h2>
+    
+      <img src="../../assets/images/Wireshark 1.png" alt="Wireshark Interface Overview" class="content-image" />
+      <img src="../../assets/images/Wireshark 2.png" alt="Wireshark Packet Capture Screen" class="content-image" />
+      <img src="../../assets/images/Wireshark 3.png" alt="Wireshark Packet Analysis" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is Wireshark?</h3>
+    
+      <p>
+        Wireshark is a packet analyzer that captures live network traffic
+        and displays packets in a human-readable format.
+      </p>
+    
+      <ul>
+        <li>✔ Free</li>
+        <li>✔ Open-source</li>
+        <li>✔ Industry standard</li>
+      </ul>
+    
+      <h3 class="sub-heading">🖥️ Wireshark Interface (Exam Important)</h3>
+    
+      <ul>
+        <li><strong>Packet List Pane (Top):</strong> All captured packets (time, source, destination, protocol)</li>
+        <li><strong>Packet Details Pane (Middle):</strong> Protocol layers (Ethernet, IP, TCP/UDP, HTTP/DNS)</li>
+        <li><strong>Packet Bytes Pane (Bottom):</strong> Raw data (Hex + ASCII)</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Protocol layers are shown in the <strong>Packet Details Pane</strong>
+      </div>
+    
+      <!-- ================= CAPTURE STEPS ================= -->
+      <h3 class="sub-heading">▶️ How to Capture Packets (Step-by-Step)</h3>
+    
+      <img src="../../assets/images/How to Capture Packets 1.png" alt="Select Interface in Wireshark" class="content-image" />
+      <img src="../../assets/images/How to Capture Packets 2.png" alt="Start Packet Capture" class="content-image" />
+    
+      <ol>
+        <li>Select network interface (Ethernet / Wi-Fi)</li>
+        <li>Click <strong>Start</strong> (blue shark fin)</li>
+        <li>Generate traffic (open website, ping)</li>
+        <li>Click <strong>Stop</strong> (red square)</li>
+      </ol>
+    
+      <!-- ================= FILTERS ================= -->
+      <h2 class="section-heading">🔍 Filters in Wireshark</h2>
+    
+      <img src="../../assets/images/Filters in Wireshark 1.png" alt="Wireshark Filter Bar" class="content-image" />
+      <img src="../../assets/images/Filters in Wireshark 2.png" alt="Wireshark Protocol Filter" class="content-image" />
+      <img src="../../assets/images/Filters in Wireshark 3.png" alt="Wireshark DNS Filter" class="content-image" />
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Filter</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ip</td><td>All IP packets</td></tr>
+          <tr><td>tcp</td><td>TCP traffic</td></tr>
+          <tr><td>udp</td><td>UDP traffic</td></tr>
+          <tr><td>http</td><td>HTTP packets</td></tr>
+          <tr><td>dns</td><td>DNS queries</td></tr>
+        </tbody>
+      </table>
+    
+      <div class="exam-tip">
+        Filters reduce noise — they do NOT stop capture
+      </div>
+    
+      <!-- ================= REAL WORLD ================= -->
+      <h3 class="sub-heading">🧪 Real-World Example: Website Not Loading</h3>
+    
+      <ol>
+        <li>Start Wireshark</li>
+        <li>Apply filter: <strong>dns</strong></li>
+        <li>Open website</li>
+      </ol>
+    
+      <ul>
+        <li>❌ No DNS response → DNS issue</li>
+        <li>✔ DNS OK but no HTTP → Web server issue</li>
+      </ul>
+    
+      <!-- ================= PCAP ================= -->
+      <h2 class="section-heading">💾 2️⃣ Saving & Opening .pcap Files</h2>
+    
+      <h3 class="sub-heading">📌 What Is a .pcap File?</h3>
+    
+      <p>
+        A <strong>.pcap</strong> file stores captured packets so they can be
+        analyzed later or shared.
+      </p>
+    
+      <div class="info-card">
+        Think of a .pcap file as a recorded video of network traffic.
+      </div>
+    
+      <h3 class="sub-heading">💾 How to Save a Capture File</h3>
+    
+      <ol>
+        <li>Stop capture</li>
+        <li>File → Save As</li>
+        <li>Choose location</li>
+        <li>Select .pcap or .pcapng</li>
+        <li>Click Save</li>
+      </ol>
+    
+      <pre class="flow-box">
+    Example file: dns_issue.pcap
+      </pre>
+    
+      <h3 class="sub-heading">📂 How to Open a .pcap File</h3>
+    
+      <img src="../../assets/images/Saving & Opening .pcap Files.png" alt="Open PCAP File in Wireshark" class="content-image" />
+      <img src="../../assets/images/Saving & Opening .pcap Files 1.png" alt="Wireshark Open Capture File" class="content-image" />
+      <img src="../../assets/images/Saving & Opening .pcap Files 2.png" alt="PCAP Analysis in Wireshark" class="content-image" />
+    
+      <ul>
+        <li>Method 1: Wireshark → File → Open</li>
+        <li>Method 2: Double-click .pcap file</li>
+      </ul>
+    
+      <div class="info-card">
+        .pcap files can be analyzed without a live network
+      </div>
+    
+      <!-- ================= PT VS WIRESHARK ================= -->
+      <h2 class="section-heading">🧪 Cisco Packet Tracer vs Wireshark</h2>
+    
+      <ul>
+        <li><strong>Packet Tracer:</strong> Simulation mode (learning)</li>
+        <li><strong>Wireshark:</strong> Real packet capture (analysis)</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Packet Tracer = Learning<br>
+        Wireshark = Real-world troubleshooting
+      </div>
+    
+      <!-- ================= SECURITY ================= -->
+      <h2 class="section-heading">🔐 Important Security Note</h2>
+    
+      <ul>
+        <li>Wireshark can capture HTTP passwords</li>
+        <li>HTTPS encrypts payload</li>
+        <li>Always capture traffic legally and ethically</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Packet capture requires permission
+      </div>
+    
+      <!-- ================= SUMMARY ================= -->
+      <h2 class="section-heading">📊 Packet Capture – Exam-Ready Summary</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Concept</th>
+            <th>Key Point</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Packet capture</td>
+            <td>Inspect network traffic</td>
+          </tr>
+          <tr>
+            <td>Wireshark</td>
+            <td>Packet analyzer</td>
+          </tr>
+          <tr>
+            <td>Filter</td>
+            <td>Shows selected packets</td>
+          </tr>
+          <tr>
+            <td>.pcap file</td>
+            <td>Saved packet capture</td>
+          </tr>
+          <tr>
+            <td>Use case</td>
+            <td>Troubleshooting</td>
+          </tr>
+        </tbody>
+      </table>
+    
+    </section>
+    
 
   </main>
 

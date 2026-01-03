@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title></title>
+  <title>Diagnostic Commands</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="../../assets/css/templatecss.css" />
@@ -14,21 +14,306 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1></h1>
-    <p class="subtitle"></p>
+    <h1>Diagnostic Commands</h1>
+    <p class="subtitle">Learn essential diagnostic commands for network troubleshooting.</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
+    <section class="content-section">
 
+      <h1 class="main-heading">🧪 Diagnostic Commands</h1>
+    
+      <p class="intro-text">
+        Diagnostic commands are the first tools used by help desk engineers and
+        network administrators. They help identify <strong>where the problem is</strong>
+        before touching cables or configurations—especially in networks using
+        Cisco Systems devices.
+      </p>
+    
+      <!-- ================= PING ================= -->
+      <h2 class="section-heading">🟢 1️⃣ ping — Connectivity Test</h2>
+    
+      <img src="../../assets/images/ping 1.jpg" alt="Ping Command Example" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is ping?</h3>
+    
+      <p>
+        <strong>ping</strong> checks:
+      </p>
+      <ul>
+        <li>Is the destination reachable?</li>
+        <li>Is the network path working?</li>
+        <li>How long packets take (latency)</li>
+      </ul>
+    
+      <div class="info-card">
+        ping uses <strong>ICMP Echo Request / Echo Reply</strong>
+      </div>
+    
+      <h3 class="sub-heading">🔧 Syntax</h3>
+    
+      <pre class="flow-box">
+    ping google.com
+    ping 8.8.8.8
+      </pre>
+    
+      <h3 class="sub-heading">🧪 Example Outputs</h3>
+    
+      <pre class="flow-box">
+    Reply from 8.8.8.8: time=23ms TTL=118
+      </pre>
+    
+      <ul>
+        <li>✔ Network reachable</li>
+        <li>✔ DNS works (if domain name used)</li>
+      </ul>
+    
+      <pre class="flow-box">
+    Request timed out.
+      </pre>
+    
+      <p><strong>Possible reasons:</strong></p>
+      <ul>
+        <li>Device offline</li>
+        <li>Firewall blocking ICMP</li>
+        <li>Wrong IP address</li>
+        <li>Network down</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧠 Troubleshooting Logic with ping</h3>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Ping Target</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>127.0.0.1</td><td>TCP/IP stack OK</td></tr>
+          <tr><td>Own IP</td><td>NIC working</td></tr>
+          <tr><td>Gateway</td><td>LAN OK</td></tr>
+          <tr><td>Internet IP</td><td>Routing OK</td></tr>
+          <tr><td>Domain fails</td><td>DNS issue</td></tr>
+        </tbody>
+      </table>
+    
+      <div class="exam-tip">
+        Always ping step-by-step
+      </div>
+    
+      <!-- ================= IPCONFIG ================= -->
+      <h2 class="section-heading">🖥️ 2️⃣ ipconfig / ifconfig / ip — IP Information</h2>
+    
+      <img src="../../assets/images/ipconfig 1.jpg" alt="ipconfig Command Output" class="content-image" />
+    
+      <p>
+        These commands display:
+      </p>
+      <ul>
+        <li>IP address</li>
+        <li>Subnet mask</li>
+        <li>Default gateway</li>
+        <li>DNS servers</li>
+      </ul>
+    
+      <h3 class="sub-heading">🔧 Commands by OS</h3>
+    
+      <pre class="flow-box">
+    Windows:
+    ipconfig
+    ipconfig /all
+    
+    Linux:
+    ifconfig
+    ip addr
+    
+    macOS:
+    ifconfig
+      </pre>
+    
+      <h3 class="sub-heading">🧪 Example (Windows)</h3>
+    
+      <pre class="flow-box">
+    IPv4 Address : 192.168.1.10
+    Subnet Mask  : 255.255.255.0
+    Default GW   : 192.168.1.1
+      </pre>
+    
+      <ul>
+        <li>✔ Correct IP → Local network works</li>
+        <li>❌ Missing gateway → No internet</li>
+      </ul>
+    
+      <h3 class="sub-heading">🧠 Common Problems Found</h3>
+      <ul>
+        <li><strong>169.254.x.x</strong> → DHCP failed</li>
+        <li>Wrong subnet mask → Local communication fails</li>
+        <li>Wrong gateway → Internet fails</li>
+      </ul>
+    
+      <div class="exam-tip">
+        169.254.x.x = DHCP problem
+      </div>
+    
+      <!-- ================= TRACERT ================= -->
+      <h2 class="section-heading">🧭 3️⃣ tracert / traceroute — Path Discovery</h2>
+    
+      <img src="../../assets/images/tracert 1.png" alt="Traceroute Output" class="content-image" />
+      <img src="../../assets/images/tracert 2.png" alt="Traceroute Hop Analysis" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Does It Do?</h3>
+    
+      <p>
+        Shows every router (hop) a packet passes through to reach a destination.
+      </p>
+    
+      <h3 class="sub-heading">🔧 Commands</h3>
+    
+      <pre class="flow-box">
+    Windows:
+    tracert google.com
+    
+    Linux / macOS:
+    traceroute google.com
+      </pre>
+    
+      <h3 class="sub-heading">🧪 Example Output</h3>
+    
+      <pre class="flow-box">
+    1  192.168.1.1
+    2  10.10.0.1
+    3  ISP Router
+    4  google.com
+      </pre>
+    
+      <p>✔ Helps identify where traffic stops</p>
+    
+      <h3 class="sub-heading">❌ Asterisk (*) Meaning</h3>
+    
+      <pre class="flow-box">
+    *  *  *
+      </pre>
+    
+      <ul>
+        <li>Router not responding</li>
+        <li>Firewall blocking ICMP</li>
+        <li>Packet dropped</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Traceroute shows path, not speed
+      </div>
+    
+      <!-- ================= NSLOOKUP ================= -->
+      <h2 class="section-heading">🌐 4️⃣ nslookup — DNS Testing Tool</h2>
+    
+      <img src="../../assets/images/nslookup 1.png" alt="nslookup Command Output" class="content-image" />
+      <img src="../../assets/images/nslookup 2.png" alt="DNS Resolution Example" class="content-image" />
+    
+      <h3 class="sub-heading">📌 What Is nslookup?</h3>
+    
+      <p>
+        nslookup checks DNS resolution and shows which IP address a domain resolves to.
+      </p>
+    
+      <h3 class="sub-heading">🔧 Syntax</h3>
+    
+      <pre class="flow-box">
+    nslookup google.com
+      </pre>
+    
+      <h3 class="sub-heading">🧪 Example Output</h3>
+    
+      <pre class="flow-box">
+    Name: google.com
+    Address: 142.250.192.14
+      </pre>
+    
+      <p>✔ DNS working correctly</p>
+    
+      <h3 class="sub-heading">❌ DNS Failure Example</h3>
+    
+      <pre class="flow-box">
+    DNS request timed out
+      </pre>
+    
+      <ul>
+        <li>DNS server down</li>
+        <li>Firewall blocking UDP 53</li>
+        <li>Wrong DNS configured</li>
+      </ul>
+    
+      <div class="exam-tip">
+        IP ping works + name fails → DNS issue
+      </div>
+    
+      <!-- ================= FIREWALL ================= -->
+      <h2 class="section-heading">🔥 5️⃣ Firewall Impact on Results</h2>
+    
+      <img src="../../assets/images/Firewall 1.jpg" alt="Firewall Blocking ICMP" class="content-image" />
+      <img src="../../assets/images/Firewall 2.png" alt="Firewall Filtering Traffic" class="content-image" />
+      <img src="../../assets/images/Firewall 3.png" alt="Firewall Rules Impact" class="content-image" />
+    
+      <p>
+        Firewalls can affect command results even when the network is healthy.
+      </p>
+    
+      <h3 class="sub-heading">🚫 How Firewalls Affect Commands</h3>
+    
+      <ul>
+        <li><strong>ping:</strong> ICMP blocked → Request timed out</li>
+        <li><strong>tracert:</strong> Hop replies blocked → * * *</li>
+        <li><strong>nslookup:</strong> DNS blocked → Name resolution fails</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Timeout ≠ Network down<br>
+        Always consider security rules
+      </div>
+    
+      <!-- ================= FLOW ================= -->
+      <h2 class="section-heading">🧠 Real Help Desk Troubleshooting Flow</h2>
+    
+      <ol>
+        <li>ipconfig → Check IP & gateway</li>
+        <li>ping 127.0.0.1 → TCP/IP check</li>
+        <li>ping gateway → LAN check</li>
+        <li>ping 8.8.8.8 → Routing check</li>
+        <li>nslookup google.com → DNS check</li>
+        <li>tracert → Path issue</li>
+      </ol>
+    
+      <!-- ================= SUMMARY ================= -->
+      <h2 class="section-heading">📊 Diagnostic Commands – Quick Comparison</h2>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ping</td><td>Reachability</td></tr>
+          <tr><td>ipconfig / ifconfig</td><td>IP details</td></tr>
+          <tr><td>tracert / traceroute</td><td>Path discovery</td></tr>
+          <tr><td>nslookup</td><td>DNS resolution</td></tr>
+          <tr><td>Firewall</td><td>May block results</td></tr>
+        </tbody>
+      </table>
+    
+    </section>
+    
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
     <a href="home.html">⬅ Back</a>
-    <a href="cisco-device-indicators.html">Next ➡</a>
+    <a href="device-access-data.html">Next ➡</a>
   </nav>
 
   <!-- External Script -->

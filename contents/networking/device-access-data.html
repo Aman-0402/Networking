@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title></title>
+  <title>Device Access & Data Collection</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="../../assets/css/templatecss.css" />
@@ -14,21 +14,298 @@
 
   <!-- Header -->
   <header class="topic-header">
-    <h1></h1>
-    <p class="subtitle"></p>
+    <h1>Device Access & Data Collection</h1>
+    <p class="subtitle">Learn how to access network devices and collect data for troubleshooting.</p>
   </header>
 
   <!-- Main Content -->
   <main class="content-wrapper">
 
+    <section class="content-section">
 
+      <h1 class="main-heading">🔐📊 Device Access & Data Collection</h1>
+    
+      <p class="intro-text">
+        This topic explains how IT teams remotely access devices, securely manage
+        networks, and collect data for monitoring and troubleshooting.
+        These are core skills for help desk, NOC, and network engineers,
+        especially in environments built with Cisco Systems.
+      </p>
+    
+      <!-- ================= REMOTE ACCESS ================= -->
+      <h2 class="section-heading">🖥️ 1️⃣ Remote Device Access Protocols</h2>
+    
+      <img src="../../assets/images/RDP 1.webp" alt="RDP Remote Desktop" class="content-image" />
+      <img src="../../assets/images/RDP 2.png" alt="Windows RDP Session" class="content-image" />
+      <img src="../../assets/images/RDP 3.png" alt="Remote Desktop Example" class="content-image" />
+    
+      <h3 class="sub-heading">🔑 A) RDP (Remote Desktop Protocol)</h3>
+    
+      <p>
+        RDP is used to remotely access <strong>Windows systems</strong>
+        with a full graphical desktop interface.
+      </p>
+    
+      <ul>
+        <li>Developed by Microsoft</li>
+        <li>Full GUI access</li>
+        <li>Used for end-user support</li>
+      </ul>
+    
+      <div class="info-card">
+        Port Used: <strong>TCP 3389</strong>
+      </div>
+    
+      <pre class="flow-box">
+    Help Desk → RDP → User’s Office PC
+      </pre>
+    
+      <ul>
+        <li>✔ Fix software issues</li>
+        <li>✔ Install updates</li>
+        <li>✔ Remote user support</li>
+        <li>❌ Not used for routers/switches</li>
+      </ul>
+    
+      <div class="exam-tip">
+        RDP = Windows GUI access
+      </div>
+    
+      <!-- ================= SSH ================= -->
+      <img src="../../assets/images/SSH 1.webp" alt="SSH Secure Access" class="content-image" />
+      <img src="../../assets/images/SSH 2.png" alt="SSH CLI Session" class="content-image" />
+    
+      <h3 class="sub-heading">🔐 B) SSH (Secure Shell)</h3>
+    
+      <p>
+        SSH provides secure, encrypted command-line access to
+        network devices and servers.
+      </p>
+    
+      <div class="info-card">
+        Port Used: <strong>TCP 22</strong>
+      </div>
+    
+      <pre class="flow-box">
+    Admin → SSH → Switch / Router CLI
+      </pre>
+    
+      <ul>
+        <li>✔ Encrypted</li>
+        <li>✔ Industry standard</li>
+        <li>✔ Replaces Telnet</li>
+      </ul>
+    
+      <div class="exam-tip">
+        SSH = secure remote CLI
+      </div>
+    
+      <!-- ================= TELNET ================= -->
+      <img src="../../assets/images/Telnet 1.webp" alt="Telnet Access" class="content-image" />
+      <img src="../../assets/images/Telnet 2.webp" alt="Telnet CLI Session" class="content-image" />
+    
+      <h3 class="sub-heading">⚠️ C) Telnet (Legacy / Insecure)</h3>
+    
+      <p>
+        Telnet provides remote CLI access but <strong>without encryption</strong>.
+      </p>
+    
+      <div class="info-card">
+        Port Used: <strong>TCP 23</strong>
+      </div>
+    
+      <ul>
+        <li>❌ Passwords sent in plain text</li>
+        <li>❌ Not safe on modern networks</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Telnet = insecure (avoid)
+      </div>
+    
+      <!-- ================= VPN ================= -->
+      <h2 class="section-heading">🌍 2️⃣ VPN (Virtual Private Network)</h2>
+    
+      <img src="../../assets/images/VPN 1.webp" alt="VPN Tunnel Concept" class="content-image" />
+    
+      <p>
+        A VPN creates a secure, encrypted tunnel over the internet.
+      </p>
+    
+      <h3 class="sub-heading">🧠 Why VPN Is Used</h3>
+      <ul>
+        <li>Secure remote access</li>
+        <li>Connect offices securely</li>
+        <li>Protect data on public Wi-Fi</li>
+      </ul>
+    
+      <pre class="flow-box">
+    Laptop → VPN → Office Network
+      </pre>
+    
+      <ul>
+        <li>✔ Acts like inside office LAN</li>
+        <li>✔ Internal IPs accessible</li>
+      </ul>
+    
+      <div class="exam-tip">
+        VPN = secure remote network access
+      </div>
+    
+      <!-- ================= CONSOLE ================= -->
+      <h2 class="section-heading">🖥️ 3️⃣ Console Access (Out-of-Band)</h2>
+    
+      <img src="../../assets/images/Console Access 1.jpg" alt="Console Cable Connection" class="content-image" />
+      <img src="../../assets/images/Console Access 2.jpg" alt="Router Console Port" class="content-image" />
+      <img src="../../assets/images/Console Access 3.png" alt="Console Access Diagram" class="content-image" />
+    
+      <p>
+        Console access is a <strong>direct physical connection</strong>
+        to a network device.
+      </p>
+    
+      <ul>
+        <li>Used when network is down</li>
+        <li>Used for first-time setup</li>
+      </ul>
+    
+      <div class="info-card">
+        Cable Used: Console / Rollover (RJ-45 ↔ USB)
+      </div>
+    
+      <pre class="flow-box">
+    Laptop ─ Console Cable ─ Router
+      </pre>
+    
+      <div class="exam-tip">
+        Console access works even without network
+      </div>
+    
+      <!-- ================= NMS ================= -->
+      <h2 class="section-heading">📈 4️⃣ Network Management Systems (NMS)</h2>
+    
+      <img src="../../assets/images/Network Management Systems 1.png" alt="Network Monitoring Dashboard" class="content-image" />
+      <img src="../../assets/images/Network Management Systems 2.webp" alt="NMS Alerts" class="content-image" />
+    
+      <p>
+        An NMS is software used to monitor, manage, and collect data
+        from network devices.
+      </p>
+    
+      <h3 class="sub-heading">🔧 What It Monitors</h3>
+      <ul>
+        <li>Device up/down</li>
+        <li>Bandwidth usage</li>
+        <li>CPU & memory</li>
+        <li>Errors & alerts</li>
+      </ul>
+    
+      <div class="info-card">
+        Protocol Used: <strong>SNMP</strong>
+      </div>
+    
+      <pre class="flow-box">
+    NMS → Routers & Switches → Status / Alerts
+      </pre>
+    
+      <div class="exam-tip">
+        NMS = centralized network visibility
+      </div>
+    
+      <!-- ================= MERAKI ================= -->
+      <h2 class="section-heading">☁️ 5️⃣ Cloud-Managed Networks (Meraki)</h2>
+    
+      <img src="../../assets/images/Cloud-Managed Networks 1.png" alt="Cisco Meraki Dashboard" class="content-image" />
+      <img src="../../assets/images/Cloud-Managed Networks 2.png" alt="Meraki Network View" class="content-image" />
+    
+      <p>
+        Cloud-managed networking allows devices to be managed via
+        a web dashboard instead of local CLI.
+      </p>
+    
+      <div class="info-card">
+        Example Platform: <strong>Cisco Meraki</strong>
+      </div>
+    
+      <pre class="flow-box">
+    Meraki Device → Internet → Meraki Cloud Dashboard
+      </pre>
+    
+      <ul>
+        <li>✔ Centralized control</li>
+        <li>✔ Minimal CLI</li>
+        <li>✔ Real-time analytics</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Meraki = cloud-managed, not CLI-heavy
+      </div>
+    
+      <!-- ================= SCRIPTS ================= -->
+      <h2 class="section-heading">🤖 6️⃣ Scripts (Automation & Data Collection)</h2>
+    
+      <img src="../../assets/images/Scripts 1.webp" alt="Network Automation Script" class="content-image" />
+    
+      <p>
+        Scripts are small programs used to automate tasks and collect data.
+      </p>
+    
+      <h3 class="sub-heading">🧠 Common Uses</h3>
+      <ul>
+        <li>Backup configurations</li>
+        <li>Check device status</li>
+        <li>Monitor logs</li>
+        <li>Restart services</li>
+      </ul>
+    
+      <pre class="flow-box">
+    Python Script → SSH → Routers → Collect Configs
+      </pre>
+    
+      <ul>
+        <li>✔ Saves time</li>
+        <li>✔ Reduces human error</li>
+      </ul>
+    
+      <div class="exam-tip">
+        Scripts = automation & efficiency
+      </div>
+    
+      <!-- ================= SUMMARY ================= -->
+      <h2 class="section-heading">🔄 How Everything Fits Together</h2>
+    
+      <img src="../../assets/images/A-typicalNetwork-Operation-Center-NOC-The-ARE-component-is-proposed-by-this-work.png"
+           alt="Network Operations Center Workflow"
+           class="content-image" />
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>RDP</td><td>Windows GUI access</td></tr>
+          <tr><td>SSH</td><td>Secure CLI</td></tr>
+          <tr><td>Telnet</td><td>Legacy CLI</td></tr>
+          <tr><td>VPN</td><td>Secure remote network</td></tr>
+          <tr><td>Console</td><td>Emergency / local access</td></tr>
+          <tr><td>NMS</td><td>Monitoring & alerts</td></tr>
+          <tr><td>Meraki</td><td>Cloud management</td></tr>
+          <tr><td>Scripts</td><td>Automation</td></tr>
+        </tbody>
+      </table>
+    
+    </section>
+    
 
   </main>
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav">
     <a href="home.html">⬅ Back</a>
-    <a href="cisco-device-indicators.html">Next ➡</a>
+    <a href="cisco-show-commands.html">Next ➡</a>
   </nav>
 
   <!-- External Script -->
