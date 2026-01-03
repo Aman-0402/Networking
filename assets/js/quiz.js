@@ -426,7 +426,338 @@ const quizData = [
     question: "A network limited to a small geographic area is called:",
     options: ["WAN", "MAN", "LAN", "PAN"],
     answer: 2
+  },
+  {
+    question: "What does NAT stand for, and what is its primary purpose?",
+    options: [
+      "Node Address Translation; to map MAC addresses",
+      "Network Authentication Token; to secure data transmission",
+      "Network Access Terminal; to provide user authentication",
+      "Network Address Translation; to conserve IP addresses"
+    ],
+    answer: 3
+  },
+  {
+    question: "What does the DNS protocol primarily do?",
+    options: [
+      "Routes packets between networks",
+      "Encrypts network traffic",
+      "Manages network bandwidth",
+      "Translates domain names to IP addresses"
+    ],
+    answer: 3
+  },
+  {
+    question: "What does the ipconfig command display on a Windows system?",
+    options: [
+      "Routing table",
+      "DNS server status",
+      "Packet loss statistics",
+      "Network configuration details"
+    ],
+    answer: 3
+  },
+  {
+    question: "Which routing protocol uses a composite metric including bandwidth and delay?",
+    options: ["BGP", "OSPF", "EIGRP", "RIP"],
+    answer: 2
+  },
+  {
+    question: "What is the primary function of a router?",
+    options: [
+      "Amplify network signals",
+      "Forward packets between different networks",
+      "Filter application-layer traffic",
+      "Connect devices within the same LAN"
+    ],
+    answer: 1
+  },
+  {
+    question: "What is the purpose of a firewall in a network?",
+    options: [
+      "To amplify signals",
+      "To assign IP addresses",
+      "To route packets between networks",
+      "To filter network traffic based on rules"
+    ],
+    answer: 3
+  },
+  {
+    question: "Which factor most affects network latency?",
+    options: [
+      "Packet size",
+      "IP address format",
+      "Distance between devices",
+      "Subnet mask"
+    ],
+    answer: 2
+  },
+  {
+    question: "What is the purpose of an IP address in a network?",
+    options: [
+      "To identify the physical location of a device",
+      "To uniquely identify a device in a network",
+      "To encrypt data packets",
+      "To manage network bandwidth"
+    ],
+    answer: 1
+  },
+  {
+    question: "Which protocol is used for dynamic routing in large networks?",
+    options: ["DHCP", "ARP", "OSPF", "RIP"],
+    answer: 2
+  },
+  {
+    question: "Which attack involves overwhelming a network with traffic?",
+    options: [
+      "Man-in-the-middle",
+      "SQL injection",
+      "Denial of Service (DoS)",
+      "Phishing"
+    ],
+    answer: 2
+  },
+  {
+    question: "What is the purpose of the ARP protocol?",
+    options: [
+      "To assign dynamic IP addresses",
+      "To resolve IP addresses to MAC addresses",
+      "To encrypt network traffic",
+      "To manage network bandwidth"
+    ],
+    answer: 1
+  },
+  {
+    question: "What is the primary advantage of a mesh topology?",
+    options: [
+      "Low cost",
+      "High redundancy and fault tolerance",
+      "Simple configuration",
+      "Limited scalability"
+    ],
+    answer: 1
+  },
+  {
+    question: "In the TCP/IP model, how does the Internet layer map to the OSI model?",
+    options: [
+      "Transport and Network layers",
+      "Network and Data Link layers",
+      "Network layer only",
+      "Data Link and Physical layers"
+    ],
+    answer: 2
+  },
+  {
+    question: "Which protocol operates at the Transport layer to provide reliable data delivery?",
+    options: ["IP", "TCP", "UDP", "HTTP"],
+    answer: 1
+  },
+  {
+    question: "Which type of network connects devices within a single user’s workspace (≈10m)?",
+    options: ["MAN", "LAN", "WAN", "PAN"],
+    answer: 3
+  },
+  {
+    question: "Which command checks network connectivity between two devices?",
+    options: ["netstat", "ipconfig", "ping", "tracert"],
+    answer: 2
+  },
+  {
+    question: "How many bits are used in an IPv4 address?",
+    options: ["16", "32", "64", "128"],
+    answer: 1
+  },
+  {
+    question: "What is a key challenge in a collapsed core network design?",
+    options: [
+      "Lack of redundancy",
+      "Increased latency",
+      "Higher costs",
+      "Reduced scalability"
+    ],
+    answer: 3
+  },
+  {
+    question: "Which attack exploits vulnerabilities in the TCP three-way handshake?",
+    options: [
+      "Smurf attack",
+      "Man-in-the-middle",
+      "Ping of Death",
+      "SYN Flood"
+    ],
+    answer: 3
+  },
+  {
+    question: "Which network topology requires a central device to connect all nodes?",
+    options: ["Bus", "Star", "Ring", "Mesh"],
+    answer: 1
+  },
+  {
+    question: "Which attack exploits vulnerabilities in the TCP three-way handshake?",
+    options: [
+      "Sync ACK attack",
+      "SYNC attack",
+      "NoSync attack",
+      "SYN Flood attack"
+    ],
+    answer: 3
+  },
+  {
+    question: "What does the DNS protocol primarily do?",
+    options: [
+      "DNS",
+      "Translates domain names to IP addresses",
+      "FTP",
+      "ARP"
+    ],
+    answer: 1
+  },
+  {
+    question: "Which encryption algorithm is used by IPsec?",
+    options: ["AES", "RSA", "SHA", "MD5"],
+    answer: 0
+  },
+  {
+    question: "Which network design principle ensures high availability?",
+    options: [
+      "Single point of failure",
+      "Static routing",
+      "Minimal segmentation",
+      "Redundancy and fault tolerance"
+    ],
+    answer: 3
+  },
+  {
+    question: "Which security protocol is recommended for modern Wi-Fi networks?",
+    options: ["WEP", "WPA", "WPA2", "WPA3"],
+    answer: 3
+  },
+  {
+    question: "What is a key challenge in wireless network performance?",
+    options: [
+      "Low security",
+      "Limited bandwidth",
+      "High latency",
+      "Signal interference"
+    ],
+    answer: 3
+  },
+  {
+    question: "What is the purpose of a MAC address?",
+    options: [
+      "To encrypt traffic",
+      "To assign IP addresses",
+      "To identify a device within a local network",
+      "To identify a device on the Internet"
+    ],
+    answer: 2
+  },
+  {
+    question: "Which OSI layer ensures reliable data transfer?",
+    options: ["Physical", "Data Link", "Transport", "Application"],
+    answer: 2
+  },
+  {
+    question: "What is the primary advantage of star topology?",
+    options: [
+      "High fault tolerance",
+      "No central failure point",
+      "Low cost",
+      "Easy to install and manage"
+    ],
+    answer: 3
+  },
+  {
+    question: "Which authentication protocol is commonly used in enterprises?",
+    options: ["PAP", "CHAP", "RADIUS", "FTP"],
+    answer: 2
+  },
+  {
+    question: "Which protocol operates at the Application layer?",
+    options: ["Ethernet", "HTTP", "IP", "TCP"],
+    answer: 1
+  },
+  {
+    question: "What is the purpose of VLANs?",
+    options: [
+      "Assign IP addresses",
+      "Increase physical connections",
+      "Encrypt data",
+      "Logically segment a network"
+    ],
+    answer: 3
+  },
+  {
+    question: "What is the purpose of VLSM?",
+    options: [
+      "Standardize subnet sizes",
+      "Simplify routing tables",
+      "Encrypt IP addresses",
+      "Optimize IP allocation using variable subnet sizes"
+    ],
+    answer: 3
+  },
+  {
+    question: "How does a hub differ from a switch?",
+    options: [
+      "Hub supports VLANs",
+      "Hub works at Layer 3",
+      "Hub forwards selectively",
+      "Hub broadcasts to all devices"
+    ],
+    answer: 3
+  },
+  {
+    question: "What is the purpose of a default gateway?",
+    options: [
+      "Encrypt packets",
+      "Assign IPs",
+      "Manage DNS",
+      "Route traffic to external networks"
+    ],
+    answer: 3
+  },
+  {
+    question: "Which protocol supports multicast traffic?",
+    options: ["DHCP", "IGMP", "SNMP", "FTP"],
+    answer: 1
+  },
+  {
+    question: "Which protocol is used to monitor networks?",
+    options: ["SMTP", "DHCP", "SNMP", "FTP"],
+    answer: 2
+  },
+  {
+    question: "What is the primary advantage of QUIC?",
+    options: [
+      "Connectionless communication",
+      "Reduced connection setup time using UDP",
+      "Higher packet loss",
+      "Simplified encryption"
+    ],
+    answer: 1
+  },
+  {
+    question: "What does the tracert command do?",
+    options: [
+      "Monitor traffic",
+      "Display interfaces",
+      "Assign IPs",
+      "Trace the route packets take"
+    ],
+    answer: 3
+  },
+  {
+    question: "What is the primary use of UDP?",
+    options: [
+      "File transfer",
+      "Real-time applications like streaming",
+      "HTTP",
+      "UDP"
+    ],
+    answer: 1
   }
+
 ];
 
 // ===============================
