@@ -865,3 +865,4 @@ function resetQuestion(index) {
 // INIT
 // ===============================
 loadQuiz();
+// Kuch Bhi
